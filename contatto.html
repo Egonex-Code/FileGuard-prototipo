@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contattaci — FileGuard</title>
+  <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+  <header class="barra">
+    <a class="marca" href="index.html">FileGuard</a>
+    <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" class="menu">
+      <a href="funzioni.html">Funzioni</a>
+      <a href="licenza.html">Licenza</a>
+      <a href="scarica.html">Scarica</a>
+      <a href="contatto.html" aria-current="page">Contatto</a>
+    </nav>
+  </header>
+  <main class="largo">
+    <section class="blocco contatto">
+      <h1>Contattaci</h1>
+      <form class="modulo" action="#" method="post">
+        <label>
+          Nome
+          <input name="nome" type="text" required autocomplete="name">
+        </label>
+        <label>
+          Mail
+          <input name="mail" type="email" required autocomplete="email">
+        </label>
+        <label>
+          Messaggio
+          <textarea name="messaggio" required rows="5"></textarea>
+        </label>
+        <button class="pieno" type="submit">Invia</button>
+        <p class="avviso" id="avviso-contatto" hidden>Il messaggio resta su questa pagina. Da qui non parte ancora.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="piede">
+    <p class="piede-nome">Egonex S.R.L.</p>
+    <p>Lariano, Roma (sede legale) · Palermo (sede operativa)</p>
+    <p>P.IVA 18155601000</p>
+    <p><a href="mailto:info@egonex-group.com">info@egonex-group.com</a></p>
+    <div class="piede-link">
+      <a href="privacy.html">Privacy e note legali</a>
+      <a href="contatto.html">Contatto</a>
+    </div>
+    <p class="piede-copy">© 2026 Egonex S.R.L.</p>
+  </footer>
+  <script src="sito.js"></script>
+</body>
+</html>
