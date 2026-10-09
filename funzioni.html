@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="barra">
-    <a class="marca" href="index.html">FileGuard</a>
+    <a class="marca" href="index.html"><img src="immagini/logo.png" alt=""><span>FileGuard</span></a>
     <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
     <nav id="menu" class="menu">
       <a href="funzioni.html" aria-current="page">Funzioni</a>
@@ -21,7 +21,7 @@
   <section class="apertura">
     <div class="largo">
       <h1>Cosa fa sul file</h1>
-      <p>FileGuard monitora cartelle e file sensibili, notifica se vengono spostati o cancellati e aiuta a rimetterli al loro posto.</p>
+      <p>FileGuard monitora cartelle e file sensibili: se privacy o GDPR chiedono conto, Lei può mostrare la traccia dei file e i tempi, anche per persona e periodo.</p>
     </div>
   </section>
   <main class="largo">
@@ -47,14 +47,45 @@
         </article>
       </div>
       <div class="schermata">
-        <div class="mock">
-          <div class="mock-vetro">
-          <p class="mock-barra">FileGuard</p>
-          <div class="mock-corpo">
-            <p class="mock-riga">contratto.pdf <span>spostato</span></p>
-            <p class="mock-riga">Computer <span>PC dello studio</span></p>
-            <p class="mock-riga">Dove <span>unità esterna</span></p>
+        <div class="app">
+          <div class="app-lato">
+            <p class="app-nome">FileGuard</p>
+            <p class="app-voce app-voce-attiva">Monitoraggio</p>
+            <p class="app-voce">Backup</p>
+            <p class="app-voce">Regole</p>
           </div>
+          <div class="app-corpo">
+            <p class="app-titolo">Diario</p>
+            <table class="app-tabella">
+              <thead>
+                <tr>
+                  <th>Evento</th>
+                  <th>Percorso</th>
+                  <th>Data</th>
+                  <th>Computer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Modificato</td>
+                  <td>Disco dello studio\Contratti\contratto.pdf</td>
+                  <td>08/10/2026 13:10</td>
+                  <td>PC dello studio</td>
+                </tr>
+                <tr>
+                  <td>Eliminati</td>
+                  <td>Disco dello studio\Fatture\fattura.pdf</td>
+                  <td>07/10/2026 18:22</td>
+                  <td>PC dello studio</td>
+                </tr>
+                <tr>
+                  <td>Rinominato</td>
+                  <td>Disco dello studio\Contratti\contratto.pdf</td>
+                  <td>07/10/2026 16:40</td>
+                  <td>PC dello studio</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -134,13 +165,54 @@
         </article>
       </div>
       <div class="schermata">
-        <div class="mock">
-          <div class="mock-vetro">
-          <p class="mock-barra">Copie dello studio</p>
-          <div class="mock-corpo">
-            <p class="mock-riga">Primo posto <span>disco dello studio</span></p>
-            <p class="mock-riga">Secondo posto <span>NAS dello studio</span></p>
+        <div class="app">
+          <div class="app-lato">
+            <p class="app-nome">FileGuard</p>
+            <p class="app-voce">Monitoraggio</p>
+            <p class="app-voce app-voce-attiva">Backup</p>
+            <p class="app-voce">Regole</p>
           </div>
+          <div class="app-corpo">
+            <p class="app-titolo">Dove sono le copie di backup</p>
+            <table class="app-tabella">
+              <thead>
+                <tr>
+                  <th>Destinazione</th>
+                  <th>File</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Disco dello studio</td>
+                  <td>contratto.pdf, fattura.pdf</td>
+                </tr>
+                <tr>
+                  <td>NAS dello studio</td>
+                  <td>contratto.pdf, fattura.pdf</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="schermata">
+        <div class="app">
+          <div class="app-corpo">
+            <p class="app-titolo">Le versioni di contratto.pdf</p>
+            <p class="app-percorso">Disco dello studio\Contratti\contratto.pdf</p>
+            <div class="app-versioni-griglia">
+              <ul>
+                <li class="app-v4"><strong>v4</strong> — giovedì 8 ottobre 2026, 13:30</li>
+                <li><strong>v3</strong> — giovedì 8 ottobre 2026, 11:05</li>
+                <li><strong>v2</strong> — giovedì 8 ottobre 2026, 09:40</li>
+              </ul>
+              <div class="app-foglio"></div>
+            </div>
+            <p class="app-nota">Il documento di adesso non viene toccato. La versione scelta viene messa nella stessa cartella con un nome che dice qual è: contratto-v4.pdf.</p>
+            <div class="app-azioni">
+              <span class="app-apri">Apri la copia</span>
+              <span class="app-ripristina">Ripristina</span>
+            </div>
           </div>
         </div>
       </div>
