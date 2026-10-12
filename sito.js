@@ -9,6 +9,22 @@
     });
   }
 
+  document.querySelectorAll(".regola").forEach(function (tasto) {
+    tasto.addEventListener("click", function () {
+      var aperto = tasto.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".regola").forEach(function (altro) {
+        altro.setAttribute("aria-expanded", "false");
+        var testo = altro.querySelector(".regola-testo");
+        if (testo) testo.hidden = true;
+      });
+      if (!aperto) {
+        tasto.setAttribute("aria-expanded", "true");
+        var testo = tasto.querySelector(".regola-testo");
+        if (testo) testo.hidden = false;
+      }
+    });
+  });
+
   document.querySelectorAll("[data-avviso]").forEach(function (el) {
     el.addEventListener("click", function () {
       var riga = document.getElementById(el.getAttribute("data-avviso"));

@@ -38,7 +38,7 @@
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M14.2 5.8 18.2 9.8 9.5 18.5H5.5v-4Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
           <h3>Traccia delle modifiche</h3>
           <p>Ogni cartella ha le sue regole.</p>
-          <p>FileGuard avvisa e traccia ogni modifica.</p>
+          <p>FileGuard ti avvisa e traccia ogni modifica.</p>
         </article>
         <article class="scheda">
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M9 19.5h6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
@@ -123,12 +123,30 @@
       <h1>Le sei regole</h1>
       <p class="intro">Su ogni cartella si impostano fino a sei regole diverse. La scelta vale cartella per cartella.</p>
       <div class="schede">
-        <article class="scheda"><h3>Non si cancella</h3></article>
-        <article class="scheda"><h3>Non si modifica</h3></article>
-        <article class="scheda"><h3>Non esce di qui</h3></article>
-        <article class="scheda"><h3>Dov'era e dov'è</h3></article>
-        <article class="scheda"><h3>Deve esserci</h3></article>
-        <article class="scheda"><h3>Non si tiene per sempre</h3></article>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Non si cancella</span>
+          <span class="regola-testo" hidden>Se qualcuno elimina un file da quella cartella, arriva l’avviso. Il programma non lo impedisce.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Non si modifica</span>
+          <span class="regola-testo" hidden>Se un file viene modificato, resta la traccia e arriva l’avviso.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Non esce di qui</span>
+          <span class="regola-testo" hidden>Se un file esce dalla cartella, si vede dove è finito, anche su una chiavetta.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Dov'era e dov'è</span>
+          <span class="regola-testo" hidden>Si vede da dove è partito e dove si trova adesso, e da quale computer.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Deve esserci</span>
+          <span class="regola-testo" hidden>Se un file che deve stare in quella cartella non c’è, si vede.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Non si tiene per sempre</span>
+          <span class="regola-testo" hidden>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</span>
+        </button>
       </div>
       <p class="nota">Si scelgono cartella per cartella. L’ultima guarda da quanto tempo i file stanno lì. Decide lo studio. Il programma non cancella da solo.</p>
       <div class="schermata">
