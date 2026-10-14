@@ -22,7 +22,7 @@
   </header>
   <section class="apertura">
     <div class="largo">
-      <h1>Cosa fa sul file</h1>
+      <h1>Cosa fa FileGuard</h1>
       <p>FileGuard monitora cartelle e file sensibili, tiene traccia e aiuta nella gestione di privacy e GDPR.</p>
     </div>
   </section>
@@ -45,7 +45,7 @@
         <article class="scheda">
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M9 19.5h6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
           <h3>Da quale computer</h3>
-          <p>Avvisa prima che un file venga modificato, spostato o eliminato. Dopo si vede da quale computer, e dove è finito, anche su unità esterne.</p>
+          <p>Avvisa quando un file viene modificato, spostato o eliminato. Dopo si vede da quale computer, e dove è finito, anche su unità esterne.</p>
         </article>
       </div>
       <div class="schermata">
@@ -70,21 +70,21 @@
               <tbody>
                 <tr>
                   <td>Modificato</td>
-                  <td>Disco dello studio\Contratti\contratto.pdf</td>
+                  <td>Disco\Contratti\contratto.pdf</td>
                   <td>08/10/2026 13:10</td>
-                  <td>PC dello studio</td>
+                  <td>PC ufficio</td>
                 </tr>
                 <tr>
                   <td>Eliminati</td>
-                  <td>Disco dello studio\Fatture\fattura.pdf</td>
+                  <td>Disco\Fatture\fattura.pdf</td>
                   <td>07/10/2026 18:22</td>
-                  <td>PC dello studio</td>
+                  <td>PC ufficio</td>
                 </tr>
                 <tr>
                   <td>Rinominato</td>
-                  <td>Disco dello studio\Contratti\contratto.pdf</td>
+                  <td>Disco\Contratti\contratto.pdf</td>
                   <td>07/10/2026 16:40</td>
-                  <td>PC dello studio</td>
+                  <td>PC ufficio</td>
                 </tr>
               </tbody>
             </table>
@@ -122,6 +122,28 @@
     </section>
 
     <section class="blocco">
+      <h1>Privacy e GDPR sui file</h1>
+      <p class="intro">Quando serve una risposta su un documento, la traccia c’è.</p>
+      <div class="schede">
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h7.2L18 8.3V19.5H7Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 4.5v4h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
+          <h3>Che cosa c’è su una persona</h3>
+          <p>In caso di controllo privacy o GDPR, FileGuard trova tutti i documenti su una persona e su un periodo specifico.</p>
+        </article>
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 8.2V12l2.4 1.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Da quanto tempo sono lì</h3>
+          <p>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</p>
+        </article>
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s5.5-4.6 5.5-9a5.5 5.5 0 1 0-11 0c0 4.4 5.5 9 5.5 9Z" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="11.5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
+          <h3>La storia del file</h3>
+          <p>FileGuard trova tutti i file che servono e ne ripercorre la storia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="blocco blocco-chiara">
       <h1>Le sei regole</h1>
       <p class="intro">Su ogni cartella si impostano fino a sei regole diverse. La scelta vale cartella per cartella.</p>
       <div class="schede">
@@ -138,7 +160,7 @@
           <span class="regola-testo" hidden>Se un file esce dalla cartella, si vede dove è finito, anche su una chiavetta.</span>
         </button>
         <button class="scheda regola" type="button" aria-expanded="false">
-          <span class="regola-nome">Dov'era e dov'è</span>
+          <span class="regola-nome">Da dove e dove</span>
           <span class="regola-testo" hidden>Si vede da dove è partito e dove si trova adesso, e da quale computer.</span>
         </button>
         <button class="scheda regola" type="button" aria-expanded="false">
@@ -150,7 +172,7 @@
           <span class="regola-testo" hidden>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</span>
         </button>
       </div>
-      <p class="nota">Si scelgono cartella per cartella. L’ultima guarda da quanto tempo i file stanno lì. Decide lo studio. Il programma non cancella da solo.</p>
+      <p class="nota">Si scelgono cartella per cartella. L’ultima guarda da quanto tempo i file stanno lì. Decide chi gestisce la cartella. Il programma non cancella da solo.</p>
       <div class="schermata">
         <div class="mock">
           <div class="mock-vetro">
@@ -159,7 +181,7 @@
             <p class="mock-riga">Non si cancella</p>
             <p class="mock-riga">Non si modifica</p>
             <p class="mock-riga">Non esce di qui</p>
-            <p class="mock-riga">Dov'era e dov'è</p>
+            <p class="mock-riga">Da dove e dove</p>
             <p class="mock-riga">Deve esserci</p>
             <p class="mock-riga">Non si tiene per sempre</p>
           </div>
@@ -168,14 +190,14 @@
       </div>
     </section>
 
-    <section class="blocco blocco-chiara">
+    <section class="blocco">
       <h1>Copie sul disco</h1>
-      <p class="intro">Le copie restano allo studio: disco, server, NAS o un cloud che lo studio ha già. Anche in doppia copia.</p>
+      <p class="intro">Le copie restano su disco, server, NAS o un cloud già in uso. Anche in doppia copia.</p>
       <div class="schede schede-2">
         <article class="scheda">
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="4.5" width="10" height="12" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="5" y="8" width="10" height="12" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
           <h3>Anche in doppia copia</h3>
-          <p>Le copie restano sui dischi dello studio, anche in doppia copia.</p>
+          <p>Le copie restano sui dischi già in uso, anche in doppia copia.</p>
         </article>
         <article class="scheda">
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 8.5A6 6 0 1 1 6.4 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M7.5 5.2v3.6H11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -203,11 +225,11 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Disco dello studio</td>
+                  <td>Disco</td>
                   <td>contratto.pdf, fattura.pdf</td>
                 </tr>
                 <tr>
-                  <td>NAS dello studio</td>
+                  <td>NAS</td>
                   <td>contratto.pdf, fattura.pdf</td>
                 </tr>
               </tbody>
@@ -219,14 +241,13 @@
         <div class="app">
           <div class="app-corpo">
             <p class="app-titolo">Le versioni di contratto.pdf</p>
-            <p class="app-percorso">Disco dello studio\Contratti\contratto.pdf</p>
+            <p class="app-percorso">Disco\Contratti\contratto.pdf</p>
             <div class="app-versioni-griglia">
               <ul>
                 <li class="app-v4"><strong>v4</strong> — giovedì 8 ottobre 2026, 13:30</li>
                 <li><strong>v3</strong> — giovedì 8 ottobre 2026, 11:05</li>
                 <li><strong>v2</strong> — giovedì 8 ottobre 2026, 09:40</li>
               </ul>
-              <div class="app-foglio"></div>
             </div>
             <p class="app-nota">Il documento di adesso non viene toccato. La versione scelta viene messa nella stessa cartella con un nome che dice qual è: contratto-v4.pdf.</p>
             <div class="app-azioni">
@@ -235,17 +256,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="blocco">
-      <h1>Posizione e storia</h1>
-      <div class="schede schede-2">
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s5.5-4.6 5.5-9a5.5 5.5 0 1 0-11 0c0 4.4 5.5 9 5.5 9Z" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="11.5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
-          <h3>La storia del file</h3>
-          <p>FileGuard trova tutti i file che servono e ne ripercorre la storia.</p>
-        </article>
       </div>
     </section>
 
