@@ -7,6 +7,14 @@
       var aperto = menu.classList.toggle("aperto");
       bottone.setAttribute("aria-expanded", aperto ? "true" : "false");
     });
+
+    document.addEventListener("keydown", function (evento) {
+      if (evento.key === "Escape" && menu.classList.contains("aperto")) {
+        menu.classList.remove("aperto");
+        bottone.setAttribute("aria-expanded", "false");
+        bottone.focus();
+      }
+    });
   }
 
   document.querySelectorAll(".regola").forEach(function (tasto) {

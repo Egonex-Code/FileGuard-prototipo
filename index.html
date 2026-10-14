@@ -23,7 +23,9 @@
 <body>
   <header class="barra">
     <a class="marca" href="index.html" aria-current="page"><img src="immagini/logo.png" alt=""><span>FileGuard</span></a>
-    <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="menu-linee" d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path class="menu-chiudi" d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+    </button>
     <nav id="menu" class="menu">
       <a href="funzioni.html">Funzioni</a>
       <a href="licenza.html">Licenza</a>
@@ -35,7 +37,7 @@
     <div class="largo hero">
       <div class="hero-testo">
         <h1>Tutti i file importanti al loro posto. Sempre.</h1>
-        <p>FileGuard monitora cartelle e file sensibili: per una gestione a prova di privacy e GDPR.</p>
+        <p>FileGuard monitora cartelle e file sensibili, tiene traccia e aiuta nella gestione di privacy e GDPR.</p>
       </div>
       <div class="video">
         <img src="immagini/hero-studio.jpg" alt="Una persona al computer, in uno studio, con dei documenti sulla scrivania.">
@@ -46,9 +48,10 @@
       </div>
     </div>
   </section>
-  <main class="largo">
+  <main class="home">
     <section class="fascia-piena">
-      <h1>Gestione delle cartelle sensibili, in linea con Privacy e GDPR</h1>
+      <div class="largo">
+      <h1>Gestione delle cartelle sensibili, ogni file è tracciato e al suo posto</h1>
       <div class="schede">
         <article class="scheda">
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1.7" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="18" cy="12" r="1.7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M8 12h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
@@ -67,9 +70,11 @@
           <p>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</p>
         </article>
       </div>
+          </div>
     </section>
 
-    <section class="blocco">
+    <section class="fascia-bianca">
+      <div class="largo">
       <div class="schede">
         <article class="scheda">
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.8-6 9-6 9 6 9 6-3.8 6-9 6-9-6-9-6Z" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
@@ -90,9 +95,11 @@
           <p>La copia di backup è già lì: se è stato un errore, un click lo rimette al suo posto.</p>
         </article>
       </div>
+          </div>
     </section>
 
-    <section class="blocco blocco-chiara">
+    <section class="fascia-azzurra">
+      <div class="largo">
       <h1>A chi serve</h1>
       <p class="intro">Per chi tiene documenti di altre persone.</p>
       <div class="schede schede-4">
@@ -151,10 +158,42 @@
           <h3>Farmacie</h3>
           <p>Ricette e dati legati ai servizi erogati.</p>
         </article>
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 5l8 5.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M6.5 10.5V18M10 10.5V18M14 10.5V18M17.5 10.5V18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M4 18h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <h3>Banche</h3>
+          <p>Fascicoli e documenti dei clienti.</p>
+        </article>
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.2c-4.4.3-7.2 3-7.2 6.1h14.4c0-3.1-2.8-5.8-7.2-6.1Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M12 4.2V14.2" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M12 14.2c0 1.7 1.3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <h3>Assicurazioni</h3>
+          <p>Polizze e fascicoli dei clienti.</p>
+        </article>
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M5 15.5 9.5 11l3.5 3L19 6.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 6.5H19V10.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Consulenti finanziari</h3>
+          <p>Dossier e proposte dei clienti.</p>
+        </article>
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h14L5 6v13Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9.5 19v-3.5h3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
+          <h3>Studi tecnici</h3>
+          <p>Pratiche e disegni dei committenti.</p>
+        </article>
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8h11l-1 11.5h-9L6.5 8Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 8V6.2a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <h3>Vendita online</h3>
+          <p>Fatture e contratti dei clienti.</p>
+        </article>
+        <article class="scheda">
+          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M4 11.5h9M4 16h6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><circle cx="17.5" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M14.8 15.5c.4-1.6 1.4-2.4 2.7-2.4s2.3.8 2.7 2.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <h3>Raccolta contatti</h3>
+          <p>Elenchi e consensi firmati.</p>
+        </article>
       </div>
+          </div>
     </section>
 
-    <section class="blocco blocco-chiara">
+    <section class="fascia-bianca">
+      <div class="largo">
       <h1>Copie e regole</h1>
       <p class="intro">Su ogni cartella valgono regole diverse. Le copie restano allo studio.</p>
       <div class="schede">
@@ -175,9 +214,11 @@
           <p>FileGuard trova tutti i file che servono e ne ripercorre la storia.</p>
         </article>
       </div>
+          </div>
     </section>
 
-    <section class="blocco">
+    <section class="fascia-azzurra">
+      <div class="largo">
       <h1>Marca e installazione</h1>
       <p class="intro">Marca temporale su un documento e installazione guidata con lo stesso account.</p>
       <div class="schede">
@@ -200,35 +241,49 @@
           <p>Lo stesso account vale su tutti i computer.</p>
         </article>
       </div>
+          </div>
     </section>
 
     <section class="richiamo">
+      <div class="largo">
       <p class="intro">Prova FileGuard.</p>
       <div class="azioni">
         <a class="pieno" href="scarica.html">Prova</a>
       </div>
+          </div>
     </section>
 
-    <section class="blocco blocco-chiara">
+    <section class="fascia-azzurra">
+      <div class="largo">
       <h1>Le sei regole</h1>
       <p class="intro">Il programma non cancella da solo.</p>
-      <div class="colonne">
-        <article class="colonna">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5h7l3.5 3.5V19H7Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 5.5V9h3.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
-          <p>Non si cancella</p>
-          <p>Non si modifica</p>
-        </article>
-        <article class="colonna">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1.7" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="18" cy="12" r="1.7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M8 12h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-          <p>Non esce di qui</p>
-          <p>Dov'era e dov'è</p>
-        </article>
-        <article class="colonna">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 8.2V12l2.4 1.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <p>Deve esserci</p>
-          <p>Non si tiene per sempre</p>
-        </article>
+      <div class="schede">
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Non si cancella</span>
+          <span class="regola-testo" hidden>Se qualcuno elimina un file da quella cartella, arriva l’avviso. Il programma non lo impedisce.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Non si modifica</span>
+          <span class="regola-testo" hidden>Se un file viene modificato, resta la traccia e arriva l’avviso.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Non esce di qui</span>
+          <span class="regola-testo" hidden>Se un file esce dalla cartella, si vede dove è finito, anche su una chiavetta.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Dov'era e dov'è</span>
+          <span class="regola-testo" hidden>Si vede da dove è partito e dove si trova adesso, e da quale computer.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Deve esserci</span>
+          <span class="regola-testo" hidden>Se un file che deve stare in quella cartella non c’è, si vede.</span>
+        </button>
+        <button class="scheda regola" type="button" aria-expanded="false">
+          <span class="regola-nome">Non si tiene per sempre</span>
+          <span class="regola-testo" hidden>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</span>
+        </button>
       </div>
+          </div>
     </section>
   </main>
   <footer class="piede">

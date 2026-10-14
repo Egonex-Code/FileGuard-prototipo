@@ -64,6 +64,33 @@ a {
 
 .menu-apri {
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--inchiostro);
+  cursor: pointer;
+}
+
+.menu-apri svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.menu-apri .menu-chiudi {
+  display: none;
+}
+
+.menu-apri[aria-expanded="true"] .menu-linee {
+  display: none;
+}
+
+.menu-apri[aria-expanded="true"] .menu-chiudi {
+  display: block;
 }
 
 .menu {
@@ -410,6 +437,50 @@ p {
 
 .fascia-piena .scheda {
   color: var(--inchiostro);
+}
+
+main.home {
+  width: 100%;
+  padding: 0;
+}
+
+main.home > section {
+  margin: 0;
+  border-radius: 0;
+  padding: 2.5rem 0 2.25rem;
+}
+
+main.home > .fascia-piena {
+  margin: 0;
+  border-radius: 0;
+}
+
+main.home > .fascia-bianca,
+main.home > .richiamo {
+  background: var(--superficie);
+}
+
+main.home > .fascia-azzurra {
+  background: var(--blocco);
+}
+
+main.home h1 {
+  margin: 0 0 0.65rem;
+  color: var(--pieno);
+  text-align: center;
+  font-size: 2.15rem;
+  line-height: 1.2;
+}
+
+main.home .fascia-piena h1 {
+  margin-bottom: 1.75rem;
+  color: #fff;
+}
+
+main.home .intro {
+  max-width: 42rem;
+  margin: 0 auto 1.5rem;
+  text-align: center;
 }
 
 .scheda {
@@ -845,11 +916,21 @@ p {
 }
 
 @media (max-width: 640px) {
+  .menu-apri {
+    display: inline-flex;
+  }
+
   .menu {
-    display: flex;
+    display: none;
     flex-basis: 100%;
     flex-direction: column;
     gap: 0;
+  }
+
+  .menu.aperto {
+    display: flex;
+    padding-top: 0.25rem;
+    border-top: 1px solid var(--linea);
   }
 
   .menu a {

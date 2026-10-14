@@ -10,7 +10,9 @@
 <body>
   <header class="barra">
     <a class="marca" href="index.html"><img src="immagini/logo.png" alt=""><span>FileGuard</span></a>
-    <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="menu-linee" d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path class="menu-chiudi" d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+    </button>
     <nav id="menu" class="menu">
       <a href="funzioni.html" aria-current="page">Funzioni</a>
       <a href="licenza.html">Licenza</a>
@@ -21,7 +23,7 @@
   <section class="apertura">
     <div class="largo">
       <h1>Cosa fa sul file</h1>
-      <p>FileGuard monitora cartelle e file sensibili: per una gestione a prova di privacy e GDPR.</p>
+      <p>FileGuard monitora cartelle e file sensibili, tiene traccia e aiuta nella gestione di privacy e GDPR.</p>
     </div>
   </section>
   <main class="largo">
