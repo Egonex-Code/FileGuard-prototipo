@@ -33,6 +33,18 @@
     });
   });
 
+  var altri = document.getElementById("altri-mestieri");
+  if (altri) {
+    altri.addEventListener("click", function () {
+      var aperti = altri.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".mestiere-extra").forEach(function (scheda) {
+        scheda.hidden = aperti;
+      });
+      altri.setAttribute("aria-expanded", aperti ? "false" : "true");
+      altri.textContent = aperti ? "Gli altri" : "Chiudi";
+    });
+  }
+
   document.querySelectorAll("[data-avviso]").forEach(function (el) {
     el.addEventListener("click", function () {
       var riga = document.getElementById(el.getAttribute("data-avviso"));

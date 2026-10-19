@@ -4,7 +4,8 @@
   <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FileGuard</title>
+  <title>FileGuard — Tutti i file importanti al loro posto</title>
+  <meta name="description" content="FileGuard monitora cartelle e file sensibili, tiene traccia e aiuta nella gestione di privacy e GDPR.">
   <link rel="stylesheet" href="stile.css">
   <style>
     .hero-testo {
@@ -22,15 +23,16 @@
 </head>
 <body>
   <header class="barra">
-    <a class="marca" href="index.html" aria-current="page"><img src="immagini/logo.png" alt=""><span>FileGuard</span></a>
+    <a class="marca" href="index.html"><img src="immagini/logo.png" alt=""><span>FileGuard</span></a>
     <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path class="menu-linee" d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path class="menu-chiudi" d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
     </button>
     <nav id="menu" class="menu">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="che-cose.html">Che cos'è</a>
       <a href="funzioni.html">Funzioni</a>
-      <a href="licenza.html">Licenza</a>
-      <a href="scarica.html">Scarica</a>
-      <a href="contatto.html">Contatto</a>
+      <a href="piani.html">Piani</a>
+      <a href="contatto.html">Contatti</a>
     </nav>
   </header>
   <section class="apertura">
@@ -43,15 +45,15 @@
         <img src="immagini/hero-studio.jpg" alt="Una persona al computer, con dei documenti sulla scrivania.">
       </div>
       <div class="azioni">
-        <a class="pieno" href="scarica.html">Prova</a>
-        <a class="bordo" href="licenza.html">Licenza</a>
+        <a class="pieno" href="piani.html#prova">Prova gratis</a>
+        <a class="bordo" href="piani.html">Piani</a>
       </div>
     </div>
   </section>
   <main class="home">
     <section class="fascia-piena">
       <div class="largo">
-      <h1>Gestione delle cartelle sensibili, ogni file è tracciato e al suo posto</h1>
+      <h2>Gestione delle cartelle sensibili, ogni file è tracciato e al suo posto</h2>
       <div class="schede">
         <article class="scheda">
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1.7" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="18" cy="12" r="1.7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M8 12h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
@@ -100,7 +102,7 @@
 
     <section class="fascia-azzurra">
       <div class="largo">
-      <h1>A chi serve</h1>
+      <h2>A chi serve</h2>
       <p class="intro">Per chi tiene documenti di altre persone.</p>
       <div class="schede schede-4">
         <article class="scheda">
@@ -143,58 +145,61 @@
           <h3>CAF e patronati</h3>
           <p>Pratiche fiscali e previdenziali dei clienti.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5V10L12 4.5 20 10v10.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M10 20.5v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
           <h3>Amministratori di condominio</h3>
           <p>Anagrafiche condominiali e verbali di assemblea.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 4.5l8 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M7 10.5V19.5h10V10.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
           <h3>Agenzie immobiliari</h3>
           <p>Contratti di locazione e documenti della trattativa.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h6V6l2 2.2V20H7V8.2L9 6V3.5Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 6h6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
           <h3>Farmacie</h3>
           <p>Ricette e dati legati ai servizi erogati.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 5l8 5.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M6.5 10.5V18M10 10.5V18M14 10.5V18M17.5 10.5V18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M4 18h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
           <h3>Banche</h3>
           <p>Fascicoli e documenti dei clienti.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.2c-4.4.3-7.2 3-7.2 6.1h14.4c0-3.1-2.8-5.8-7.2-6.1Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M12 4.2V14.2" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M12 14.2c0 1.7 1.3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
           <h3>Assicurazioni</h3>
           <p>Polizze e fascicoli dei clienti.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M5 15.5 9.5 11l3.5 3L19 6.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 6.5H19V10.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <h3>Consulenti finanziari</h3>
           <p>Dossier e proposte dei clienti.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h14L5 6v13Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9.5 19v-3.5h3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
           <h3>Studi tecnici</h3>
           <p>Pratiche e disegni dei committenti.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8h11l-1 11.5h-9L6.5 8Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M9 8V6.2a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
           <h3>Vendita online</h3>
           <p>Fatture e contratti dei clienti.</p>
         </article>
-        <article class="scheda">
+        <article class="scheda mestiere-extra" hidden>
           <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M4 11.5h9M4 16h6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><circle cx="17.5" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M14.8 15.5c.4-1.6 1.4-2.4 2.7-2.4s2.3.8 2.7 2.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
           <h3>Raccolta contatti</h3>
           <p>Elenchi e consensi firmati.</p>
         </article>
+      </div>
+      <div class="altri-mestieri">
+        <button class="bordo" type="button" id="altri-mestieri" aria-expanded="false">Gli altri</button>
       </div>
           </div>
     </section>
 
     <section class="fascia-bianca">
       <div class="largo">
-      <h1>Copie e regole</h1>
+      <h2>Copie e regole</h2>
       <p class="intro">Su ogni cartella valgono regole diverse. Le copie restano sui sistemi già in uso.</p>
       <div class="schede">
         <article class="scheda">
@@ -219,7 +224,7 @@
 
     <section class="fascia-azzurra">
       <div class="largo">
-      <h1>Marca e installazione</h1>
+      <h2>Marca e installazione</h2>
       <p class="intro">Marca temporale su un documento e installazione guidata con lo stesso account.</p>
       <div class="schede">
         <article class="scheda">
@@ -248,14 +253,14 @@
       <div class="largo">
       <p class="intro">Prova FileGuard.</p>
       <div class="azioni">
-        <a class="pieno" href="scarica.html">Prova</a>
+        <a class="pieno" href="piani.html#prova">Prova gratis</a>
       </div>
           </div>
     </section>
 
     <section class="fascia-azzurra">
       <div class="largo">
-      <h1>Le sei regole</h1>
+      <h2>Le sei regole</h2>
       <p class="intro">Il programma non cancella da solo.</p>
       <div class="schede">
         <button class="scheda regola" type="button" aria-expanded="false">
@@ -293,7 +298,7 @@
     <p><a href="mailto:info@egonex-group.com">info@egonex-group.com</a></p>
     <div class="piede-link">
       <a href="privacy.html">Privacy e note legali</a>
-      <a href="contatto.html">Contatto</a>
+      <a href="contatto.html">Contatti</a>
     </div>
     <p class="piede-copy">© 2026 Egonex S.R.L.</p>
   </footer>

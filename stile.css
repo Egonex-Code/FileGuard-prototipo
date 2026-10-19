@@ -189,7 +189,8 @@ p {
   background: var(--superficie);
 }
 
-.blocco h1 {
+.blocco h1,
+.blocco h2 {
   margin: 0 0 0.65rem;
   color: var(--pieno);
   text-align: center;
@@ -203,19 +204,171 @@ p {
   text-align: center;
 }
 
+.spiega {
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.spiega p {
+  margin: 0 0 0.9rem;
+}
+
+.passi {
+  margin: 0 0 0.9rem;
+  padding-left: 1.15rem;
+}
+
+.passi li {
+  margin: 0 0 0.4rem;
+}
+
+.passi li:last-child {
+  margin-bottom: 0;
+}
+
+.figura {
+  max-width: 32rem;
+  margin: 0 auto 1.35rem;
+  text-align: center;
+}
+
+.figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figura figcaption {
+  margin-top: 0.65rem;
+  color: var(--secondario);
+  font-size: 0.95rem;
+}
+
+.affianco {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(14rem, 0.85fr);
+  gap: 1.25rem 2rem;
+  align-items: center;
+}
+
+.affianco-gira {
+  grid-template-columns: minmax(14rem, 0.85fr) minmax(0, 1.15fr);
+}
+
+.affianco-gira .spiega {
+  order: 2;
+}
+
+.affianco h2 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+main.pagina {
+  width: 100%;
+}
+
+main.pagina > section {
+  margin: 0;
+  padding: 2.75rem 0;
+}
+
+main.pagina > .fascia-bianca {
+  background: var(--superficie);
+}
+
+main.pagina > .fascia-azzurra {
+  background: var(--blocco);
+}
+
+main.pagina h2 {
+  color: var(--pieno);
+  font-size: 2.15rem;
+  line-height: 1.2;
+}
+
+.faq {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq details {
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--linea);
+  border-radius: 0.65rem;
+  background: var(--superficie);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 550;
+}
+
+.faq p {
+  margin: 0.7rem 0 0;
+}
+
+.contatti-griglia {
+  display: grid;
+  grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.contatti-griglia .blocco {
+  margin: 0;
+}
+
+.contatti-dati,
 .contatto {
-  width: min(36rem, 100%);
-  margin-inline: auto;
+  width: auto;
+  margin: 0;
   background: var(--superficie);
   border: 1px solid var(--linea);
   box-shadow: 0 16px 40px rgba(28, 36, 48, 0.05);
-  padding: 3.25rem 2.5rem 2.75rem;
+  padding: 2.25rem 2rem 2rem;
 }
 
-.contatto h1 {
-  margin-bottom: 2rem;
+.contatti-dati h2,
+.contatto h2 {
+  margin: 0 0 1.25rem;
+  color: var(--inchiostro);
+  text-align: left;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.contatti-elenco {
+  display: grid;
+  gap: 0.95rem;
+  margin: 0;
+}
+
+.contatti-elenco div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.contatti-elenco dt {
+  color: var(--secondario);
+  font-size: 0.82rem;
   font-weight: 550;
-  letter-spacing: -0.02em;
+}
+
+.contatti-elenco dd {
+  margin: 0;
+}
+
+.contatti-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .modulo {
@@ -232,8 +385,15 @@ p {
   font-weight: 550;
 }
 
+.modulo-riga {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
 .modulo input,
-.modulo textarea {
+.modulo textarea,
+.modulo select {
   display: block;
   width: 100%;
   margin-top: 0.45rem;
@@ -243,7 +403,15 @@ p {
   background: var(--carta);
   color: var(--inchiostro);
   font: inherit;
-  font-weight: 400;
+}
+
+.modulo select {
+  appearance: none;
+  padding-right: 2.2rem;
+  background-image: linear-gradient(45deg, transparent 50%, var(--secondario) 50%), linear-gradient(135deg, var(--secondario) 50%, transparent 50%);
+  background-position: calc(100% - 1.15rem) 1.15rem, calc(100% - 0.75rem) 1.15rem;
+  background-size: 0.4rem 0.4rem, 0.4rem 0.4rem;
+  background-repeat: no-repeat;
 }
 
 .modulo textarea {
@@ -251,8 +419,25 @@ p {
   resize: vertical;
 }
 
+.modulo .casella {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-weight: 400;
+  color: var(--inchiostro);
+}
+
+.modulo .casella input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  accent-color: var(--pieno);
+}
+
 .modulo input:focus,
-.modulo textarea:focus {
+.modulo textarea:focus,
+.modulo select:focus {
   outline: 2px solid var(--pieno);
   outline-offset: 2px;
   border-color: var(--pieno);
@@ -420,7 +605,8 @@ p {
   margin: 0 0 1.75rem;
 }
 
-.fascia-piena h1 {
+.fascia-piena h1,
+.fascia-piena h2 {
   margin: 0 0 0.65rem;
   color: #fff;
   text-align: center;
@@ -464,7 +650,8 @@ main.home > .fascia-azzurra {
   background: var(--blocco);
 }
 
-main.home h1 {
+main.home h1,
+main.home h2 {
   margin: 0 0 0.65rem;
   color: var(--pieno);
   text-align: center;
@@ -472,7 +659,8 @@ main.home h1 {
   line-height: 1.2;
 }
 
-main.home .fascia-piena h1 {
+main.home .fascia-piena h1,
+main.home .fascia-piena h2 {
   margin-bottom: 1.75rem;
   color: #fff;
 }
@@ -543,6 +731,16 @@ main.home .intro {
   line-height: 1.1;
 }
 
+.altri-mestieri {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.mestiere-extra[hidden] {
+  display: none;
+}
+
 .spazio,
 .etichetta,
 .mail {
@@ -559,6 +757,14 @@ main.home .intro {
   gap: 0.75rem;
   align-items: center;
   margin-top: 1.5rem;
+}
+
+.blocco .azioni {
+  justify-content: center;
+}
+
+.blocco .avviso {
+  text-align: center;
 }
 
 .hero .azioni {
@@ -894,8 +1100,14 @@ main.home .intro {
   .schede,
   .schede-2,
   .schede-4,
-  .colonne {
+  .colonne,
+  .affianco,
+  .affianco-gira {
     grid-template-columns: 1fr;
+  }
+
+  .affianco-gira .spiega {
+    order: 0;
   }
 
   .app {
@@ -952,12 +1164,29 @@ main.home .intro {
   }
 
   .blocco h1,
-  .fascia-piena h1 {
+  .blocco h2,
+  .fascia-piena h1,
+  .fascia-piena h2 {
     font-size: 1.7rem;
   }
 
+  .mestiere-extra[hidden] {
+    display: none;
+  }
+
+  .contatti-griglia,
+  .modulo-riga {
+    grid-template-columns: 1fr;
+  }
+
+  .contatti-dati,
   .contatto {
-    padding: 2rem 1.15rem 1.75rem;
+    padding: 1.75rem 1.15rem 1.5rem;
+  }
+
+  .contatti-dati h2,
+  .contatto h2 {
+    font-size: 1.25rem;
   }
 
   .modulo .pieno {
