@@ -260,6 +260,21 @@ p {
   order: 2;
 }
 
+.foto {
+  width: min(60rem, 100%);
+  margin: 1.75rem auto 0;
+  border: 1px solid var(--linea);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .affianco h2 {
   text-align: left;
   margin-bottom: 1rem;
@@ -286,6 +301,47 @@ main.pagina h2 {
   color: var(--pieno);
   font-size: 2.15rem;
   line-height: 1.2;
+}
+
+main.pagina .largo > h2,
+main.pagina .largo > .intro,
+main.pagina .nota,
+main.pagina .avviso {
+  text-align: center;
+}
+
+main.pagina .largo > .intro {
+  max-width: 42rem;
+  margin: 0 auto 1.5rem;
+}
+
+main.pagina .nota {
+  max-width: 42rem;
+  margin: 1.25rem auto 0;
+}
+
+.spiega .nota {
+  text-align: left;
+  max-width: none;
+  margin: 1rem 0 0;
+}
+
+main.pagina .affianco + .schede,
+main.pagina .affianco + .nota {
+  margin-top: 1.5rem;
+}
+
+main.pagina .azioni {
+  justify-content: center;
+}
+
+main.pagina > section.richiamo {
+  margin: 0;
+}
+
+main.pagina > .fascia-azzurra + .fascia-azzurra,
+main.pagina > .fascia-bianca + .fascia-bianca {
+  box-shadow: inset 0 1px 0 var(--linea);
 }
 
 .faq {
@@ -644,6 +700,40 @@ main.home > .fascia-piena {
 main.home > .fascia-bianca,
 main.home > .richiamo {
   background: var(--superficie);
+}
+
+main.home > .pausa {
+  text-align: center;
+  padding: 3.25rem 0;
+  color: var(--inchiostro);
+}
+
+main.home > .pausa-rossa {
+  background: #f8e8e6;
+}
+
+main.home > .pausa-verde {
+  background: #e5f2ea;
+}
+
+main.home > .fascia-azzurra + .pausa {
+  margin-top: 2.5rem;
+}
+
+main.home > .pausa h2 {
+  max-width: 36rem;
+  margin: 0 auto;
+  color: var(--inchiostro);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+main.home > .pausa-rossa h2 {
+  max-width: 64rem;
+}
+
+main.home > .pausa .azioni {
+  justify-content: center;
 }
 
 main.home > .fascia-azzurra {
@@ -1165,6 +1255,7 @@ main.home .intro {
 
   .blocco h1,
   .blocco h2,
+  main.pagina h2,
   .fascia-piena h1,
   .fascia-piena h2 {
     font-size: 1.7rem;

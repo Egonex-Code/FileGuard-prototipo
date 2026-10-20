@@ -28,263 +28,175 @@
       <p>FileGuard monitora cartelle e file sensibili, tiene traccia e aiuta nella gestione di privacy e GDPR.</p>
     </div>
   </section>
-  <main class="largo">
-    <section class="blocco">
-      <h2>Monitoraggio continuo</h2>
-      <p class="intro">Cartelle e file restano sotto osservazione.</p>
-      <div class="schede">
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.8-6 9-6 9 6 9 6-3.8 6-9 6-9-6-9-6Z" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
-          <h3>Ogni spostamento</h3>
-          <p>FileGuard segue ciò che c’è dentro e notifica ogni spostamento o cancellazione.</p>
-        </article>
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M14.2 5.8 18.2 9.8 9.5 18.5H5.5v-4Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
-          <h3>Traccia delle modifiche</h3>
-          <p>Ogni cartella ha le sue regole.</p>
-          <p>FileGuard ti avvisa e traccia ogni modifica.</p>
-        </article>
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M9 19.5h6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-          <h3>Da quale computer</h3>
-          <p>Avvisa quando un file viene modificato, spostato o eliminato. Dopo si vede da quale computer, e dove è finito, anche su unità esterne.</p>
-        </article>
-      </div>
-      <div class="schermata">
-        <div class="app">
-          <div class="app-lato">
-            <p class="app-nome">FileGuard</p>
-            <p class="app-voce app-voce-attiva">Monitoraggio</p>
-            <p class="app-voce">Backup</p>
-            <p class="app-voce">Regole</p>
-          </div>
-          <div class="app-corpo">
-            <p class="app-titolo">Diario</p>
-            <table class="app-tabella">
-              <thead>
-                <tr>
-                  <th>Evento</th>
-                  <th>Percorso</th>
-                  <th>Data</th>
-                  <th>Computer</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Modificato</td>
-                  <td>Disco\Contratti\contratto.pdf</td>
-                  <td>08/10/2026 13:10</td>
-                  <td>PC ufficio</td>
-                </tr>
-                <tr>
-                  <td>Eliminati</td>
-                  <td>Disco\Fatture\fattura.pdf</td>
-                  <td>07/10/2026 18:22</td>
-                  <td>PC ufficio</td>
-                </tr>
-                <tr>
-                  <td>Rinominato</td>
-                  <td>Disco\Contratti\contratto.pdf</td>
-                  <td>07/10/2026 16:40</td>
-                  <td>PC ufficio</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+  <main class="pagina">
+    <section class="fascia-bianca">
+      <div class="largo">
+        <h2>Monitoraggio continuo</h2>
+        <p class="intro">Cartelle e file restano sotto osservazione.</p>
+        <div class="schede">
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.8-6 9-6 9 6 9 6-3.8 6-9 6-9-6-9-6Z" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
+            <h3>Ogni spostamento</h3>
+            <p>FileGuard segue ciò che c’è dentro e notifica ogni spostamento o cancellazione.</p>
+          </article>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="m15 5 4 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <h3>Traccia delle modifiche</h3>
+            <p>Ogni cartella ha le sue regole.</p>
+            <p>FileGuard ti avvisa e traccia ogni modifica.</p>
+          </article>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M9 19.5h6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <h3>Da quale computer</h3>
+            <p>Avvisa quando un file viene modificato, spostato o eliminato. Dopo si vede da quale computer, e dove è finito, anche su unità esterne.</p>
+          </article>
         </div>
+        <figure class="foto">
+          <img src="immagini/screen-diario.png" alt="Diario di FileGuard: un file modificato, uno eliminato e uno rinominato, con data e computer.">
+        </figure>
       </div>
     </section>
 
-    <section class="blocco blocco-chiara">
-      <h2>Avviso e ripristino</h2>
-      <p class="intro">Quando un file sparisce o cambia posto, arriva la notifica.</p>
-      <div class="schede schede-2">
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8.5a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.7 20.2a2 2 0 0 1-3.4 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-          <h3>La notifica</h3>
-          <p>La copia di backup è già lì: se è stato un errore, un click lo rimette al suo posto.</p>
-        </article>
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 8.5A6 6 0 1 1 6.4 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M7.5 5.2v3.6H11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>Posto originale</h3>
-          <p>Lo rimette al posto originale con un click.</p>
-        </article>
-      </div>
-      <div class="schermata">
-        <div class="mock">
-          <div class="mock-vetro">
-          <p class="mock-barra">FileGuard</p>
-          <div class="mock-corpo">
-            <p class="mock-riga">contratto.pdf <span>posto originale</span></p>
-            <p class="mock-riga">Ripristino <span>un click</span></p>
-          </div>
-          </div>
+    <section class="fascia-azzurra">
+      <div class="largo">
+        <h2>Avviso e ripristino</h2>
+        <p class="intro">Quando un file sparisce o cambia posto, arriva la notifica.</p>
+        <div class="schede schede-2">
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8.5a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.7 20.2a2 2 0 0 1-3.4 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <h3>La notifica</h3>
+            <p>La copia di backup è già lì: se è stato un errore, un click lo rimette al suo posto.</p>
+          </article>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 8.5A6 6 0 1 1 6.4 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M7.5 5.2v3.6H11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Posto originale</h3>
+            <p>Lo rimette al posto originale con un click.</p>
+          </article>
         </div>
+        <figure class="foto">
+          <img src="immagini/screen-ripristino.png" alt="Avviso di FileGuard: contratto.pdf eliminato dal PC ufficio, con il pulsante per rimetterlo al posto originale.">
+        </figure>
       </div>
     </section>
 
-    <section class="blocco">
-      <h2>Privacy e GDPR sui file</h2>
-      <p class="intro">Quando serve una risposta su un documento, la traccia c’è.</p>
-      <div class="schede">
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h7.2L18 8.3V19.5H7Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 4.5v4h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
-          <h3>Che cosa c’è su una persona</h3>
-          <p>In caso di controllo privacy o GDPR, FileGuard trova tutti i documenti su una persona e su un periodo specifico.</p>
-        </article>
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 8.2V12l2.4 1.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>Da quanto tempo sono lì</h3>
-          <p>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</p>
-        </article>
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s5.5-4.6 5.5-9a5.5 5.5 0 1 0-11 0c0 4.4 5.5 9 5.5 9Z" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="11.5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
-          <h3>La storia del file</h3>
-          <p>FileGuard trova tutti i file che servono e ne ripercorre la storia.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="blocco blocco-chiara">
-      <h2>Le sei regole</h2>
-      <p class="intro">Su ogni cartella si impostano fino a sei regole diverse. La scelta vale cartella per cartella.</p>
-      <div class="schede">
-        <button class="scheda regola" type="button" aria-expanded="false">
-          <span class="regola-nome">Non si cancella</span>
-          <span class="regola-testo" hidden>Se qualcuno elimina un file da quella cartella, arriva l’avviso. Il programma non lo impedisce.</span>
-        </button>
-        <button class="scheda regola" type="button" aria-expanded="false">
-          <span class="regola-nome">Non si modifica</span>
-          <span class="regola-testo" hidden>Se un file viene modificato, resta la traccia e arriva l’avviso.</span>
-        </button>
-        <button class="scheda regola" type="button" aria-expanded="false">
-          <span class="regola-nome">Non esce di qui</span>
-          <span class="regola-testo" hidden>Se un file esce dalla cartella, si vede dove è finito, anche su una chiavetta.</span>
-        </button>
-        <button class="scheda regola" type="button" aria-expanded="false">
-          <span class="regola-nome">Da dove e dove</span>
-          <span class="regola-testo" hidden>Si vede da dove è partito e dove si trova adesso, e da quale computer.</span>
-        </button>
-        <button class="scheda regola" type="button" aria-expanded="false">
-          <span class="regola-nome">Deve esserci</span>
-          <span class="regola-testo" hidden>Se un file che deve stare in quella cartella non c’è, si vede.</span>
-        </button>
-        <button class="scheda regola" type="button" aria-expanded="false">
-          <span class="regola-nome">Non si tiene per sempre</span>
-          <span class="regola-testo" hidden>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</span>
-        </button>
-      </div>
-      <p class="nota">Si scelgono cartella per cartella. L’ultima guarda da quanto tempo i file stanno lì. Decide chi gestisce la cartella. Il programma non cancella da solo.</p>
-      <div class="schermata">
-        <div class="mock">
-          <div class="mock-vetro">
-          <p class="mock-barra">Cartella Contratti</p>
-          <div class="mock-corpo">
-            <p class="mock-riga">Non si cancella</p>
-            <p class="mock-riga">Non si modifica</p>
-            <p class="mock-riga">Non esce di qui</p>
-            <p class="mock-riga">Da dove e dove</p>
-            <p class="mock-riga">Deve esserci</p>
-            <p class="mock-riga">Non si tiene per sempre</p>
-          </div>
-          </div>
+    <section class="fascia-bianca">
+      <div class="largo">
+            <h2>Privacy e GDPR sui file</h2>
+            <p class="intro">Quando serve una risposta su un documento, la traccia c’è.</p>
+        <div class="schede">
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h7.2L18 8.3V19.5H7Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 4.5v4h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
+            <h3>Che cosa c’è su una persona</h3>
+            <p>In caso di controllo privacy o GDPR, FileGuard trova tutti i documenti su una persona e su un periodo specifico.</p>
+          </article>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 8.2V12l2.4 1.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Da quanto tempo sono lì</h3>
+            <p>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</p>
+          </article>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s5.5-4.6 5.5-9a5.5 5.5 0 1 0-11 0c0 4.4 5.5 9 5.5 9Z" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="11.5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
+            <h3>La storia del file</h3>
+            <p>FileGuard trova tutti i file che servono e ne ripercorre la storia.</p>
+          </article>
         </div>
+        <figure class="foto">
+          <img src="immagini/screen-privacy.png" alt="FileGuard elenca i documenti trovati su una persona e su un periodo, con da quanto sono in cartella.">
+        </figure>
       </div>
     </section>
 
-    <section class="blocco">
-      <h2>Copie sul disco</h2>
-      <p class="intro">Le copie restano su disco, server, NAS o un cloud già in uso. Anche in doppia copia.</p>
-      <div class="schede schede-2">
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="4.5" width="10" height="12" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="5" y="8" width="10" height="12" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
-          <h3>Anche in doppia copia</h3>
-          <p>Le copie restano sui dischi già in uso, anche in doppia copia.</p>
-        </article>
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 8.5A6 6 0 1 1 6.4 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M7.5 5.2v3.6H11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>Versioni precedenti</h3>
-          <p>Ogni modifica lascia una versione consultabile.</p>
-          <p>Si risale a ciò che c’era prima.</p>
-        </article>
-      </div>
-      <div class="schermata">
-        <div class="app">
-          <div class="app-lato">
-            <p class="app-nome">FileGuard</p>
-            <p class="app-voce">Monitoraggio</p>
-            <p class="app-voce app-voce-attiva">Backup</p>
-            <p class="app-voce">Regole</p>
-          </div>
-          <div class="app-corpo">
-            <p class="app-titolo">Dove sono le copie di backup</p>
-            <table class="app-tabella">
-              <thead>
-                <tr>
-                  <th>Destinazione</th>
-                  <th>File</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Disco</td>
-                  <td>contratto.pdf, fattura.pdf</td>
-                </tr>
-                <tr>
-                  <td>NAS</td>
-                  <td>contratto.pdf, fattura.pdf</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    <section class="fascia-azzurra">
+      <div class="largo">
+            <h2>Le sei regole</h2>
+            <p class="intro">Su ogni cartella si impostano fino a sei regole diverse. La scelta vale cartella per cartella.</p>
+        <div class="schede">
+          <button class="scheda regola" type="button" aria-expanded="false">
+            <span class="regola-nome">Non si cancella</span>
+            <span class="regola-testo" hidden>Se qualcuno elimina un file da quella cartella, arriva l’avviso. Il programma non lo impedisce.</span>
+          </button>
+          <button class="scheda regola" type="button" aria-expanded="false">
+            <span class="regola-nome">Non si modifica</span>
+            <span class="regola-testo" hidden>Se un file viene modificato, resta la traccia e arriva l’avviso.</span>
+          </button>
+          <button class="scheda regola" type="button" aria-expanded="false">
+            <span class="regola-nome">Non esce di qui</span>
+            <span class="regola-testo" hidden>Se un file esce dalla cartella, si vede dove è finito, anche su una chiavetta.</span>
+          </button>
+          <button class="scheda regola" type="button" aria-expanded="false">
+            <span class="regola-nome">Da dove e dove</span>
+            <span class="regola-testo" hidden>Si vede da dove è partito e dove si trova adesso, e da quale computer.</span>
+          </button>
+          <button class="scheda regola" type="button" aria-expanded="false">
+            <span class="regola-nome">Deve esserci</span>
+            <span class="regola-testo" hidden>Se un file che deve stare in quella cartella non c’è, si vede.</span>
+          </button>
+          <button class="scheda regola" type="button" aria-expanded="false">
+            <span class="regola-nome">Non si tiene per sempre</span>
+            <span class="regola-testo" hidden>Mostra da quanto restano in quella cartella e se è possibile archiviarli.</span>
+          </button>
         </div>
+        <p class="nota">Si scelgono cartella per cartella. L’ultima guarda da quanto tempo i file stanno lì. Decide chi gestisce la cartella. Il programma non cancella da solo.</p>
+        <figure class="foto">
+          <img src="immagini/screen-regole.png" alt="Le sei regole di FileGuard sulla cartella Contratti. Ogni regola si accende o si spegne.">
+        </figure>
       </div>
-      <div class="schermata">
-        <div class="app">
-          <div class="app-corpo">
-            <p class="app-titolo">Le versioni di contratto.pdf</p>
-            <p class="app-percorso">Disco\Contratti\contratto.pdf</p>
-            <div class="app-versioni-griglia">
-              <ul>
-                <li class="app-v4"><strong>v4</strong> — giovedì 8 ottobre 2026, 13:30</li>
-                <li><strong>v3</strong> — giovedì 8 ottobre 2026, 11:05</li>
-                <li><strong>v2</strong> — giovedì 8 ottobre 2026, 09:40</li>
-              </ul>
-            </div>
-            <p class="app-nota">Il documento di adesso non viene toccato. La versione scelta viene messa nella stessa cartella con un nome che dice qual è: contratto-v4.pdf.</p>
-            <div class="app-azioni">
-              <span class="app-apri">Apri la copia</span>
-              <span class="app-ripristina">Ripristina</span>
-            </div>
-          </div>
+    </section>
+
+    <section class="fascia-bianca">
+      <div class="largo">
+            <h2>Copie sul disco</h2>
+            <p class="intro">Le copie restano su disco, server, NAS o un cloud già in uso. Anche in doppia copia.</p>
+        <div class="schede schede-2">
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="4.5" width="10" height="12" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="5" y="8" width="10" height="12" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
+            <h3>Anche in doppia copia</h3>
+            <p>Le copie restano sui dischi già in uso, anche in doppia copia.</p>
+          </article>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 8.5A6 6 0 1 1 6.4 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M7.5 5.2v3.6H11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Versioni precedenti</h3>
+            <p>Ogni modifica lascia una versione consultabile.</p>
+            <p>Si risale a ciò che c’era prima.</p>
+          </article>
         </div>
+        <figure class="foto">
+          <img src="immagini/screen-versioni.png" alt="Le versioni di contratto.pdf. Il file in uso resta com'è. La versione scelta viene messa accanto, nella stessa cartella.">
+        </figure>
       </div>
     </section>
 
-    <section class="blocco blocco-chiara">
-      <h2>Marca e installazione</h2>
-      <p class="intro">Marca temporale su un documento e installazione guidata con lo stesso account.</p>
-      <div class="schede schede-2">
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h7.2L18 8.3V19.5H7Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 4.5v4h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><circle cx="11.2" cy="14" r="1.3" fill="currentColor"/></svg>
-          <h3>Marca su documento</h3>
-          <p>Si applica su un singolo documento.</p>
-          <p>Fino a 5 al mese.</p>
-        </article>
-        <article class="scheda">
-          <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="2.3" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M7.5 18.2c.7-2.4 2.3-3.6 4.5-3.6s3.8 1.2 4.5 3.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-          <h3>Stesso account ovunque</h3>
-          <p>Un wizard guida l’installazione, in pochi minuti.</p>
-          <p>Lo stesso account vale su tutti i computer.</p>
-        </article>
+    <section class="fascia-azzurra">
+      <div class="largo">
+        <h2>Marca e installazione</h2>
+        <p class="intro">Marca temporale su un documento e installazione guidata con lo stesso account.</p>
+        <div class="schede schede-2">
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h7.2L18 8.3V19.5H7Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 4.5v4h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><circle cx="11.2" cy="14" r="1.3" fill="currentColor"/></svg>
+            <h3>Marca su documento</h3>
+            <p>Si applica su un singolo documento.</p>
+            <p>Fino a 5 al mese.</p>
+          </article>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="2.3" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M7.5 18.2c.7-2.4 2.3-3.6 4.5-3.6s3.8 1.2 4.5 3.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <h3>Stesso account ovunque</h3>
+            <p>Un wizard guida l’installazione, in pochi minuti.</p>
+            <p>Lo stesso account vale su tutti i computer.</p>
+          </article>
+        </div>
+        <figure class="foto">
+          <img src="immagini/screen-marca.png" alt="Marca temporale su contratto.pdf: data, ora, e quante ne restano questo mese.">
+        </figure>
       </div>
     </section>
 
-    <section class="richiamo">
-      <p class="intro">Prova FileGuard.</p>
-      <div class="azioni">
-        <a class="pieno" href="piani.html#prova">Prova gratis</a>
-        <a class="bordo" href="piani.html">Piani</a>
+    <section class="fascia-bianca richiamo">
+      <div class="largo">
+        <p class="intro">Prova FileGuard.</p>
+        <div class="azioni">
+          <a class="pieno" href="piani.html#prova">Prova gratis</a>
+          <a class="bordo" href="piani.html">Piani</a>
+        </div>
       </div>
     </section>
   </main>
