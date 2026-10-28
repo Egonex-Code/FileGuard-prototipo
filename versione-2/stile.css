@@ -112,10 +112,12 @@ a:hover {
 .marca {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  color: var(--colore-principale);
-  font-size: 1.2rem;
+  gap: 0.4rem;
+  color: #062D70;
+  font-size: 1.35rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
   text-decoration: none;
 }
 
