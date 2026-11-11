@@ -1,8 +1,14 @@
+/* Copia dei colori di fondo fino all'11/11/2026, per tornare indietro:
+   --colore-alternato: #F5F7F9;
+   (le altre variabili non sono cambiate) */
+
 :root {
   --colore-principale: #1C2A3A;
   --colore-piede: #141F2B;
   --colore-riquadro-scuro: #253649;
-  --colore-alternato: #F5F7F9;
+  /* Grigio-blu più deciso: le fasce alternate si distinguono dal bianco.
+     Testo secondario su questo fondo: contrasto 6,3:1. */
+  --colore-alternato: #EAEFF5;
   --colore-base: #FFFFFF;
   --colore-secondario: #4B5866;
   --colore-chiaro: #C9D3DE;
@@ -10,6 +16,8 @@
   --colore-bordo-marcato: #C3CBD4;
   --colore-hover: #3A5370;
   --colore-segnaposto: #FFF4C2;
+  --colore-programma: #0B2C6B;
+  --colore-programma-chiaro: #E9EFF8;
   --raggio-pulsante: 8px;
   --raggio-scheda: 12px;
   --raggio-schermata: 14px;
@@ -98,8 +106,8 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 110;
-  background: var(--colore-base);
-  border-bottom: 1px solid var(--colore-bordo);
+  background: #0C1929;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .barra-riga {
@@ -123,8 +131,13 @@ a:hover {
 
 .marca img {
   display: block;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: auto;
+  height: 2.75rem;
+}
+
+.barra .marca,
+.barra .marca:hover {
+  color: #fff;
 }
 
 .marca:hover {
@@ -141,7 +154,7 @@ a:hover {
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--colore-principale);
+  color: #fff;
   cursor: pointer;
 }
 
@@ -167,35 +180,70 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.25rem 1.5rem;
+  gap: 8px;
   margin-left: auto;
 }
 
 .menu a {
-  color: var(--colore-principale);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  font-weight: 600;
   text-decoration: none;
-  padding: 0.35rem 0;
-  font-weight: 500;
 }
 
-.menu a:hover {
-  color: var(--colore-hover);
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 8px;
+  height: 2px;
+  border-radius: 9999px;
+  background: var(--colore-chiaro);
+  transform: scaleX(0);
+  transform-origin: left center;
 }
 
+.menu a:hover,
+.menu a:focus-visible,
 .menu a[aria-current="page"] {
-  text-decoration: underline;
-  text-underline-offset: 0.35rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hover::after,
+.menu a:focus-visible::after,
+.menu a[aria-current="page"]::after {
+  transform: scaleX(1);
 }
 
 .menu .pieno {
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
   padding: 14px 28px;
-  color: #fff;
+  background: #fff;
+  border-color: #fff;
+  color: var(--colore-principale);
   font-weight: 600;
 }
 
-.menu .pieno:hover {
-  color: #fff;
+.menu .pieno::after,
+.menu .pieno:hover::after,
+.menu .pieno:focus-visible::after {
+  content: none;
+}
+
+.menu .pieno:hover,
+.menu .pieno:focus-visible {
+  background: var(--colore-chiaro);
+  border-color: var(--colore-chiaro);
+  color: var(--colore-principale);
 }
 
 h1,
@@ -291,6 +339,16 @@ h3 {
 
 .fascia-scura a:hover {
   color: var(--colore-chiaro);
+}
+
+.fascia-scura .icona,
+.fascia-scura .punto p,
+.fascia-scura .nota {
+  color: var(--colore-chiaro);
+}
+
+.fascia-scura .riga-sotto {
+  border-top-color: var(--colore-riquadro-scuro);
 }
 
 .hero {
@@ -740,14 +798,6 @@ h3 {
   justify-content: center;
 }
 
-.segnaposto {
-  display: inline;
-  background: var(--colore-segnaposto);
-  color: var(--colore-principale);
-  padding: 0.1em 0.35em;
-  border-radius: 4px;
-}
-
 .elenco-funzioni {
   display: flex;
   flex-wrap: wrap;
@@ -767,19 +817,22 @@ h3 {
   margin-top: 0.75rem;
 }
 
-.sicurezza-elenco {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
+/* Due punti affiancati (Sicurezza: «Da te» / «A Egonex») */
+@media (min-width: 800px) {
+  .punti-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
 }
 
-.sicurezza-elenco h2 {
-  font-size: 1.25rem;
+.punti-2 {
+  margin-top: 0;
 }
 
-.sicurezza-elenco p {
-  margin-top: 0.45rem;
-  color: var(--colore-secondario);
+/* Titolo di un punto quando è il titolo della sezione */
+.titolo-punto {
+  font-size: 1.375rem;
+  line-height: 1.3;
 }
 
 .esempio {
@@ -896,20 +949,99 @@ h3 {
   max-width: 42rem;
 }
 
+/* Pagine legali: una sola colonna continua, un punto dopo l'altro, separati da una riga */
+.fascia:has(> .legale) {
+  padding: 0;
+  background: var(--colore-base);
+}
+
+.fascia:has(> .legale):last-child {
+  padding-bottom: 4rem;
+}
+
+.legale {
+  padding-block: 2.25rem;
+  border-top: 1px solid var(--colore-bordo);
+}
+
+@media (min-width: 800px) {
+  .legale {
+    padding-block: 2.75rem;
+  }
+
+  .fascia:has(> .legale):last-child {
+    padding-bottom: 6rem;
+  }
+}
+
+.legale h2 {
+  max-width: 42rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 800px) {
+  .legale h2 {
+    font-size: 1.375rem;
+  }
+}
+
+.legale ul {
+  max-width: 42rem;
+  margin: 0.85rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--colore-secondario);
+}
+
+.legale li + li {
+  margin-top: 0.6rem;
+}
+
+.legale li::marker {
+  color: var(--colore-bordo-marcato);
+}
+
+.legale strong {
+  color: var(--colore-principale);
+  font-weight: 600;
+}
+
+/* Segnaposti da decidere o confermare: ben visibili, nello stile del sito */
+.segnaposto,
+mark {
+  background: var(--colore-segnaposto);
+  color: var(--colore-principale);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-weight: 600;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 .piede {
   background: var(--colore-piede);
   color: var(--colore-chiaro);
-  padding: 3rem 0;
-  font-size: 0.95rem;
+  padding: 3rem 0 0;
+  font-size: 0.875rem;
+}
+
+.piede-alto {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 2rem;
 }
 
 .piede a.marca {
   color: #fff;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .piede a.marca:hover {
-  color: var(--colore-chiaro);
+  color: #fff;
+}
+
+.piede .marca img {
+  height: 2.25rem;
 }
 
 .piede p {
@@ -918,17 +1050,52 @@ h3 {
 
 .piede a {
   color: var(--colore-chiaro);
+  text-decoration: none;
 }
 
-.piede a:hover {
+.piede a:hover,
+.piede a[aria-current="page"] {
   color: #fff;
 }
 
-.piede-link {
+.piede .piede-titolo {
+  margin: 0 0 0.75rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.piede ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.piede li + li {
+  margin-top: 0.45rem;
+}
+
+.piede .piede-social {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  margin-top: 1.25rem;
+  gap: 1rem;
+  margin: 1rem 0 0;
+}
+
+.piede-basso {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 0;
+}
+
+.piede-basso p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 800px) {
+  .piede-alto {
+    grid-template-columns: 1.6fr 1fr 1fr 1.15fr;
+    gap: 2rem;
+  }
 }
 
 .barra-basso {
@@ -939,7 +1106,7 @@ body.menu-aperto {
   overflow: hidden;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
   .menu-apri {
     display: inline-flex;
   }
@@ -959,7 +1126,7 @@ body.menu-aperto {
     gap: 0;
     margin: 0;
     padding: 1rem 1.5rem 2rem;
-    background: var(--colore-base);
+    background: #0C1929;
     overflow: auto;
   }
 
@@ -968,16 +1135,29 @@ body.menu-aperto {
   }
 
   .menu a {
+    justify-content: flex-start;
     padding: 0.95rem 0;
-    border-bottom: 1px solid var(--colore-bordo);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+  }
+
+  .menu a::after {
+    left: 0;
+    right: auto;
+    width: 2.5rem;
+    bottom: 0.65rem;
   }
 
   .menu .pieno {
+    justify-content: center;
     width: 100%;
     margin: 1.25rem 0 0;
     padding: 14px 28px;
     border-bottom: 0;
   }
+}
+
+@media (max-width: 800px) {
 
   .azioni {
     flex-direction: column;
@@ -1011,5 +1191,456 @@ body.menu-aperto {
 
   body.con-barra-basso {
     padding-bottom: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .entra > .largo {
+    opacity: 0;
+    transform: translateY(1.15rem);
+  }
+
+  .entra.entrata > .largo {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--ritardo, 0ms);
+  }
+}
+
+/* Le pagine legali restano ferme: niente comparsa in dissolvenza */
+.entra > .legale,
+.entra.entrata > .legale {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* Casi «prima e dopo» (home, sezione «Succede ogni giorno») */
+.casi {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.caso {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio-scheda);
+  background: var(--colore-base);
+}
+
+.caso-prima,
+.caso-dopo {
+  padding: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .caso-prima,
+  .caso-dopo {
+    padding: 2rem;
+  }
+}
+
+.caso-prima p {
+  margin-top: 0.55rem;
+  color: var(--colore-secondario);
+}
+
+.caso-dopo {
+  display: grid;
+  flex: 1;
+  align-content: start;
+  gap: 1.25rem;
+  border-top: 1px solid var(--colore-bordo);
+  background: var(--colore-alternato);
+}
+
+.caso-etichetta {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--colore-secondario);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.caso-dopo .caso-etichetta {
+  margin-bottom: 0.5rem;
+  color: var(--colore-programma);
+}
+
+/* Versione A: tre schede affiancate su schermo grande */
+@media (min-width: 1000px) {
+  .casi-a {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Versione B: scena a sinistra, risposta a destra */
+.casi-b {
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .casi-b .caso {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  }
+
+  .casi-b .caso-prima {
+    align-self: center;
+  }
+
+  .casi-b .caso-dopo {
+    border-top: 0;
+    border-left: 1px solid var(--colore-bordo);
+  }
+}
+
+/* Dettaglio di schermata ricostruito dal programma, con dati di prova */
+.dettaglio {
+  margin: 0;
+  container-type: inline-size;
+}
+
+.dettaglio-finestra {
+  overflow: hidden;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 10px;
+  background: var(--colore-base);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.dettaglio-cerca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.dettaglio-campo {
+  flex: 1 1 8rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 6px;
+}
+
+.dettaglio-tabella {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dettaglio-tabella th,
+.dettaglio-tabella td {
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.dettaglio-tabella th {
+  background: var(--colore-programma);
+  color: #fff;
+  font-weight: 600;
+}
+
+.dettaglio-tabella td {
+  border-top: 1px solid var(--colore-bordo);
+}
+
+.dettaglio-tabella .dettaglio-evidenza td {
+  background: var(--colore-programma-chiaro);
+}
+
+.dettaglio-grigio {
+  color: var(--colore-secondario);
+}
+
+.dettaglio-largo {
+  display: none;
+}
+
+@container (min-width: 26rem) {
+  .dettaglio-largo {
+    display: table-cell;
+  }
+}
+
+.dettaglio-piede {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-top: 1px solid var(--colore-bordo);
+  color: var(--colore-secondario);
+  font-size: 0.8125rem;
+}
+
+.dettaglio-pulsante {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  background: var(--colore-programma);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.dettaglio-vuoto {
+  display: grid;
+  place-items: center;
+  min-height: 9rem;
+  padding: 1rem;
+  border: 1.5px dashed var(--colore-bordo-marcato);
+  border-radius: 10px;
+  background: var(--colore-base);
+  color: var(--colore-secondario);
+  font-weight: 600;
+  text-align: center;
+}
+
+.dettaglio figcaption {
+  margin-top: 0.5rem;
+  color: var(--colore-secondario);
+  font-size: 0.8125rem;
+}
+
+.dettaglio-sotto {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--colore-secondario);
+  font-size: 0.8125rem;
+}
+
+.dettaglio-etichetta {
+  flex-basis: 100%;
+  color: var(--colore-secondario);
+  font-size: 0.8125rem;
+}
+
+.dettaglio-conta {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dettaglio-conta li {
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid var(--colore-bordo);
+}
+
+.dettaglio-conta strong {
+  color: var(--colore-programma);
+  font-size: 1.125rem;
+}
+
+.dettaglio-testa {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--colore-bordo);
+}
+
+.dettaglio-testa strong {
+  display: block;
+  color: var(--colore-programma);
+}
+
+.dettaglio-gruppo {
+  padding: 0.45rem 0.75rem;
+  background: var(--colore-alternato);
+  font-weight: 600;
+}
+
+.dettaglio-versione {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid var(--colore-bordo);
+}
+
+.dettaglio-versione.dettaglio-evidenza {
+  background: var(--colore-programma-chiaro);
+  box-shadow: inset 3px 0 0 var(--colore-programma);
+}
+
+.dettaglio-numero {
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  background: var(--colore-programma);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.dettaglio-pulsanti {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.dettaglio-pulsante-bordo {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--colore-bordo-marcato);
+  border-radius: 6px;
+  color: var(--colore-principale);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Etichetta «presto» sulle regole non ancora attive: piccola e quieta */
+.presto {
+  display: inline-block;
+  margin-left: 0.4em;
+  padding: 0.05em 0.55em;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 999px;
+  background: var(--colore-base);
+  color: var(--colore-secondario);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.6;
+  vertical-align: middle;
+}
+
+/* ---------------------------------------------------------------
+   Home (prove/home-stile-2.html, stile scelto da Samuele l'11/11/2026)
+   Classi nuove, usate solo dalla home: le altre pagine non cambiano.
+   --------------------------------------------------------------- */
+
+/* Pagina ferma: niente comparsa in dissolvenza */
+.ferma .entra > .largo,
+.ferma .entra.entrata > .largo {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* Scheda con l'immagine in alto (tre momenti) */
+.scheda-figura {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.scheda-figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--colore-bordo);
+  background: var(--colore-base);
+}
+
+/* Tra 700 e 899 px le schede con immagine restano in colonna:
+   su tre colonne le immagini sarebbero troppo piccole per leggerle. */
+@media (min-width: 700px) and (max-width: 899px) {
+  .schede-3:has(> .scheda-figura) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.scheda-figura-testo {
+  padding: 1.5rem;
+}
+
+/* Spazio sopra l'elenco numerato del diario */
+.passi-spazio {
+  margin-top: 1.75rem;
+}
+
+/* Riga in evidenza: «avvisa, non blocca» */
+.riga-chiave {
+  margin-top: 1.75rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--colore-principale);
+  background: var(--colore-base);
+  color: var(--colore-principale);
+  font-weight: 600;
+}
+
+.fascia-chiara .riga-chiave {
+  background: var(--colore-alternato);
+}
+
+/* Riga sotto un blocco, con un link (il backup) */
+.riga-sotto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--colore-bordo);
+}
+
+.riga-sotto .freccia {
+  margin-top: 0;
+}
+
+/* Spazio tra due parti dello stesso blocco */
+.stacco {
+  margin-top: 3.5rem;
+}
+
+/* Mestieri della home: su due colonne anche sul telefono.
+   Vale solo per il gruppo con .stacco, così la home di oggi non cambia. */
+@media (max-width: 899px) {
+  .schede-4.stacco {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .schede-4.stacco .scheda {
+    padding: 1.1rem;
+  }
+}
+
+.anche-per {
+  margin-top: 1.5rem;
+  color: var(--colore-secondario);
+}
+
+/* Tre punti su fondo scuro (home): icone, titoli, testi e link
+   restano in fila anche se un testo va a capo. */
+@media (min-width: 800px) {
+  .fascia-scura .punti-3 {
+    row-gap: 0;
+  }
+
+  .fascia-scura .punti-3 > .punto {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    align-content: start;
+  }
+}
+
+/* Elenco dei mestieri (Panoramica): su due colonne anche sul telefono */
+@media (max-width: 899px) {
+  .schede-mestieri {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .schede-mestieri .scheda {
+    padding: 1rem;
+  }
+
+  .schede-mestieri h3 {
+    font-size: 1rem;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .schede-mestieri p {
+    font-size: 0.9375rem;
   }
 }

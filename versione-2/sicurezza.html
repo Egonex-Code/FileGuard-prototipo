@@ -5,20 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Sicurezza FileGuard: dove restano i tuoi documenti</title>
-  <meta name="description" content="Le copie restano sui tuoi sistemi. Cosa arriva a Egonex, dove sono i dati, cosa succede se smetti di usare FileGuard.">
+  <meta name="description" content="I tuoi file restano sui tuoi computer. Cosa arriva a Egonex, dove sta il server, come sono protetti i collegamenti.">
   <link rel="stylesheet" href="stile.css">
-  <link rel="icon" href="immagini/logo.png" type="image/png">
+  <link rel="icon" href="immagini/favicon.png" type="image/png">
 </head>
-<body>
+<body class="ferma">
   <a class="salta" href="#contenuto">Vai al contenuto</a>
   <header class="barra">
     <div class="largo barra-riga">
-      <a class="marca" href="index.html"><img src="immagini/logo.png" alt="" width="40" height="40"><span>FileGuard</span></a>
+      <a class="marca" href="index.html"><img src="immagini/logo.png" alt="FileGuard" width="147" height="44"></a>
       <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path class="menu-linee" d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path class="menu-chiudi" d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
       </button>
       <nav id="menu" class="menu">
-        <a href="che-cose.html">Che cos'è</a>
+        <a href="index.html">Home</a>
+        <a href="che-cose.html">Panoramica</a>
         <a href="funzioni.html">Funzioni</a>
         <a href="piani.html">Piani</a>
         <a href="sicurezza.html" aria-current="page">Sicurezza</a>
@@ -29,72 +30,165 @@
   </header>
 
   <main id="contenuto">
-    <section class="fascia fascia-chiara apertura">
+    <!-- 1. Apertura scura -->
+    <section class="fascia fascia-scura apertura">
       <div class="largo">
         <h1>Sicurezza: cosa vede Egonex e cosa no</h1>
-        <p class="intro">Chi custodisce i dati di altre persone deve sapere dove vanno i propri.</p>
+        <p class="intro">I tuoi documenti restano sui tuoi computer. Qui trovi cosa arriva a Egonex, dove va e perché.</p>
+        <p class="nota">Chi custodisce i dati di altre persone deve sapere dove vanno i propri.</p>
       </div>
     </section>
 
+    <!-- 2. Da te / A Egonex -->
+    <section class="fascia fascia-chiara">
+      <div class="largo">
+        <div class="punti punti-2">
+          <article class="punto">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="11.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M9 20h6M12 16v4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <span class="caso-etichetta">Da te</span>
+            <h2 class="titolo-punto">Cosa resta sui tuoi computer</h2>
+            <ul>
+              <li>I tuoi file e il loro contenuto.</li>
+              <li>I nomi dei file e delle cartelle.</li>
+              <li>Il diario delle operazioni.</li>
+              <li>Le copie di backup, dove scegli tu: disco, server, NAS.</li>
+            </ul>
+          </article>
+          <article class="punto">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="2.3" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M7.5 18.2c.7-2.4 2.3-3.6 4.5-3.6s3.8 1.2 4.5 3.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <span class="caso-etichetta">A Egonex</span>
+            <h2 class="titolo-punto">Cosa arriva a Egonex</h2>
+            <p>Quello che serve per la licenza e gli aggiornamenti:</p>
+            <ul>
+              <li>il codice di installazione e la data;</li>
+              <li>il nome del computer e un'impronta del computer;</li>
+              <li>la versione del programma;</li>
+              <li>quante postazioni sono occupate;</li>
+              <li>se la compili, la scheda facoltativa: nome, organizzazione, settore e tre scelte sì/no (diagnostica, aggiornamenti, suggerimenti).</li>
+            </ul>
+            <p>Mai i tuoi file, né i loro nomi.</p>
+          </article>
+        </div>
+        <p class="riga-sotto"><span><strong>Se scegli una cartella sul cloud.</strong> Le copie possono andare anche in una cartella sincronizzata con il tuo servizio cloud. In quel caso arrivano anche a quel servizio, secondo le sue condizioni. Il fornitore lo scegli tu.</span></p>
+      </div>
+    </section>
+
+    <!-- 3. Quattro schede -->
     <section class="fascia fascia-alternata">
       <div class="largo">
-        <div class="sicurezza-elenco">
-          <article>
-            <h2>Dove restano i documenti</h2>
-            <p>Le copie restano sui tuoi sistemi: disco, server, NAS o cloud che usi già. Non sui sistemi di Egonex.</p>
+        <h2>Come è protetto</h2>
+        <div class="schede schede-4">
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="4" y="14" width="16" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M8 7h.01M8 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <h3>Il server è in Europa</h3>
+            <p>Su Microsoft Azure, nei Paesi Bassi. Egonex non salva il tuo indirizzo IP; i registri tecnici di Azure lo mascherano e tengono le richieste 90 giorni.</p>
           </article>
-          <article>
-            <h2>Cosa arriva a Egonex</h2>
-            <p><span class="segnaposto">[Solo i dati dell'account e della licenza? Anche nomi dei file, registri, nomi di persone? Da compilare con precisione.]</span></p>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <h3>Collegamenti cifrati</h3>
+            <p>Il programma parla con il server solo in https. <mark>[DA DECIDERE: cifratura delle copie e del registro sul disco]</mark></p>
           </article>
-          <article>
-            <h2>Dove sono ospitati questi dati</h2>
-            <p><span class="segnaposto">[Paese e fornitore]</span></p>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M6.5 17.5l11-11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <h3>Nessun accesso da fuori</h3>
+            <p>Egonex non entra nei tuoi computer e non riceve statistiche né rapporti di errore.</p>
           </article>
-          <article>
-            <h2>Protezione</h2>
-            <p><span class="segnaposto">[Cifratura dei dati in viaggio e a riposo: da compilare]</span></p>
-          </article>
-          <article>
-            <h2>Chi vede gli avvisi</h2>
-            <p><span class="segnaposto">[Da confermare]</span></p>
-          </article>
-          <article>
-            <h2>FileGuard non blocca e non cancella</h2>
-            <p>Ti avvisa e ti lascia decidere. Nessun tuo documento viene eliminato in automatico.</p>
-          </article>
-          <article>
-            <h2>Accordo sul trattamento dei dati</h2>
-            <p><span class="segnaposto">[Se Egonex tratta dati per conto del cliente: modello scaricabile]</span></p>
-          </article>
-          <article>
-            <h2>Se smetti di usare FileGuard</h2>
-            <p>Le copie restano tue, sui tuoi sistemi. <span class="segnaposto">[Cosa succede ai dati dell'account: da compilare]</span></p>
+          <article class="scheda">
+            <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8.5a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.7 20.2a2 2 0 0 1-3.4 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <h3>Non blocca e non cancella</h3>
+            <p>Ti avvisa e decidi tu: nessun documento viene eliminato in automatico.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="fascia fascia-chiara chiusura">
+    <!-- 4. Chi riceve gli avvisi -->
+    <section class="fascia fascia-chiara">
+      <div class="largo">
+        <div class="affianco">
+          <div class="spiega">
+            <h2>Chi riceve gli avvisi</h2>
+            <p class="intro">Gli avvisi compaiono nel programma. Se vuoi anche le email, scegli tu gli indirizzi a cui mandarle.</p>
+            <p>Le email passano dal servizio di Egonex e contengono frasi fisse e il nome dello studio. Mai il nome del file.</p>
+          </div>
+          <figure class="figura">
+            <img src="immagini/avviso-email.svg" width="600" height="350" alt="Un avviso email di FileGuard, inviato all'indirizzo scelto dallo studio: cancellato un file o una cartella protetta, con il nome dello studio. Senza computer e senza nomi di file." loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Domande -->
+    <section class="fascia fascia-alternata">
+      <div class="largo">
+        <h2>Domande frequenti</h2>
+        <div class="faq faq-2">
+          <article class="scheda">
+            <h3>Firmate un accordo sul trattamento dei dati?</h3>
+            <p><mark>[DA DECIDERE: se serve un modello di accordo e se si scarica da qui]</mark></p>
+          </article>
+          <article class="scheda">
+            <h3>Cosa succede se smetto di usare FileGuard?</h3>
+            <p>Le copie restano tue, sui tuoi computer. <mark>[DA DECIDERE: per quanto tempo Egonex tiene i dati di installazione]</mark></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Chiusura scura -->
+    <section class="fascia fascia-scura chiusura">
       <div class="largo">
         <p>Hai altre domande sulla sicurezza? <a href="contatto.html">Scrivici</a>.</p>
+        <div class="azioni">
+          <a class="pieno" href="piani.html#prova">Prova gratis</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="piede">
-    <div class="largo">
-      <a class="marca" href="index.html"><img src="immagini/logo.png" alt="" width="36" height="36"><span>FileGuard</span></a>
-      <p>FileGuard è un software di Egonex S.R.L.</p>
-      <p>Sede legale: Via Sausset Les Pins 9, 00076 Lariano (RM)</p>
-      <p>Sede operativa: Palermo</p>
-      <p>P.IVA 18155601000</p>
-      <p><a href="mailto:info@egonex-group.com">info@egonex-group.com</a></p>
-      <div class="piede-link">
-        <a href="privacy.html">Privacy</a>
-        <a href="cookie.html">Cookie</a>
-        <a href="licenza.html">Condizioni di licenza</a>
-        <a href="contatto.html">Contatti</a>
+    <div class="largo piede-alto">
+      <section>
+        <a class="marca" href="index.html"><img src="immagini/logo.png" alt="FileGuard" width="147" height="44"></a>
+        <p>FileGuard è un software di Egonex S.R.L.</p>
+        <p>Sede legale: Via Sausset Les Pins 9, 00076 Lariano (RM)</p>
+        <p>Sede operativa: Palermo</p>
+        <p>P.IVA 18155601000</p>
+      </section>
+      <nav aria-label="Navigazione">
+        <p class="piede-titolo">Navigazione</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="che-cose.html">Panoramica</a></li>
+          <li><a href="funzioni.html">Funzioni</a></li>
+          <li><a href="piani.html">Piani</a></li>
+          <li><a href="sicurezza.html" aria-current="page">Sicurezza</a></li>
+          <li><a href="contatto.html">Contatti</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Note legali">
+        <p class="piede-titolo">Note legali</p>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="cookie.html">Cookie</a></li>
+          <li><a href="licenza.html">Condizioni di licenza</a></li>
+        </ul>
+      </nav>
+      <section>
+        <p class="piede-titolo">Contatti</p>
+        <ul>
+          <li><a href="mailto:info@egonex-group.com">info@egonex-group.com</a></li>
+          <li><a href="mailto:licensing@egonex-group.com">licensing@egonex-group.com</a></li>
+        </ul>
+        <p class="piede-social">
+          <a href="https://www.linkedin.com/company/egonex" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://x.com/egonexgroup" target="_blank" rel="noopener noreferrer">X</a>
+        </p>
+      </section>
+    </div>
+    <div class="piede-basso">
+      <div class="largo">
+        <p>© 2026 Egonex S.R.L. Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>

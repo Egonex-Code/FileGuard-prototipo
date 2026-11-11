@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 375" width="600" height="375" role="img" aria-labelledby="t">
+  <title id="t">Spostato dal computer Segreteria: da Clienti\Bianchi ad Archivio 2025</title>
+  <!-- Disegno di Egonex, versione breve per schede strette. Colori dalla palette di stile.css. -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="36" y="70" font-size="44" font-weight="700" fill="#0B2C6B">Spostato</text>
+    <text x="36" y="122" font-size="34" fill="#4B5866">Segreteria · 06/11 18:49</text>
+
+    <g transform="translate(36 162)">
+      <path d="M0 8a6 6 0 0 1 6-6h16l6 6h22a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6Z" fill="#FFFFFF" stroke="#C3CBD4" stroke-width="3"/>
+      <text x="78" y="36" font-size="36" fill="#4B5866">Clienti\Bianchi</text>
+    </g>
+    <path d="M64 222v52" stroke="#0B2C6B" stroke-width="4" stroke-dasharray="8 7"/>
+    <path d="M52 266l12 16 12-16" fill="none" stroke="#0B2C6B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(36 296)">
+      <path d="M0 8a6 6 0 0 1 6-6h16l6 6h22a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6Z" fill="#E9EFF8" stroke="#0B2C6B" stroke-width="3"/>
+      <text x="78" y="36" font-size="36" font-weight="700" fill="#1C2A3A">Archivio 2025</text>
+    </g>
+  </g>
+</svg>

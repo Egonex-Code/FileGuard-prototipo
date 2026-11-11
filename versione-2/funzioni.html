@@ -5,20 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Funzioni di FileGuard: avvisi, ripristino, regole</title>
-  <meta name="description" content="Avviso quando un file cambia, ripristino in un click, versioni precedenti, ricerca dei documenti di una persona e sei regole per cartella.">
+  <meta name="description" content="Avviso quando un file protetto cambia o sparisce, versioni e ripristino, ricerca dei documenti di una persona e regole per cartella.">
   <link rel="stylesheet" href="stile.css">
-  <link rel="icon" href="immagini/logo.png" type="image/png">
+  <link rel="icon" href="immagini/favicon.png" type="image/png">
 </head>
 <body>
   <a class="salta" href="#contenuto">Vai al contenuto</a>
   <header class="barra">
     <div class="largo barra-riga">
-      <a class="marca" href="index.html"><img src="immagini/logo.png" alt="" width="40" height="40"><span>FileGuard</span></a>
+      <a class="marca" href="index.html"><img src="immagini/logo.png" alt="FileGuard" width="147" height="44"></a>
       <button class="menu-apri" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path class="menu-linee" d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path class="menu-chiudi" d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
       </button>
       <nav id="menu" class="menu">
-        <a href="che-cose.html">Che cos'è</a>
+        <a href="index.html">Home</a>
+        <a href="che-cose.html">Panoramica</a>
         <a href="funzioni.html" aria-current="page">Funzioni</a>
         <a href="piani.html">Piani</a>
         <a href="sicurezza.html">Sicurezza</a>
@@ -41,11 +42,14 @@
         <div class="affianco">
           <div class="spiega">
             <h2>Monitoraggio continuo</h2>
-            <p class="intro">Cartelle e file restano sotto osservazione. Se un file viene modificato, spostato o eliminato, arriva l'avviso. Vedi da quale computer e dove è finito, anche su un'unità esterna.</p>
-            <p class="esempio">Il preventivo di un paziente sparisce dalla cartella: arriva l'avviso.</p>
+            <p class="intro">Cartelle e file restano sotto osservazione, e ogni operazione finisce nel diario, con il computer da cui è partita. Nelle cartelle protette, se un file viene modificato o sparisce dalla cartella, perché cancellato o spostato altrove, arriva l'avviso.</p>
+            <p class="esempio">Il preventivo di un paziente sparisce da una cartella protetta: arriva l'avviso.</p>
           </div>
           <figure class="foto-schermata">
-            <img src="immagini/screen-diario.png" width="1120" height="430" alt="Diario di FileGuard: un file modificato, uno eliminato e uno rinominato, con data e computer.">
+            <picture>
+              <source media="(max-width: 599px), (min-width: 800px) and (max-width: 1099px)" srcset="immagini/screen-diario-breve.png" width="600" height="375">
+              <img src="immagini/screen-diario-v2.png" width="800" height="490" alt="Diario di FileGuard: un file modificato, uno eliminato, uno rinominato e uno spostato da una cartella a un'altra, con data e computer.">
+            </picture>
           </figure>
         </div>
       </div>
@@ -53,7 +57,7 @@
 
     <section class="fascia fascia-chiara">
       <div class="largo">
-        <h2>Le sei regole</h2>
+        <h2>Le regole</h2>
         <p class="intro">Su ogni cartella scegli le regole che ti servono. FileGuard ti avvisa; cosa fare lo decidi tu.</p>
         <div class="affianco">
           <div class="tabella-scorre">
@@ -77,14 +81,9 @@
                   <td>Contratti firmati</td>
                 </tr>
                 <tr>
-                  <th scope="row">Non esce di qui</th>
-                  <td>Vedi dove è finito un file uscito dalla cartella, anche su un'unità esterna</td>
+                  <th scope="row">Non esce di qui <span class="presto">presto</span></th>
+                  <td>Vedi dove è finito un file uscito dalla cartella</td>
                   <td>Referti</td>
-                </tr>
-                <tr>
-                  <th scope="row">Da dove e dove</th>
-                  <td>Vedi da dove è partito il file, dove si trova adesso e da quale computer</td>
-                  <td>Cartella condivisa della segreteria</td>
                 </tr>
                 <tr>
                   <th scope="row">Deve esserci</th>
@@ -92,15 +91,15 @@
                   <td>Fascicolo antiriciclaggio</td>
                 </tr>
                 <tr>
-                  <th scope="row">Non si tiene per sempre</th>
-                  <td>Vedi da quanto tempo i file sono nella cartella e se è possibile archiviarli</td>
+                  <th scope="row">Non si tiene per sempre <span class="presto">presto</span></th>
+                  <td>Vedi da quanto tempo i file sono nella cartella</td>
                   <td>Documenti di ex clienti</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <figure class="foto-schermata">
-            <img src="immagini/screen-regole.png" width="980" height="560" alt="Le sei regole di FileGuard su una cartella. Ogni regola si attiva o si disattiva." loading="lazy">
+            <img src="immagini/screen-regole-breve.png" width="600" height="345" alt="Nuova regola, cosa deve essere protetto: Non si cancella e Non si modifica sono scelte; Non esce di qui è segnata «presto»." loading="lazy">
           </figure>
         </div>
       </div>
@@ -111,11 +110,11 @@
         <div class="affianco affianco-gira">
           <div class="spiega">
             <h2>Avviso e ripristino</h2>
-            <p class="intro">La copia del file è già pronta: se è stato un errore, un click lo rimette al posto originale.</p>
-            <p class="esempio">"contratto.pdf eliminato dal PC ufficio": premi il pulsante e il file torna al suo posto.</p>
+            <p class="intro">Dall'avviso vedi cosa manca. Se è stato un errore, apri la finestra delle versioni e rimetti il file con «Ripristina».</p>
+            <p class="esempio">"contratto.pdf eliminato dal PC ufficio": apri le versioni del contratto e lo ripristini.</p>
           </div>
           <figure class="foto-schermata">
-            <img src="immagini/screen-ripristino.png" width="1120" height="300" alt="Avviso di FileGuard: contratto.pdf eliminato dal PC ufficio." loading="lazy">
+            <img src="immagini/screen-ripristino-breve.png" width="600" height="240" alt="Una riga del diario di FileGuard: contratto.pdf eliminato il 30/10/2026 alle 15:28 dal computer PC ufficio." loading="lazy">
           </figure>
         </div>
       </div>
@@ -126,11 +125,14 @@
         <div class="affianco">
           <div class="spiega">
             <h2>Copie e versioni</h2>
-            <p class="intro">Le copie restano su disco, server, NAS o cloud che usi già, anche in doppia copia. Ogni modifica lascia una versione: il file in uso resta com'è e la versione scelta viene messa accanto.</p>
-            <p class="esempio">Hai salvato sopra il contratto? La versione di ieri è lì accanto.</p>
+            <p class="intro">Le copie restano sui tuoi computer, o nelle cartelle che scegli tu: disco, server, NAS, anche in doppia copia. Le copie possono andare anche in una cartella sincronizzata con il tuo servizio cloud. Le modifiche lasciano una versione, secondo la conservazione che scegli.</p>
+            <p class="esempio">Hai salvato sopra il contratto? Apri le versioni e ritrovi quella di ieri.</p>
           </div>
           <figure class="foto-schermata">
-            <img src="immagini/screen-versioni.png" width="1120" height="460" alt="Le versioni di contratto.pdf. Il file in uso resta com'è. La versione scelta viene messa accanto, nella stessa cartella." loading="lazy">
+            <picture>
+              <source media="(max-width: 599px), (min-width: 800px) and (max-width: 1099px)" srcset="immagini/documento-versioni-breve.svg" width="600" height="375">
+              <img src="immagini/documento-versioni.svg" width="800" height="460" alt="Le versioni del contratto Galli: giovedì, mercoledì e martedì. È scelta la versione di martedì, con il pulsante Ripristina." loading="lazy">
+            </picture>
           </figure>
         </div>
       </div>
@@ -141,11 +143,14 @@
         <div class="affianco affianco-gira">
           <div class="spiega">
             <h2>Privacy e GDPR sui file</h2>
-            <p class="intro">Trova, nelle cartelle sorvegliate, tutti i documenti di una persona in un periodo, mostra da quanto tempo sono in cartella e ripercorre la storia di ogni file.</p>
+            <p class="intro">Trova, nelle cartelle sorvegliate, i documenti di una persona e ripercorre la storia di ogni file.</p>
             <p class="esempio">Un cliente chiede quali dati conservi su di lui.</p>
           </div>
           <figure class="foto-schermata">
-            <img src="immagini/screen-privacy.png" width="1120" height="420" alt="FileGuard elenca i documenti trovati su una persona e su un periodo, con da quanto sono in cartella" loading="lazy">
+            <picture>
+              <source media="(max-width: 599px), (min-width: 800px) and (max-width: 1099px)" srcset="immagini/screen-ricerca-breve.png" width="600" height="375">
+              <img src="immagini/screen-ricerca.png" width="800" height="440" alt="Ricerca per Bianchi: 9 documenti sicuri e 3 da controllare." loading="lazy">
+            </picture>
           </figure>
         </div>
       </div>
@@ -155,11 +160,14 @@
       <div class="largo">
         <div class="affianco">
           <div class="spiega">
-            <h2>Marca temporale</h2>
-            <p class="intro">Si applica su un singolo documento, fino a 5 al mese. <span class="segnaposto">[Semplice o qualificata: da confermare prima di aggiungere altro.]</span></p>
+            <h2>Marca temporale <span class="presto">presto</span></h2>
+            <p class="intro">Fissa la data e l'ora in cui un documento era così com'è, per mostrarlo se qualcuno te lo chiede.</p>
           </div>
           <figure class="foto-schermata">
-            <img src="immagini/screen-marca.png" width="960" height="324" alt="Marca temporale su un documento: data, ora, e quante ne restano questo mese." loading="lazy">
+            <picture>
+              <source media="(max-width: 599px), (min-width: 800px) and (max-width: 1099px)" srcset="immagini/documento-data-breve.svg" width="600" height="300">
+              <img src="immagini/documento-data.svg" width="800" height="340" alt="Un documento, Contratto Galli.pdf, con la sua data e ora: giovedì 5 novembre 2026, 15:32." loading="lazy">
+            </picture>
           </figure>
         </div>
       </div>
@@ -168,8 +176,8 @@
     <section class="fascia fascia-alternata">
       <div class="largo">
         <h2>Installazione</h2>
-        <p class="intro">Una procedura guidata, in pochi minuti. Lo stesso account vale su tutti i computer.</p>
-        <p class="nota">Requisiti: Windows 10 (aggiornamento di novembre 2021) o successivo, oppure Windows 11, a 64 bit.</p>
+        <p class="intro">Lo installi con una procedura guidata.</p>
+        <p class="nota">Requisiti: Windows 10 (dalla versione 1809, ottobre 2018) e Windows 11.</p>
       </div>
     </section>
 
@@ -185,18 +193,48 @@
   </main>
 
   <footer class="piede">
-    <div class="largo">
-      <a class="marca" href="index.html"><img src="immagini/logo.png" alt="" width="36" height="36"><span>FileGuard</span></a>
-      <p>FileGuard è un software di Egonex S.R.L.</p>
-      <p>Sede legale: Via Sausset Les Pins 9, 00076 Lariano (RM)</p>
-      <p>Sede operativa: Palermo</p>
-      <p>P.IVA 18155601000</p>
-      <p><a href="mailto:info@egonex-group.com">info@egonex-group.com</a></p>
-      <div class="piede-link">
-        <a href="privacy.html">Privacy</a>
-        <a href="cookie.html">Cookie</a>
-        <a href="licenza.html">Condizioni di licenza</a>
-        <a href="contatto.html">Contatti</a>
+    <div class="largo piede-alto">
+      <section>
+        <a class="marca" href="index.html"><img src="immagini/logo.png" alt="FileGuard" width="147" height="44"></a>
+        <p>FileGuard è un software di Egonex S.R.L.</p>
+        <p>Sede legale: Via Sausset Les Pins 9, 00076 Lariano (RM)</p>
+        <p>Sede operativa: Palermo</p>
+        <p>P.IVA 18155601000</p>
+      </section>
+      <nav aria-label="Navigazione">
+        <p class="piede-titolo">Navigazione</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="che-cose.html">Panoramica</a></li>
+          <li><a href="funzioni.html" aria-current="page">Funzioni</a></li>
+          <li><a href="piani.html">Piani</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="contatto.html">Contatti</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Note legali">
+        <p class="piede-titolo">Note legali</p>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="cookie.html">Cookie</a></li>
+          <li><a href="licenza.html">Condizioni di licenza</a></li>
+        </ul>
+      </nav>
+      <section>
+        <p class="piede-titolo">Contatti</p>
+        <ul>
+          <li><a href="mailto:info@egonex-group.com">info@egonex-group.com</a></li>
+          <li><a href="mailto:licensing@egonex-group.com">licensing@egonex-group.com</a></li>
+        </ul>
+        <p class="piede-social">
+          <a href="https://www.linkedin.com/company/egonex" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://x.com/egonexgroup" target="_blank" rel="noopener noreferrer">X</a>
+        </p>
+      </section>
+    </div>
+    <div class="piede-basso">
+      <div class="largo">
+        <p>© 2026 Egonex S.R.L. Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>

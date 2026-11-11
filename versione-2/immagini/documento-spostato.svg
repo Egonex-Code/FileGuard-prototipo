@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Un documento spostato in un'altra cartella</title>
+  <desc id="d">La pratica Bianchi passa dalla cartella Clienti\Bianchi alla cartella Archivio 2025. Lo spostamento è partito dal computer Segreteria e resta scritto nel diario.</desc>
+  <!-- Disegno di Egonex, fatto a mano per il sito. Colori dalla palette di stile.css. -->
+  <defs>
+    <marker id="punta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#0B2C6B"/>
+    </marker>
+  </defs>
+
+  <!-- Cartella di partenza -->
+  <g transform="translate(20 70)">
+    <path d="M0 24a14 14 0 0 1 14-14h70l20 20h132a14 14 0 0 1 14 14v126a14 14 0 0 1-14 14H14A14 14 0 0 1 0 170Z" fill="#FFFFFF" stroke="#C3CBD4" stroke-width="3"/>
+    <rect x="85" y="60" width="80" height="96" rx="8" fill="none" stroke="#C3CBD4" stroke-width="3" stroke-dasharray="8 8"/>
+    <text x="125" y="232" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#1C2A3A">Clienti\Bianchi</text>
+  </g>
+
+  <!-- Cartella di arrivo -->
+  <g transform="translate(530 70)">
+    <path d="M0 24a14 14 0 0 1 14-14h70l20 20h132a14 14 0 0 1 14 14v126a14 14 0 0 1-14 14H14A14 14 0 0 1 0 170Z" fill="#E9EFF8" stroke="#0B2C6B" stroke-width="3"/>
+    <rect x="85" y="60" width="80" height="96" rx="8" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="3"/>
+    <path d="M101 88h48M101 106h48M101 124h32" stroke="#0B2C6B" stroke-width="4" stroke-linecap="round"/>
+    <text x="125" y="232" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#1C2A3A">Archivio 2025</text>
+  </g>
+
+  <!-- Spostamento -->
+  <path d="M285 140C345 70 455 70 515 140" fill="none" stroke="#0B2C6B" stroke-width="4" stroke-dasharray="12 10" marker-end="url(#punta)"/>
+
+  <!-- Computer da cui parte lo spostamento -->
+  <path d="M400 92v108" stroke="#C3CBD4" stroke-width="3" stroke-dasharray="4 8"/>
+  <g transform="translate(340 200)">
+    <rect width="120" height="80" rx="10" fill="#FFFFFF" stroke="#1C2A3A" stroke-width="3"/>
+    <rect x="12" y="12" width="96" height="56" rx="5" fill="#E9EFF8"/>
+    <path d="M50 80v14M70 80v14M38 96h44" stroke="#1C2A3A" stroke-width="3" stroke-linecap="round"/>
+    <text x="60" y="134" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#1C2A3A">Segreteria</text>
+  </g>
+
+  <!-- Riga del diario -->
+  <g transform="translate(20 380)">
+    <rect width="760" height="160" rx="14" fill="#FFFFFF" stroke="#DDE2E8" stroke-width="3"/>
+    <text x="32" y="64" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1C2A3A">Spostato</text>
+    <text x="210" y="64" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" fill="#4B5866">06/11 18:49 · Segreteria</text>
+    <text x="32" y="122" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" fill="#1C2A3A">Pratica Bianchi.pdf → Archivio 2025</text>
+  </g>
+</svg>

@@ -38,6 +38,40 @@
     });
   });
 
+  var riduciMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var sezioni = document.querySelectorAll("main > .fascia:not(.apertura)");
+  if (!riduciMovimento && "IntersectionObserver" in window && sezioni.length) {
+    sezioni.forEach(function (sezione) {
+      sezione.classList.add("entra");
+    });
+
+    function inVista(sezione) {
+      var riquadro = sezione.getBoundingClientRect();
+      var altezza = window.innerHeight || document.documentElement.clientHeight;
+      return riquadro.top < altezza * 0.92 && riquadro.bottom > 0;
+    }
+
+    var comparsa = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.style.setProperty("--ritardo", "0ms");
+        entry.target.classList.add("entrata");
+        comparsa.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+    requestAnimationFrame(function () {
+      sezioni.forEach(function (sezione, indice) {
+        if (inVista(sezione)) {
+          sezione.style.setProperty("--ritardo", Math.min(indice * 80, 160) + "ms");
+          sezione.classList.add("entrata");
+        } else {
+          comparsa.observe(sezione);
+        }
+      });
+    });
+  }
+
   var apertura = document.querySelector(".apertura");
   var barraBasso = document.querySelector(".barra-basso");
   if (apertura && barraBasso && "IntersectionObserver" in window) {

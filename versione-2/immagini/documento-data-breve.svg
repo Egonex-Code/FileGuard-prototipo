@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300" role="img" aria-labelledby="t">
+  <title id="t">Un documento con la sua data e ora: giovedì 5 novembre 2026, 15:32</title>
+  <!-- Disegno di Egonex, versione breve per colonne strette. Colori dalla palette di stile.css. Dati di prova. -->
+  <rect x="10" y="10" width="580" height="280" rx="14" fill="#FFFFFF" stroke="#DDE2E8" stroke-width="3"/>
+  <g transform="translate(40 50)">
+    <path d="M0 0h70l26 26v102H0Z" fill="#E9EFF8" stroke="#0B2C6B" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M70 0v26h26" fill="none" stroke="#0B2C6B" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M18 54h60M18 74h60M18 94h40" stroke="#0B2C6B" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="166" y="96" font-size="36" font-weight="700" fill="#1C2A3A">Contratto Galli.pdf</text>
+    <text x="166" y="146" font-size="32" fill="#4B5866">Data e ora</text>
+    <text x="40" y="232" font-size="34" font-weight="600" fill="#0B2C6B">giovedì 5 novembre 2026, 15:32</text>
+  </g>
+</svg>
