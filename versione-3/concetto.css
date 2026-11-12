@@ -1,0 +1,2853 @@
+/* FileGuard, concetto visivo «La traccia». Grafico Egonex, 12/11/2026.
+   Proposta separata dal prototipo: non tocca stile.css.
+   Idea: la memoria dei documenti si vede come un filo ambra con dei punti
+   (data, ora, computer). Il filo torna in tutto il sito. */
+
+/* Caratteri nella cartella del sito: nessun collegamento a Google. Licenza SIL Open Font License 1.1 (vedi caratteri/LICENZE.txt). */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("caratteri/plus-jakarta-sans.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("caratteri/jetbrains-mono.woff2") format("woff2");
+}
+
+:root {
+  --notte: #0E1A2B;
+  --notte-2: #172840;
+  --inchiostro: #16212F;
+  --testo-2: #4A5668;
+  --carta: #FFFFFF;
+  --nebbia: #EEF2F8;
+  --linea: #D6DEE9;
+  --ambra: #F2A23A;
+  --ambra-tenue: #FFF4E2;
+  --ambra-testo: #8A5200;
+  --programma: #0B2C6B;
+  --chiaro-su-notte: #C9D5E4;
+  --raggio: 16px;
+  --raggio-piccolo: 10px;
+  --larghezza: 1160px;
+  --testo: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+  --ora: "JetBrains Mono", Consolas, monospace;
+  --spazio-fascia: 3.25rem;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --spazio-fascia: 4.5rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--carta);
+  color: var(--inchiostro);
+  font-family: var(--testo);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ambra);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.6vw, 2.6rem);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.largo {
+  width: min(var(--larghezza), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.sotto {
+  margin-top: 0.9rem;
+  color: var(--testo-2);
+  font-size: 1.125rem;
+  max-width: 38rem;
+}
+
+/* ---------- Barra ---------- */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--notte);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.barra-riga {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 4rem;
+}
+
+@media (min-width: 900px) {
+  .barra-riga {
+    gap: 1.5rem;
+  }
+}
+
+.barra-marca img {
+  display: block;
+  height: 2.4rem;
+  width: auto;
+}
+
+.barra-menu {
+  display: none;
+  gap: 1.5rem;
+  margin-left: auto;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.barra-menu a {
+  color: var(--chiaro-su-notte);
+  text-decoration: none;
+}
+
+.barra-menu a[aria-current="page"],
+.barra-menu a:hover {
+  color: var(--carta);
+}
+
+.barra .bottone {
+  margin-left: auto;
+}
+
+@media (min-width: 900px) {
+  .barra-menu {
+    display: flex;
+  }
+
+  .barra .bottone {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Pulsanti: pillola compatta ---------- */
+.bottone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.55rem 1.15rem;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.bottone-ambra {
+  background: var(--ambra);
+  color: var(--inchiostro);
+}
+
+.bottone-ambra:hover {
+  background: #F7B65C;
+}
+
+.bottone-bordo {
+  border-color: currentColor;
+}
+
+.azioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.dettaglio-piccolo {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--testo-2);
+}
+
+/* ---------- Occhiello: etichetta con il punto ambra ---------- */
+.occhiello {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.8rem 0.3rem 0.6rem;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  background: var(--carta);
+  color: var(--inchiostro);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.occhiello::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--ambra);
+  box-shadow: 0 0 0 3px var(--ambra-tenue);
+}
+
+/* ---------- Fasce ---------- */
+.fascia {
+  padding-block: var(--spazio-fascia);
+}
+
+.fascia-nebbia {
+  background: var(--nebbia);
+}
+
+.fascia-ambra {
+  background: var(--ambra-tenue);
+}
+
+.fascia-notte {
+  background: var(--notte);
+  color: var(--carta);
+}
+
+.fascia-notte .sotto,
+.fascia-notte .dettaglio-piccolo {
+  color: var(--chiaro-su-notte);
+}
+
+.fascia-notte .occhiello {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: var(--carta);
+}
+
+.fascia-notte .occhiello::before {
+  box-shadow: 0 0 0 3px rgba(242, 162, 58, 0.25);
+}
+
+.testa {
+  max-width: 44rem;
+  margin-bottom: 2.25rem;
+}
+
+.testa-centro {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.testa-centro .sotto {
+  margin-inline: auto;
+}
+
+/* ---------- Apertura con la memoria che si scrive ---------- */
+.apertura {
+  position: relative;
+  overflow: hidden;
+  padding-block: 3rem 3.5rem;
+  background:
+    radial-gradient(60rem 30rem at 85% 10%, rgba(242, 162, 58, 0.16), transparent 60%),
+    radial-gradient(50rem 30rem at 0% 100%, rgba(80, 130, 210, 0.18), transparent 60%),
+    var(--notte);
+}
+
+@media (min-width: 900px) {
+  .apertura {
+    padding-block: 5rem 5.5rem;
+  }
+}
+
+.apertura-testa {
+  max-width: 50rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.apertura-testa .sotto {
+  margin-inline: auto;
+}
+
+.apertura-testa .azioni {
+  justify-content: center;
+}
+
+/* Il filo scende dai pulsanti dentro il video */
+.filo-discesa {
+  display: block;
+  width: 2px;
+  height: 2.5rem;
+  margin: 1.75rem auto 0;
+  background: var(--ambra);
+}
+
+/* Il riquadro video: protagonista dell'apertura */
+.video {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  background:
+    radial-gradient(40rem 20rem at 80% 0%, rgba(242, 162, 58, 0.18), transparent 60%),
+    var(--notte-2);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7);
+}
+
+.video::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.55rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: var(--ambra);
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 6px rgba(242, 162, 58, 0.22);
+}
+
+@media (min-width: 860px) {
+  .video {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    aspect-ratio: 16 / 9;
+    padding: 2.5rem 3rem;
+    gap: 2.5rem;
+  }
+}
+
+/* Sul telefono la copertina resta compatta: solo gli ultimi due ricordi */
+@media (max-width: 859px) {
+  .video .ricordo:nth-child(-n+2) {
+    display: none;
+  }
+
+  .video .memoria {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.video-play {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--carta);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.video-tondo {
+  display: grid;
+  place-items: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  background: var(--ambra);
+  color: var(--inchiostro);
+  box-shadow: 0 0 0 10px rgba(242, 162, 58, 0.18);
+}
+
+.video-tondo svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 0.3rem;
+}
+
+.video-play:hover .video-tondo {
+  background: #F7B65C;
+}
+
+.video-scritta strong {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.video-scritta span {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--chiaro-su-notte);
+}
+
+/* Titolo a domanda e risposta: la domanda più quieta, la risposta in ambra e più grande */
+.titolo-domanda .domanda,
+.titolo-domanda .risposta {
+  display: block;
+}
+
+.titolo-domanda .domanda {
+  font-size: clamp(1.6rem, 4.2vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.titolo-domanda .risposta {
+  margin-top: 0.35em;
+  font-size: clamp(2.9rem, 8vw, 5.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ambra);
+}
+
+.apertura h1 em {
+  font-style: normal;
+  color: var(--ambra);
+}
+
+/* La memoria: un documento e il suo filo */
+.memoria {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-radius: var(--raggio);
+  background: var(--carta);
+  color: var(--inchiostro);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.55);
+}
+
+.memoria-testa {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+.memoria-testa svg {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.memoria-nome {
+  font-weight: 800;
+}
+
+.memoria-cartella {
+  font-size: 0.875rem;
+  color: var(--testo-2);
+}
+
+.filo {
+  position: relative;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Il filo ambra che unisce i ricordi */
+.filo::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--ambra);
+  transform-origin: top;
+}
+
+.ricordo {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.1rem 0.75rem;
+  padding: 0.7rem 0 0.7rem 2rem;
+}
+
+.ricordo::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 1rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2.5px solid var(--ambra);
+  border-radius: 50%;
+  background: var(--carta);
+}
+
+.ricordo-ultimo::before {
+  background: var(--ambra);
+}
+
+.ricordo-cosa {
+  font-weight: 700;
+}
+
+.ricordo-ora {
+  font-family: var(--ora);
+  font-size: 0.8125rem;
+  color: var(--ambra-testo);
+  white-space: nowrap;
+}
+
+.ricordo-dove {
+  grid-column: 1 / -1;
+  font-size: 0.9375rem;
+  color: var(--testo-2);
+}
+
+/* Etichetta che si sovrappone alla memoria (profondità) */
+.memoria-nota {
+  position: absolute;
+  right: -0.5rem;
+  bottom: -1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--programma);
+  color: var(--carta);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 960px) {
+  .memoria-nota {
+    right: -1.25rem;
+  }
+}
+
+/* Animazione discreta: il filo si disegna e i ricordi compaiono, una volta sola */
+@media (prefers-reduced-motion: no-preference) {
+  .anima .filo::before {
+    animation: filo-scrive 1.6s ease-out both;
+  }
+
+  .anima .ricordo {
+    animation: ricordo-arriva 0.5s ease-out both;
+  }
+
+  .anima .ricordo:nth-child(1) { animation-delay: 0.2s; }
+  .anima .ricordo:nth-child(2) { animation-delay: 0.55s; }
+  .anima .ricordo:nth-child(3) { animation-delay: 0.9s; }
+  .anima .ricordo:nth-child(4) { animation-delay: 1.25s; }
+
+  .anima .memoria-nota {
+    animation: ricordo-arriva 0.5s ease-out 1.7s both;
+  }
+}
+
+@keyframes filo-scrive {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes ricordo-arriva {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Le tre cose che ricorda: griglia a mosaico ---------- */
+.mosaico {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .mosaico {
+    grid-template-columns: 1.15fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .mosaico .tessera:first-child {
+    grid-row: span 2;
+  }
+}
+
+.tessera {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  background: var(--carta);
+}
+
+.tessera-figura {
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: var(--nebbia);
+}
+
+.tessera:first-child .tessera-figura {
+  flex: 1;
+}
+
+.tessera-figura img {
+  display: block;
+  width: 100%;
+}
+
+.tessera-testo {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.tessera-testo p {
+  margin-top: 0.4rem;
+  color: var(--testo-2);
+}
+
+.verbo {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--ambra-testo);
+  font-family: var(--ora);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+/* ---------- Avviso: due livelli sovrapposti ---------- */
+.affianco {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .affianco {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 3.5rem;
+  }
+
+  .affianco-gira > :first-child {
+    order: 2;
+  }
+}
+
+.strati {
+  position: relative;
+  padding: 1.5rem 0 2.5rem 1.5rem;
+}
+
+.strati-fondo {
+  padding: 1rem 1.25rem;
+  border-radius: var(--raggio);
+  background: var(--notte-2);
+  color: var(--chiaro-su-notte);
+  font-size: 0.9375rem;
+}
+
+.strati-fondo p {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.strati-fondo p:last-child {
+  border-bottom: 0;
+}
+
+.strati-fondo span {
+  font-family: var(--ora);
+  color: var(--ambra);
+  margin-right: 0.5rem;
+}
+
+.avviso {
+  position: absolute;
+  left: 0;
+  right: 1.5rem;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.9rem;
+  padding: 1rem 1.1rem;
+  border-left: 5px solid var(--ambra);
+  border-radius: var(--raggio-piccolo);
+  background: var(--carta);
+  color: var(--inchiostro);
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
+}
+
+.avviso svg {
+  grid-row: span 2;
+  width: 2rem;
+  height: 2rem;
+  color: var(--ambra-testo);
+}
+
+.avviso strong {
+  font-size: 1.05rem;
+}
+
+.avviso span {
+  color: var(--testo-2);
+  font-size: 0.9375rem;
+}
+
+.punti-chiave {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.punti-chiave li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.punti-chiave li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 2.5px solid var(--ambra);
+  border-radius: 50%;
+}
+
+/* ---------- Prova: la schermata vera ---------- */
+.prova img {
+  display: block;
+  width: 100%;
+  border-radius: var(--raggio);
+  box-shadow: 0 24px 50px -24px rgba(14, 26, 43, 0.45);
+}
+
+.prova figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--testo-2);
+}
+
+.riga-backup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-top: 1.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--raggio-piccolo);
+  background: var(--carta);
+  border: 1px solid var(--linea);
+}
+
+.riga-backup a {
+  font-weight: 700;
+}
+
+/* ---------- Per chi: etichette compatte ---------- */
+.settori {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .settori {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.settore {
+  padding: 1.25rem;
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  background: var(--carta);
+}
+
+.settore-icona {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 0.9rem;
+  border-radius: 50%;
+  background: var(--ambra-tenue);
+  color: var(--ambra-testo);
+}
+
+.settore-icona svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.settore h3 {
+  font-size: 1.05rem;
+}
+
+.settore p {
+  margin-top: 0.3rem;
+  color: var(--testo-2);
+  font-size: 0.9375rem;
+}
+
+.nota-gdpr {
+  margin-top: 1.25rem;
+  color: var(--testo-2);
+}
+
+/* ---------- Chiusura: il filo arriva al pulsante ---------- */
+.chiusura {
+  text-align: center;
+}
+
+.chiusura .azioni {
+  justify-content: center;
+}
+
+.chiusura .sotto {
+  margin-inline: auto;
+}
+
+.filo-fine {
+  display: block;
+  width: 2px;
+  height: 3rem;
+  margin: 0 auto 1.25rem;
+  background: linear-gradient(var(--ambra), var(--ambra));
+  position: relative;
+}
+
+.filo-fine::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--ambra);
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 6px rgba(242, 162, 58, 0.2);
+}
+
+/* ---------- Piede: uguale su tutte le pagine ---------- */
+.piede {
+  background: #0A1422;
+  color: var(--chiaro-su-notte);
+  font-size: 0.9375rem;
+}
+
+.piede-alto {
+  display: grid;
+  gap: 2rem;
+  padding-block: 3rem 2.5rem;
+}
+
+@media (min-width: 700px) {
+  .piede-alto {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .piede-alto {
+    grid-template-columns: 1.4fr 1fr 1.2fr 1.2fr;
+  }
+}
+
+.piede-marca img {
+  display: block;
+  height: 2.2rem;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.piede-titolo {
+  margin-bottom: 0.75rem;
+  color: var(--carta);
+  font-weight: 700;
+}
+
+.piede ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.piede a {
+  color: var(--chiaro-su-notte);
+  text-decoration: none;
+}
+
+.piede a:hover,
+.piede a[aria-current="page"] {
+  color: var(--carta);
+  text-decoration: underline;
+}
+
+.piede-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.piede-basso {
+  padding-block: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.875rem;
+}
+
+/* ---------- Vai al contenuto e menu del telefono ---------- */
+.salta {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--ambra);
+  color: var(--inchiostro);
+  font-weight: 700;
+}
+
+.salta:focus {
+  top: 0.75rem;
+}
+
+.menu-telefono {
+  position: relative;
+}
+
+.menu-telefono summary {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--carta);
+  list-style: none;
+  cursor: pointer;
+}
+
+.menu-telefono summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-linee,
+.menu-linee::before,
+.menu-linee::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.menu-linee {
+  position: relative;
+}
+
+.menu-linee::before,
+.menu-linee::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-linee::before {
+  top: -6px;
+}
+
+.menu-linee::after {
+  top: 6px;
+}
+
+.menu-telefono[open] .menu-linee {
+  background: transparent;
+}
+
+.menu-telefono[open] .menu-linee::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-telefono[open] .menu-linee::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menu-telefono nav {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.6rem);
+  display: grid;
+  min-width: 13rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--raggio);
+  background: var(--notte-2);
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.6);
+}
+
+.menu-telefono nav a {
+  padding: 0.75rem 1rem;
+  border-radius: var(--raggio-piccolo);
+  color: var(--chiaro-su-notte);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu-telefono nav a[aria-current="page"] {
+  color: var(--carta);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (min-width: 900px) {
+  .menu-telefono {
+    display: none;
+  }
+}
+
+/* ---------- Segnaposti ancora da decidere: restano visibili ---------- */
+mark {
+  padding: 0 0.25rem;
+  border-radius: 4px;
+  background: #FFE7A3;
+  color: var(--inchiostro);
+}
+
+/* ---------- Panoramica: i capitoli lungo il filo ---------- */
+.capitoli {
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .capitoli::before {
+    content: "";
+    position: absolute;
+    left: calc((100% - min(var(--larghezza), calc(100% - 2rem))) / 2 - 1.75rem);
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 2px;
+    background: var(--ambra);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  .capitolo {
+    position: relative;
+  }
+
+  .capitolo::before {
+    content: "";
+    position: absolute;
+    left: calc((100% - min(var(--larghezza), calc(100% - 2rem))) / 2 - 1.75rem - 0.5rem + 1px);
+    top: calc(var(--spazio-fascia) + 0.35rem);
+    width: 1rem;
+    height: 1rem;
+    border: 3px solid var(--ambra);
+    border-radius: 50%;
+    background: var(--carta);
+  }
+}
+
+.elenco-fatti {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.elenco-fatti li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--testo-2);
+}
+
+.elenco-fatti li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.55rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--ambra);
+}
+
+.presto {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  background: var(--carta);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--testo-2);
+}
+
+.griglia-settori {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 700px) {
+  .griglia-settori {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .griglia-settori {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.griglia-settori li {
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--raggio-piccolo);
+  background: var(--carta);
+  border: 1px solid var(--linea);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+
+.griglia-settori strong {
+  display: block;
+}
+
+.griglia-settori span {
+  color: var(--testo-2);
+  font-size: 0.875rem;
+}
+
+/* ---------- Voci dell'ufficio: la frase detta, poi la risposta sul filo ---------- */
+.respira {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: #FFFFFF;
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.titolo-domanda + .sotto {
+  margin-top: 1.5rem;
+}
+
+.voce {
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--inchiostro);
+}
+
+.voce .virgoletta {
+  color: var(--ambra-testo);
+  font-weight: 600;
+}
+
+.tessera-testo .voce-risposta {
+  position: relative;
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  font-size: 1.0625rem;
+  border-left: 2px solid var(--ambra);
+}
+
+.voce-risposta::before {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ambra);
+}
+
+/* ---------- Pagine interne: apertura più bassa ---------- */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+.apertura-pagina {
+  padding-block: 3rem;
+}
+
+@media (min-width: 900px) {
+  .apertura-pagina {
+    padding-block: 4.5rem 4rem;
+  }
+}
+
+/* ---------- Funzioni: la giornata in studio ---------- */
+/* L'orologio: le ore della giornata, ognuna porta al suo momento */
+.orologio {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 1100px) {
+  .orologio {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .orologio::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background: var(--ambra);
+    opacity: 0.6;
+  }
+}
+
+.orologio a {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.6rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--raggio-piccolo);
+  background: var(--notte-2);
+  color: var(--chiaro-su-notte);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+}
+
+.orologio a:hover {
+  border-color: var(--ambra);
+  color: var(--carta);
+}
+
+.orologio span {
+  color: var(--ambra);
+  font-family: var(--ora);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Ogni momento è un ricordo sul filo che scende lungo la pagina */
+.momento {
+  --punto-sinistra: calc((100% - min(var(--larghezza), calc(100% - 2rem))) / 2);
+  position: relative;
+  padding-block: var(--spazio-fascia);
+}
+
+.momento::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--punto-sinistra) + 0.5rem - 1px);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--ambra);
+}
+
+.momento:first-child::before {
+  top: calc(var(--spazio-fascia) + 0.5rem);
+}
+
+.momento-domani::before {
+  bottom: auto;
+  height: calc(var(--spazio-fascia) + 0.5rem);
+  background: repeating-linear-gradient(var(--ambra) 0 6px, transparent 6px 12px);
+}
+
+.momento-nebbia {
+  background: var(--nebbia);
+}
+
+.momento-notte {
+  background: var(--notte);
+  color: var(--carta);
+}
+
+.momento-riga {
+  position: relative;
+  display: grid;
+  gap: 1.25rem 3rem;
+  align-items: start;
+  padding-left: 2.25rem;
+}
+
+.momento-riga::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid var(--ambra);
+  border-radius: 50%;
+  background: var(--carta);
+}
+
+.momento-nebbia .momento-riga::before {
+  background: var(--nebbia);
+}
+
+.momento-notte .momento-riga::before {
+  background: var(--ambra);
+}
+
+.momento-domani .momento-riga::before {
+  border-style: dashed;
+}
+
+@media (min-width: 1000px) {
+  .momento-riga {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .momento-ora {
+    grid-column: 1 / -1;
+  }
+
+  .momento-riga > .momento-testo:last-child {
+    max-width: 46rem;
+  }
+}
+
+.momento-ora {
+  color: var(--ambra-testo);
+  font-family: var(--ora);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.momento-notte .momento-ora {
+  color: var(--ambra);
+}
+
+.voce-grande {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.momento-notte .voce {
+  color: var(--carta);
+}
+
+.momento-notte .voce .virgoletta {
+  color: var(--ambra);
+}
+
+.momento-testo h2 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.momento-righe {
+  max-width: 36rem;
+  margin-top: 0.5rem;
+  color: var(--testo-2);
+  font-size: 1.0625rem;
+}
+
+.momento-notte .momento-righe {
+  color: var(--chiaro-su-notte);
+}
+
+/* Il dettaglio, piccolo, per chi vuole sapere */
+.dettagli {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dettagli li {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  background: var(--carta);
+  color: var(--testo-2);
+  font-size: 0.875rem;
+}
+
+.momento-notte .dettagli li {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: var(--chiaro-su-notte);
+}
+
+.forte {
+  margin-top: 1.5rem;
+  color: var(--ambra);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.forte span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--chiaro-su-notte);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.momento-figura {
+  margin: 0;
+}
+
+.momento-figura img {
+  display: block;
+  width: 100%;
+}
+
+.figura-carta {
+  border-radius: var(--raggio);
+  background: var(--carta);
+  box-shadow: 0 24px 50px -24px rgba(14, 26, 43, 0.45);
+}
+
+/* Elenco dei documenti non letti, ricostruito con dati di prova */
+.elenco-letti {
+  padding: 1.25rem;
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  background: var(--carta);
+  box-shadow: 0 24px 50px -24px rgba(14, 26, 43, 0.35);
+}
+
+.elenco-letti-testa {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--linea);
+  font-weight: 800;
+}
+
+.elenco-letti-testa span {
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  background: var(--ambra-tenue);
+  color: var(--ambra-testo);
+  font-size: 0.8125rem;
+}
+
+.elenco-letti ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.elenco-letti li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.1rem 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.elenco-letti li span {
+  color: var(--ambra-testo);
+  font-family: var(--ora);
+  font-size: 0.8125rem;
+}
+
+.elenco-letti figcaption,
+.momento-figura figcaption {
+  margin-top: 0.75rem;
+  color: var(--testo-2);
+  font-size: 0.875rem;
+}
+
+/* Le regole di una cartella */
+.regole {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+}
+
+.regole div {
+  display: grid;
+  gap: 0.15rem 1rem;
+  padding: 0.7rem 1rem;
+  border-left: 3px solid var(--ambra);
+  border-radius: var(--raggio-piccolo);
+  background: var(--nebbia);
+}
+
+@media (min-width: 600px) {
+  .regole div {
+    grid-template-columns: 12rem 1fr;
+  }
+}
+
+.regole dt {
+  font-weight: 700;
+}
+
+.regole dd {
+  margin: 0;
+  color: var(--testo-2);
+}
+
+.regole .regola-presto {
+  border-left-style: dashed;
+}
+
+.dettagli li {
+  border-radius: 14px;
+}
+
+.figura-respiro {
+  padding: 1.25rem;
+}
+
+/* ---------- Panoramica: il racconto, il filo al centro e il documento che lo segue ---------- */
+.racconto {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0 0 0 2.25rem;
+  list-style: none;
+}
+
+.racconto::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--ambra);
+}
+
+.racconto li {
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  background: var(--carta);
+}
+
+.racconto li::before {
+  content: "";
+  position: absolute;
+  left: calc(-2.25rem);
+  top: 1.75rem;
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid var(--ambra);
+  border-radius: 50%;
+  background: var(--nebbia);
+  box-sizing: border-box;
+}
+
+.racconto li:last-child::before {
+  background: var(--ambra);
+}
+
+@media (min-width: 900px) {
+  .racconto {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(4rem, auto);
+    gap: 0 5rem;
+    padding: 0;
+  }
+
+  .racconto::before {
+    left: 50%;
+  }
+
+  .racconto li:nth-child(odd) { grid-column: 1; }
+  .racconto li:nth-child(even) { grid-column: 2; }
+  .racconto li:nth-child(1) { grid-row: 1 / span 2; }
+  .racconto li:nth-child(2) { grid-row: 2 / span 2; }
+  .racconto li:nth-child(3) { grid-row: 3 / span 2; }
+  .racconto li:nth-child(4) { grid-row: 4 / span 2; }
+  .racconto li:nth-child(5) { grid-row: 5 / span 2; }
+  .racconto li:nth-child(6) { grid-row: 6 / span 2; }
+
+  .racconto li {
+    margin-bottom: 1.5rem;
+  }
+
+  .racconto li:nth-child(odd)::before {
+    left: auto;
+    right: calc(-2.5rem - 0.5rem);
+  }
+
+  .racconto li:nth-child(even)::before {
+    left: calc(-2.5rem - 0.5rem);
+  }
+}
+
+.racconto-disegno {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto 1.25rem;
+}
+
+.racconto-numero {
+  color: var(--ambra-testo);
+  font-family: var(--ora);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.racconto h2 {
+  margin-top: 0.15rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.racconto-storia {
+  margin-top: 0.6rem;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+.racconto-fileguard {
+  position: relative;
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--ambra);
+  color: var(--testo-2);
+}
+
+.racconto-fileguard strong {
+  display: block;
+  color: var(--ambra-testo);
+  font-family: var(--ora);
+  font-size: 0.8125rem;
+}
+
+.racconto-fine {
+  position: relative;
+  max-width: 34rem;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.racconto-fine::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.5rem;
+  width: 1rem;
+  height: 1rem;
+  margin-left: -0.5rem;
+  border-radius: 50%;
+  background: var(--ambra);
+  box-shadow: 0 0 0 6px rgba(242, 162, 58, 0.22);
+}
+
+/* ---------- Domande: ognuna è un punto sul filo ---------- */
+.domande {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 50rem;
+}
+
+.domande details {
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio-piccolo);
+  background: var(--carta);
+}
+
+.domande summary {
+  position: relative;
+  padding: 1rem 3rem 1rem 2.75rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.domande summary::-webkit-details-marker {
+  display: none;
+}
+
+.domande summary::before {
+  content: "";
+  position: absolute;
+  left: 1.1rem;
+  top: 1.35rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2.5px solid var(--ambra);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.domande details[open] summary::before {
+  background: var(--ambra);
+}
+
+.domande summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.25rem;
+  top: 0.85rem;
+  color: var(--ambra-testo);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.domande details[open] summary::after {
+  content: "−";
+}
+
+.domande details > :not(summary) {
+  margin: 0 1.25rem 1.1rem 2.75rem;
+  color: var(--testo-2);
+}
+
+.domande a {
+  font-weight: 700;
+}
+
+@media (max-width: 599px) {
+  .racconto li {
+    padding: 1.1rem;
+  }
+
+  .racconto-disegno {
+    max-width: none;
+    margin-inline: -0.35rem;
+    width: calc(100% + 0.7rem);
+  }
+}
+
+/* ---------- Piani: il filo attraversa i passi e finisce nel pulsante ---------- */
+.percorso {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  max-width: 56rem;
+  margin: 2.5rem auto 0;
+  padding: 0 0 0 2.25rem;
+  list-style: none;
+}
+
+.percorso::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.75rem;
+  bottom: 1.4rem;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--ambra);
+}
+
+.percorso li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--carta);
+  font-weight: 700;
+}
+
+.percorso li::before {
+  content: "";
+  position: absolute;
+  left: -2.25rem;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.5rem;
+  border: 3px solid var(--ambra);
+  border-radius: 50%;
+  background: var(--notte);
+  box-sizing: border-box;
+}
+
+.percorso span {
+  color: var(--ambra);
+  font-family: var(--ora);
+  font-size: 0.875rem;
+}
+
+.percorso-arrivo::before {
+  display: none;
+}
+
+@media (min-width: 760px) {
+  .percorso {
+    grid-template-columns: repeat(3, auto) auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+  }
+
+  .percorso::before {
+    left: 0;
+    right: 4rem;
+    top: 50%;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+    margin: -1px 0 0;
+  }
+
+  .percorso li {
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0 1rem;
+    background: var(--notte);
+  }
+
+  .percorso li::before {
+    display: none;
+  }
+
+  .percorso li:not(.percorso-arrivo) {
+    padding-block: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    flex-direction: row;
+  }
+}
+
+/* Il biglietto della prova */
+.biglietto {
+  padding: 1.5rem;
+  border: 1px solid var(--linea);
+  border-top: 5px solid var(--ambra);
+  border-radius: var(--raggio);
+  background: var(--carta);
+  box-shadow: 0 30px 60px -30px rgba(14, 26, 43, 0.4);
+}
+
+.biglietto-testa {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--linea);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.biglietto .filo {
+  margin-bottom: 1.25rem;
+}
+
+.forte-chiaro {
+  color: var(--inchiostro);
+}
+
+/* La licenza: i computer sullo stesso filo, e cosa c'è dentro */
+.licenza {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  background: var(--carta);
+}
+
+@media (min-width: 900px) {
+  .licenza {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+.postazioni {
+  padding: 1.75rem;
+  background: var(--notte);
+  color: var(--carta);
+}
+
+.postazioni-titolo,
+.licenza-titolo {
+  margin-bottom: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+
+.licenza-dentro {
+  padding: 1.75rem;
+}
+
+.licenza-dentro .elenco-fatti {
+  margin-top: 0;
+}
+
+.licenza-nota {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--linea);
+  font-weight: 700;
+}
+
+
+
+/* ---------- Sicurezza e privacy: lo studio è un confine, Egonex sta fuori ---------- */
+.casa-e-fuori {
+  display: grid;
+  gap: 0;
+  align-items: center;
+}
+
+@media (min-width: 1000px) {
+  .casa-e-fuori {
+    grid-template-columns: minmax(0, 1fr) 19rem;
+  }
+}
+
+.casa {
+  position: relative;
+  padding: 2.5rem 1.5rem 1.5rem;
+  border: 2.5px solid var(--inchiostro);
+  border-radius: 28px;
+  background: var(--carta);
+}
+
+.casa-nome {
+  position: absolute;
+  left: 1.5rem;
+  top: -0.95rem;
+  padding: 0.1rem 0.75rem;
+  border-radius: 999px;
+  background: var(--inchiostro);
+  color: var(--carta);
+  font-size: 0.9375rem;
+  font-weight: 800;
+}
+
+.casa-promesse {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 760px) {
+  .casa-promesse {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.promessa h2 {
+  margin-top: 0.75rem;
+  font-size: 1.4rem;
+}
+
+.promessa p {
+  margin-top: 0.4rem;
+  color: var(--testo-2);
+}
+
+.promessa-numero {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--ambra);
+  color: var(--inchiostro);
+  font-family: var(--ora);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.fuori {
+  display: grid;
+  justify-items: center;
+}
+
+@media (min-width: 1000px) {
+  .fuori {
+    grid-template-columns: 3rem 1fr;
+    align-items: center;
+  }
+}
+
+.fuori-filo {
+  width: 0;
+  height: 2.5rem;
+  border-left: 2.5px dashed #8A97AA;
+}
+
+@media (min-width: 1000px) {
+  .fuori-filo {
+    width: 100%;
+    height: 0;
+    border-left: 0;
+    border-top: 2.5px dashed #8A97AA;
+  }
+}
+
+.promessa-fuori {
+  width: 100%;
+  padding: 1.5rem;
+  border: 2px dashed #8A97AA;
+  border-radius: 20px;
+  background: var(--nebbia);
+}
+
+/* La scheda tecnica, per chi controlla */
+.scheda-tecnica {
+  display: grid;
+  gap: 2rem 3rem;
+}
+
+@media (min-width: 800px) {
+  .scheda-tecnica {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.scheda-tecnica section {
+  padding-top: 1rem;
+  border-top: 2px solid var(--inchiostro);
+}
+
+.scheda-tecnica h3 {
+  font-size: 1.1rem;
+}
+
+.scheda-tecnica .elenco-fatti {
+  margin-top: 0.75rem;
+}
+
+.mai {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--raggio-piccolo);
+  background: var(--nebbia);
+}
+
+.domande-sola {
+  margin-top: 2.5rem;
+}
+
+.collegamenti {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+}
+
+.promessa-numero {
+  width: 1.1rem;
+  height: 1.1rem;
+  box-shadow: 0 0 0 5px var(--ambra-tenue);
+}
+
+.promessa-fuori .promessa-numero {
+  background: var(--carta);
+  border: 3px solid var(--ambra);
+  box-shadow: none;
+}
+
+/* ---------- Contatti: la lettera, con il filo che va a una persona ---------- */
+.lettera-riga {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .lettera-riga {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 4rem;
+  }
+}
+
+.lettera {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.75rem;
+  border: 1px solid var(--linea);
+  border-top: 5px solid var(--ambra);
+  border-radius: var(--raggio);
+  background: var(--carta);
+  box-shadow: 0 30px 60px -30px rgba(14, 26, 43, 0.4);
+}
+
+.lettera-testa {
+  padding-bottom: 0.9rem;
+  border-bottom: 1px dashed var(--linea);
+  font-weight: 700;
+}
+
+.lettera-testa span {
+  margin-right: 0.35rem;
+  color: var(--ambra-testo);
+  font-family: var(--ora);
+}
+
+.campo {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.campo label,
+.campo legend {
+  padding: 0;
+  font-weight: 700;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #8A97AA;
+  border-radius: var(--raggio-piccolo);
+  background: var(--carta);
+  color: var(--inchiostro);
+  font: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--ambra-testo);
+  outline: 3px solid var(--ambra-tenue);
+}
+
+.scelte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.scelte label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.4rem 1rem 0.4rem 0.75rem;
+  border: 1.5px solid var(--linea);
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scelte label:has(input:checked) {
+  border-color: var(--ambra);
+  background: var(--ambra-tenue);
+}
+
+.scelte input,
+.consenso input {
+  accent-color: var(--ambra-testo);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.consenso {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.lettera .bottone {
+  justify-self: start;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lettera-lato h2 {
+  font-size: 1.4rem;
+}
+
+.lettera-lato h2 + * {
+  margin-top: 0.9rem;
+}
+
+.lettera-lato > * + h2 {
+  margin-top: 2.25rem;
+}
+
+.lettera-lato p {
+  color: var(--testo-2);
+}
+
+.indirizzi {
+  display: grid;
+  gap: 0.9rem;
+  padding: 0;
+  list-style: none;
+}
+
+.indirizzi li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.indirizzi li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.5rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--ambra);
+}
+
+.indirizzi span {
+  display: block;
+  color: var(--testo-2);
+  font-size: 0.875rem;
+}
+
+.indirizzi a {
+  font-weight: 700;
+}
+
+/* Il filo esce dalla lettera e va verso chi risponde */
+@media (min-width: 900px) {
+  .lettera::after {
+    content: "";
+    position: absolute;
+    right: -4rem;
+    top: 2.6rem;
+    width: 4rem;
+    height: 2px;
+    background: var(--ambra);
+  }
+
+  .lettera-lato {
+    position: relative;
+    padding-top: 1.75rem;
+  }
+
+  .lettera-lato::before {
+    content: "";
+    position: absolute;
+    left: -0.5rem;
+    top: 2.15rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--ambra);
+    box-shadow: 0 0 0 5px var(--ambra-tenue);
+  }
+
+  .lettera-lato > h2:first-child {
+    padding-left: 1.25rem;
+  }
+}
+
+/* ---------- Pagine legali: un documento con l'indice sul filo ---------- */
+.apertura-legale h1 {
+  margin-top: 0.25rem;
+}
+
+.legale-corpo {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .legale-corpo {
+    grid-template-columns: 16rem minmax(0, 1fr);
+    gap: 4rem;
+  }
+
+  .indice {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+.indice {
+  padding: 1.25rem;
+  border-radius: var(--raggio);
+  background: var(--nebbia);
+}
+
+.indice-titolo {
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.indice ol {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  list-style: none;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.indice ol::before {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--ambra);
+}
+
+.indice li {
+  position: relative;
+}
+
+.indice li::before {
+  content: "";
+  position: absolute;
+  left: -1.2rem;
+  top: 0.35rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 2px solid var(--ambra);
+  border-radius: 50%;
+  background: var(--nebbia);
+}
+
+.indice a {
+  display: block;
+  padding: 0.15rem 0;
+  color: var(--testo-2);
+  text-decoration: none;
+}
+
+.indice a:hover {
+  color: var(--inchiostro);
+  text-decoration: underline;
+}
+
+.legale {
+  max-width: 46rem;
+}
+
+.legale-parte + .legale-parte {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--linea);
+}
+
+.legale h2 {
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.legale p,
+.legale ul,
+.legale ol {
+  margin: 0.9rem 0 0;
+  color: var(--testo-2);
+}
+
+.legale strong {
+  color: var(--inchiostro);
+}
+
+.legale ul,
+.legale ol {
+  display: grid;
+  gap: 0.4rem;
+  padding-left: 1.25rem;
+}
+
+.legale ul li::marker {
+  color: var(--ambra);
+}
+
+.legale a {
+  color: var(--inchiostro);
+  font-weight: 600;
+}
+
+/* ---------- Home: le quattro promesse sul filo ---------- */
+.promesse-riga {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin: 2.5rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 2px solid var(--ambra);
+  list-style: none;
+}
+
+@media (min-width: 700px) {
+  .promesse-riga {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .promesse-riga {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+.promesse-riga li {
+  position: relative;
+  color: var(--testo-2);
+}
+
+.promesse-riga li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(-1.5rem - 0.5rem - 1px);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--ambra);
+  box-shadow: 0 0 0 4px var(--ambra-tenue);
+}
+
+@media (max-width: 699px) {
+  .promesse-riga {
+    padding: 0 0 0 1.75rem;
+    border-top: 0;
+    border-left: 2px solid var(--ambra);
+    margin-left: 0.5rem;
+  }
+
+  .promesse-riga li::before {
+    left: calc(-1.75rem - 0.5rem - 1px);
+    top: 0.25rem;
+  }
+}
+
+.promesse-riga strong {
+  display: block;
+  color: var(--inchiostro);
+  font-size: 1.05rem;
+}
+
+/* ---------- Piani: anteprima del calcolo, centrata ---------- */
+.calcolatore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.calcolatore .postazioni-titolo {
+  margin-bottom: 1rem;
+}
+
+.contatore {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.contatore-tasto {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--carta);
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contatore-tasto:hover {
+  border-color: var(--ambra);
+  color: var(--ambra);
+}
+
+.contatore-tasto:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.contatore-numero {
+  min-width: 3ch;
+  color: var(--ambra);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.contatore-sotto {
+  margin-top: 0.4rem;
+  color: var(--chiaro-su-notte);
+}
+
+/* I computer sul filo: compaiono e spariscono, sempre al centro */
+.schermi {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 3rem;
+  margin: 1.5rem 0;
+}
+
+.schermi::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ambra) 15%, var(--ambra) 85%, transparent);
+}
+
+.schermi-fila {
+  position: relative;
+  display: flex;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schermi-fila li {
+  display: block;
+  padding: 0 0.15rem;
+  background: var(--notte);
+}
+
+.schermi-fila li[hidden] {
+  display: none;
+}
+
+.schermi-fila svg {
+  display: block;
+  width: 1.6rem;
+  height: auto;
+}
+
+@media (min-width: 600px) {
+  .schermi-fila svg {
+    width: 2.1rem;
+  }
+}
+
+.schermi-oltre {
+  position: relative;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--ambra);
+  color: var(--inchiostro);
+  font-family: var(--ora);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.schermi-oltre[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .schermi-fila li.arriva {
+    animation: ricordo-arriva 0.35s ease-out both;
+  }
+}
+
+/* Il prezzo, coperto finché non ci sono le cifre */
+.prezzo-coperto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: var(--chiaro-su-notte);
+  font-weight: 600;
+}
+
+.prezzo-cifra {
+  color: var(--carta);
+  font-family: var(--ora);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+}
+
+.anteprima-nota {
+  margin-top: 0.75rem;
+  color: var(--chiaro-su-notte);
+  font-size: 0.8125rem;
+}
+
+.filo-corto {
+  height: 1.75rem;
+  margin: 1rem auto 0;
+}
+
+@media (max-width: 599px) {
+  .postazioni {
+    padding: 1.75rem 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .schermi-fila svg {
+    width: 2.5rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .schermi {
+    gap: 0.3rem;
+  }
+
+  .schermi-fila {
+    gap: 0.2rem;
+  }
+
+  .schermi-fila li {
+    padding: 0 0.1rem;
+  }
+
+  .schermi-fila svg {
+    width: 1.2rem;
+  }
+}
+
+/* Le immagini con una versione breve per il telefono */
+picture {
+  display: block;
+}
+
+/* Telefoni molto stretti (fino a 379 px): barra e fila dei computer più compatte */
+@media (max-width: 379px) {
+  .barra-riga {
+    gap: 0.25rem;
+  }
+
+  .barra-marca img {
+    height: 1.9rem;
+  }
+
+  .barra .bottone {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.875rem;
+  }
+
+  .schermi-fila {
+    gap: 0.15rem;
+  }
+
+  .schermi-fila li {
+    padding: 0 0.05rem;
+  }
+
+  .schermi-fila svg {
+    width: 0.95rem;
+  }
+}
+
+.prezzo-coperto {
+  white-space: nowrap;
+}
+
+@media (max-width: 379px) {
+  .prezzo-coperto {
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.875rem;
+  }
+
+  .prezzo-cifra {
+    font-size: 1.05rem;
+  }
+}
+
+/* ---------- Contatti: controlli, esito e ripiego email ---------- */
+.facoltativo {
+  color: var(--testo-2);
+  font-weight: 400;
+}
+
+.campo-aiuto {
+  color: var(--testo-2);
+  font-size: 0.875rem;
+}
+
+.campo-errore {
+  color: #A3261B;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.campo-errore[hidden],
+.esito[hidden],
+.ripiego[hidden] {
+  display: none;
+}
+
+.campo [aria-invalid="true"] {
+  border-color: #A3261B;
+}
+
+.consenso input[aria-invalid="true"] {
+  outline: 2px solid #A3261B;
+  outline-offset: 2px;
+}
+
+/* Il campo trappola resta fuori dallo schermo */
+.trappola {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.lettera .bottone:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.esito {
+  padding: 0.85rem 1rem;
+  border-radius: var(--raggio-piccolo);
+  font-weight: 600;
+}
+
+.esito:focus {
+  outline: 3px solid var(--ambra);
+}
+
+.esito-attesa {
+  background: var(--nebbia);
+}
+
+.esito-fatto {
+  border-left: 4px solid var(--ambra);
+  background: var(--ambra-tenue);
+}
+
+.esito-errore {
+  border-left: 4px solid #A3261B;
+  background: #FBEDEB;
+  color: #7A1C14;
+}
+
+.ripiego {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: start;
+  padding: 1rem;
+  border: 1px solid var(--ambra);
+  border-radius: var(--raggio-piccolo);
+  background: var(--ambra-tenue);
+}
+
+.ripiego .bottone {
+  border-color: var(--inchiostro);
+  white-space: normal;
+}
+
+@media (max-width: 599px) {
+  .campo input,
+  .campo textarea {
+    min-height: 52px;
+    font-size: 1.0625rem;
+  }
+
+  .lettera {
+    padding: 1.25rem;
+  }
+}
+
+/* Freccia dei collegamenti: piccola icona, perché i caratteri del sito non hanno «→» */
+.freccia {
+  display: inline-block;
+  width: 0.95em;
+  height: 0.95em;
+  margin-left: 0.15em;
+  vertical-align: -0.12em;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 8h10.5M9 4l4 4-4 4' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 8h10.5M9 4l4 4-4 4' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}

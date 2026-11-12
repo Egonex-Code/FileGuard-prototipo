@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Contatti FileGuard: scrivici, ti risponde una persona</title>
+  <meta name="description" content="Domande su FileGuard, sulla prova o sul prezzo? Scrivi a Egonex: ti risponde una persona del team, in italiano.">
+  <link rel="stylesheet" href="concetto.css?v=5">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+  <a class="salta" href="#contenuto">Vai al contenuto</a>
+  <header class="barra">
+    <div class="largo barra-riga">
+      <a class="barra-marca" href="index.html"><img src="img/logo.png" alt="FileGuard" width="147" height="44"></a>
+      <nav class="barra-menu" aria-label="Menu">
+        <a href="index.html">Home</a>
+        <a href="panoramica.html">Panoramica</a>
+        <a href="funzioni.html">Funzioni</a>
+        <a href="piani.html">Piani</a>
+        <a href="contatto.html" aria-current="page">Contatti</a>
+      </nav>
+      <a class="bottone bottone-ambra" href="piani.html#prova">Prova gratis</a>
+      <details class="menu-telefono">
+        <summary aria-label="Menu"><span class="menu-linee" aria-hidden="true"></span></summary>
+        <nav aria-label="Menu">
+          <a href="index.html">Home</a>
+          <a href="panoramica.html">Panoramica</a>
+          <a href="funzioni.html">Funzioni</a>
+          <a href="piani.html">Piani</a>
+          <a href="contatto.html" aria-current="page">Contatti</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <section class="apertura apertura-pagina fascia-notte">
+      <div class="largo">
+        <div class="apertura-testa">
+          <h1 class="titolo-domanda">
+            <span class="domanda">Scrivici.</span>
+            <span class="risposta">Ti risponde una persona.</span>
+          </h1>
+          <p class="sotto">Una domanda su FileGuard, sulla prova o sul prezzo? Raccontaci il tuo ufficio: ti aiutiamo a capire se fa per te.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- La lettera: il filo parte dal tuo messaggio e arriva a una persona -->
+    <section class="fascia fascia-nebbia">
+      <div class="largo lettera-riga">
+        <form class="lettera" id="modulo-contatto" action="#" method="post">
+          <!-- Invio con contatti.js allo stesso servizio del sito Egonex. Se non riesce, si offre l'email già compilata. -->
+          <p class="lettera-testa"><span>A:</span> una persona di Egonex</p>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100" aria-describedby="nome-errore">
+            <p class="campo-errore" id="nome-errore" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" aria-describedby="email-errore">
+            <p class="campo-errore" id="email-errore" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="studio">Studio o azienda <span class="facoltativo">(facoltativo)</span></label>
+            <input id="studio" name="company" type="text" autocomplete="organization" maxlength="100" aria-describedby="studio-errore">
+            <p class="campo-errore" id="studio-errore" hidden></p>
+          </div>
+          <fieldset class="campo">
+            <legend>Di cosa vuoi parlare</legend>
+            <div class="scelte">
+              <label><input type="radio" name="recipient" value="info" checked> Informazioni generali</label>
+              <label><input type="radio" name="recipient" value="licensing"> Licenze e prezzi</label>
+            </div>
+          </fieldset>
+          <div class="campo">
+            <label for="messaggio">Il tuo messaggio</label>
+            <textarea id="messaggio" name="message" rows="5" required minlength="10" maxlength="2000" aria-describedby="messaggio-aiuto messaggio-errore"></textarea>
+            <p class="campo-aiuto" id="messaggio-aiuto">Da 10 a 2000 caratteri.</p>
+            <p class="campo-errore" id="messaggio-errore" hidden></p>
+          </div>
+          <!-- Campo trappola contro lo spam: le persone non lo vedono, i programmi automatici lo compilano -->
+          <div class="trappola" aria-hidden="true">
+            <label for="website">Non compilare questo campo</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="campo">
+            <label class="consenso"><input id="privacy" type="checkbox" name="privacy" required aria-describedby="privacy-errore"> <span>Accetto l'<a href="privacy.html">informativa privacy</a></span></label>
+            <p class="campo-errore" id="privacy-errore" hidden></p>
+          </div>
+          <button class="bottone bottone-ambra" type="submit">Invia</button>
+          <p class="dettaglio-piccolo">Non serve allegare documenti dei tuoi clienti. Bastano due righe.</p>
+          <div class="esito" id="esito" role="status" aria-live="polite" tabindex="-1" hidden></div>
+          <div class="ripiego" id="ripiego" hidden>
+            <p><strong>Non siamo riusciti a inviare.</strong> Scrivici a <a href="mailto:info@egonex-group.com">info@egonex-group.com</a>: il tuo messaggio è già pronto nell'email.</p>
+            <a class="bottone bottone-bordo" id="apri-email" href="mailto:info@egonex-group.com">Apri l'email già compilata</a>
+          </div>
+        </form>
+
+        <div class="lettera-lato">
+          <h2>Oppure scrivi direttamente</h2>
+          <ul class="indirizzi">
+            <li><span>Informazioni</span><a href="mailto:info@egonex-group.com">info@egonex-group.com</a></li>
+            <li><span>Licenze e prezzi</span><a href="mailto:licensing@egonex-group.com">licensing@egonex-group.com</a></li>
+          </ul>
+          <h2>Chi c'è dietro</h2>
+          <p>FileGuard è fatto in Italia da Egonex S.R.L. Sede legale a Lariano (Roma), sede operativa a Palermo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede">
+    <div class="largo piede-alto">
+      <section>
+        <a class="piede-marca" href="index.html"><img src="img/logo.png" alt="FileGuard" width="147" height="44"></a>
+        <p>FileGuard è un software di Egonex S.R.L.</p>
+        <p>Sede legale: Via Sausset Les Pins 9, 00076 Lariano (RM)</p>
+        <p>Sede operativa: Palermo</p>
+        <p>P.IVA 18155601000</p>
+      </section>
+      <nav aria-label="Pagine">
+        <p class="piede-titolo">Pagine</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="panoramica.html">Panoramica</a></li>
+          <li><a href="funzioni.html">Funzioni</a></li>
+          <li><a href="piani.html">Piani</a></li>
+          <li><a href="contatto.html" aria-current="page">Contatti</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Sicurezza e note legali">
+        <p class="piede-titolo">Sicurezza e note legali</p>
+        <ul>
+          <li><a href="sicurezza-privacy.html">Sicurezza e privacy</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="cookie.html">Cookie</a></li>
+          <li><a href="licenza.html">Condizioni di licenza</a></li>
+        </ul>
+      </nav>
+      <section>
+        <p class="piede-titolo">Contatti</p>
+        <ul>
+          <li><a href="mailto:info@egonex-group.com">info@egonex-group.com</a></li>
+          <li><a href="mailto:licensing@egonex-group.com">licensing@egonex-group.com</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="piede-basso">
+      <div class="largo">
+        <p>© 2026 Egonex S.R.L. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="contatti.js?v=1"></script>
+</body>
+</html>

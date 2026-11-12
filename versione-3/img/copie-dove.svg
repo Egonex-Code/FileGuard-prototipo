@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" aria-labelledby="t">
+  <title id="t">Dal tuo computer il filo porta le copie dei documenti a un altro disco, a un disco di rete o NAS o a una cartella sincronizzata con il cloud.</title>
+  <!-- Concetto «La traccia», Grafico Egonex. Disegno per Funzioni, parte 8. -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <!-- Il computer -->
+    <g transform="translate(24 104)">
+      <rect width="120" height="78" rx="10" fill="#E4ECF8" stroke="#0B2C6B" stroke-width="2.5"/>
+      <path d="M44 78v14M76 78v14M32 94h56" stroke="#0B2C6B" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="38" y="16" width="34" height="42" rx="4" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.2"/>
+      <path d="M46 30h18M46 39h18M46 48h11" stroke="#0B2C6B" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+    <text x="84" y="232" text-anchor="middle" font-size="18" font-weight="700" fill="#16212F">Il tuo computer</text>
+    <!-- I fili -->
+    <path d="M144 140C210 140 210 58 276 58" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M144 143H276" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M144 146C210 146 210 230 276 230" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="144" cy="143" r="8" fill="#F2A23A"/>
+    <!-- Altro disco -->
+    <circle cx="276" cy="58" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
+    <rect x="296" y="34" width="172" height="48" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
+    <text x="382" y="64" text-anchor="middle" font-size="18" fill="#16212F">Un altro disco</text>
+    <!-- Disco di rete o NAS -->
+    <circle cx="276" cy="143" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
+    <rect x="296" y="119" width="172" height="48" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
+    <text x="382" y="149" text-anchor="middle" font-size="17" fill="#16212F">Disco di rete o NAS</text>
+    <!-- Cartella sincronizzata con il cloud -->
+    <circle cx="276" cy="230" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
+    <rect x="296" y="206" width="172" height="48" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
+    <text x="382" y="236" text-anchor="middle" font-size="16" fill="#16212F">Una cartella sul cloud</text>
+  </g>
+</svg>

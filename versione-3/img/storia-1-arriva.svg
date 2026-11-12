@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="320" height="180" role="img" aria-labelledby="t">
+  <title id="t">Il contratto arriva e entra nella cartella Clienti: da lì comincia il suo diario.</title>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <g transform="translate(30 50)"><path d="M0 0h34l12 12v46H0Z" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/><path d="M34 0v12h12M9 22h28M9 31h28M9 40h18" fill="none" stroke="#0B2C6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <path d="M90 80H180" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="180" cy="80" r="8" fill="#F2A23A"/>
+    <path d="M200 50h30l10 10h50v62H200Z" fill="#E4ECF8" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/>
+    <text x="245" y="150" text-anchor="middle" font-size="17" font-weight="700" fill="#16212F">Clienti</text>
+    <text x="53" y="150" text-anchor="middle" font-size="16" fill="#4A5668">Contratto</text>
+    <text x="135" y="66" text-anchor="middle" font-size="15" font-family="Consolas, monospace" fill="#8A5200">lun 09:12</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 270" width="300" height="270" role="img" aria-labelledby="t">
+  <title id="t">Dal tuo computer il filo porta le copie a un altro disco, a un disco di rete o NAS o a una cartella sincronizzata con il cloud.</title>
+  <!-- Versione breve per il telefono. -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="4" y="8" width="80" height="54" rx="8" fill="#E4ECF8" stroke="#0B2C6B" stroke-width="2.5"/>
+    <path d="M32 62v10M56 62v10M24 74h40" stroke="#0B2C6B" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="100" y="44" font-size="19" font-weight="700" fill="#16212F">Il tuo computer</text>
+    <path d="M24 80V235" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="24" cy="127" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
+    <rect x="48" y="106" width="248" height="42" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
+    <text x="64" y="133" font-size="18" fill="#16212F">Un altro disco</text>
+    <circle cx="24" cy="181" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
+    <rect x="48" y="160" width="248" height="42" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
+    <text x="64" y="187" font-size="18" fill="#16212F">Disco di rete o NAS</text>
+    <circle cx="24" cy="235" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
+    <rect x="48" y="214" width="248" height="42" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
+    <text x="64" y="241" font-size="18" fill="#16212F">Una cartella sul cloud</text>
+  </g>
+</svg>

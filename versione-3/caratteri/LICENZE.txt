@@ -1,0 +1,8 @@
+Caratteri usati dal sito FileGuard (concetto «La traccia»)
+
+Plus Jakarta Sans - Copyright The Plus Jakarta Sans Project Authors.
+JetBrains Mono - Copyright The JetBrains Mono Project Authors.
+
+Entrambi sono distribuiti con la SIL Open Font License, versione 1.1:
+https://openfontlicense.org
+I file woff2 sono quelli pubblicati da Google Fonts (sottoinsieme latino), non modificati.
