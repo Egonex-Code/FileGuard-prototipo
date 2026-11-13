@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 230" width="300" height="230" role="img" aria-labelledby="t">
-  <title id="t">Due versioni del contratto lungo il filo: martedì e mercoledì. È scelta quella di martedì, con il pulsante Ripristina.</title>
+  <title id="t">Due versioni del contratto lungo il filo: martedì e mercoledì. Quella di martedì torna accanto all'originale, con un altro nome.</title>
   <!-- Versione breve per il telefono. Dati di prova. -->
   <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
     <line x1="20" x2="280" y1="120" y2="120" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
@@ -18,7 +18,6 @@
     <circle cx="220" cy="120" r="9" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
     <text x="220" y="152" text-anchor="middle" font-size="20" font-weight="600" fill="#4A5668">v2</text>
     <text x="220" y="174" text-anchor="middle" font-family="Consolas, monospace" font-size="18" fill="#8A5200">mer 11:10</text>
-    <rect x="14" y="188" width="132" height="38" rx="19" fill="#0B2C6B"/>
-    <text x="80" y="214" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">Ripristina</text>
+    <text x="14" y="214" font-size="17" fill="#16212F">Torna accanto, con un altro nome</text>
   </g>
 </svg>

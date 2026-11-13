@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Funzioni di FileGuard: diario dei documenti, versioni, ricerca per persona</title>
   <meta name="description" content="Cosa è successo a un documento, da quale computer, com'era prima, cosa conservi su un cliente. Le funzioni di FileGuard, una per ogni domanda d'ufficio.">
-  <link rel="stylesheet" href="concetto.css?v=5">
+  <link rel="stylesheet" href="concetto.css?v=6">
   <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
@@ -73,9 +73,9 @@
             <ul class="dettagli">
               <li>creato, modificato, rinominato, spostato, eliminato</li>
               <li>giorno e ora</li>
-              <li>nome del computer</li>
+              <li>il computer da cui è partita l'operazione, quando si riconosce</li>
               <li>ricerca nel diario</li>
-              <li>esportazione in Excel</li>
+              <li>esportazione in Excel e in PDF</li>
             </ul>
           </div>
           <figure class="prova momento-figura">
@@ -95,15 +95,15 @@
           <div class="momento-testo">
             <p class="voce voce-grande"><span class="virgoletta" aria-hidden="true">«</span>Ho salvato sopra la versione buona!<span class="virgoletta" aria-hidden="true">»</span></p>
             <h2>Ti riporta indietro</h2>
-            <p class="momento-righe">Apri le versioni del documento, ne confronti due e rimetti quella giusta. Il pomeriggio è salvo.</p>
+            <p class="momento-righe">Apri le versioni del documento, ne confronti due e riprendi quella giusta. Il pomeriggio è salvo.</p>
             <ul class="dettagli">
               <li>«Vedi le versioni»</li>
               <li>confronto tra due versioni</li>
-              <li>«Ripristina versione»</li>
+              <li>la versione scelta torna nella stessa cartella, con un nome diverso: il documento di adesso non viene toccato</li>
             </ul>
           </div>
           <figure class="momento-figura">
-            <picture><source media="(max-width: 599px)" srcset="img/traccia-com-era-breve.svg" width="300" height="230"><img class="figura-carta figura-respiro" src="img/traccia-com-era.svg" width="480" height="250" alt="Le versioni del contratto lungo il filo; è scelta quella di martedì, con il pulsante Ripristina." loading="lazy"></picture>
+            <picture><source media="(max-width: 599px)" srcset="img/traccia-com-era-breve.svg" width="300" height="230"><img class="figura-carta figura-respiro" src="img/traccia-com-era.svg" width="480" height="250" alt="Le versioni del contratto lungo il filo; quella di martedì torna accanto all'originale, con un altro nome." loading="lazy"></picture>
           </figure>
         </div>
       </section>
@@ -115,10 +115,10 @@
           <div class="momento-testo">
             <p class="voce voce-grande"><span class="virgoletta" aria-hidden="true">«</span>Un cliente vuole sapere cosa teniamo su di lui.<span class="virgoletta" aria-hidden="true">»</span></p>
             <h2>Trova chi c'è nei documenti</h2>
-            <p class="momento-righe">Scrivi un nome, una ditta o un codice fiscale: FileGuard ti mostra i documenti che lo riguardano. Per ogni persona riconosciuta c'è una scheda.</p>
+            <p class="momento-righe">Scrivi il nome di una persona o il suo codice fiscale: FileGuard ti mostra i documenti che la riguardano, e per ognuna c'è una scheda. Le ditte le trovi scrivendo il loro nome.</p>
             <ul class="dettagli">
-              <li>le persone sono riconosciute dal codice fiscale scritto nei documenti</li>
-              <li>risultati divisi in «sicuri» e «da controllare»</li>
+              <li>«sicuri»: i documenti con il codice fiscale della persona</li>
+              <li>«da controllare»: i documenti dove compare solo il nome</li>
               <li>ricerca per periodo <span class="presto">presto</span></li>
               <li>tutto resta sul tuo computer</li>
             </ul>
@@ -129,6 +129,27 @@
               <img src="img/screen-ricerca.png" width="800" height="440" alt="La ricerca di FileGuard: i documenti che riguardano una persona, divisi in sicuri e da controllare." loading="lazy">
             </picture>
             <figcaption>La ricerca, dal programma, con dati di prova.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 3b: nuova funzione, lettura di scansioni e foto (13/11). Il disegno lo fa il Grafico. -->
+      <section class="momento" id="p3b">
+        <div class="largo momento-riga">
+          <p class="momento-ora">11:45</p>
+          <div class="momento-testo">
+            <p class="voce voce-grande"><span class="virgoletta" aria-hidden="true">«</span>La carta d'identità era una foto. La trova lo stesso?<span class="virgoletta" aria-hidden="true">»</span></p>
+            <h2>Legge anche la carta</h2>
+            <p class="momento-righe">Sì. FileGuard legge anche i documenti scansionati e le foto: il testo lo riconosce Windows, sul tuo computer, senza internet. Così la ricerca trova anche quello che è nato su carta.</p>
+            <ul class="dettagli">
+              <li>documenti scansionati e foto</li>
+              <li>il testo lo riconosce Windows, sul computer</li>
+              <li>niente passa da internet</li>
+            </ul>
+          </div>
+          <figure class="momento-figura">
+            <picture><source media="(max-width: 599px)" srcset="img/legge-carta-breve.svg" width="300" height="380"><img class="figura-carta figura-respiro" src="img/legge-carta.svg" width="480" height="270" alt="La foto di una carta di prova passa dal tuo computer, senza internet: il testo diventa leggibile, Rossi Mario, e la ricerca la trova." loading="lazy"></picture>
+            <figcaption>Esempio con dati di prova.</figcaption>
           </figure>
         </div>
       </section>
@@ -171,11 +192,12 @@
             <p class="forte">Non blocca nessuno.<span>Il lavoro continua, la decisione resta tua.</span></p>
             <ul class="dettagli">
               <li>avvisi nel programma, per esempio «Cancellato un file o una cartella protetta» e «Modificato un file protetto»</li>
-              <li>avvisi via email divisi per tipo, senza nomi di file</li>
+              <li>ti avvisa anche se il backup non ha più spazio, o se la cartella di backup o le cartelle seguite non si raggiungono</li>
+              <li>via email: una per tipo di avviso, con testo fisso e il nome dello studio, mai nomi di file</li>
             </ul>
           </div>
           <figure class="momento-figura">
-            <img class="figura-carta" src="img/avviso-email.svg" width="600" height="350" alt="Un avviso email di FileGuard: cancellato un file o una cartella protetta. Contiene solo frasi fisse, il nome dello studio e i destinatari." loading="lazy">
+            <img class="figura-carta" src="img/avviso-email.svg" width="600" height="350" alt="Un avviso email di FileGuard: cancellato un file o una cartella protetta. Contiene solo un testo fisso e il nome dello studio." loading="lazy">
           </figure>
         </div>
       </section>
@@ -209,10 +231,20 @@
           <p class="momento-ora">16:20</p>
           <div class="momento-testo">
             <p class="voce voce-grande"><span class="virgoletta" aria-hidden="true">«</span>Cosa ci manca ancora?<span class="virgoletta" aria-hidden="true">»</span></p>
-            <h2>Ti ricorda cosa fare</h2>
-            <p class="momento-righe">Nella sezione Conformità trovi «Da fare» e le tue «Cartelle protette»: un posto unico per vedere cosa resta da sistemare.</p>
-            <p class="dettaglio-piccolo"><mark>[DA CONFERMARE CON DEV: cosa compare esattamente in «Da fare»]</mark></p>
+            <h2>Ti dice cosa sistemare, e lo sistemi</h2>
+            <p class="momento-righe">In «Da fare» trovi quello che non torna nelle cartelle protette: un documento che manca, uno cancellato, uno modificato. Premi «Rimetti a posto» e il documento torna dov'era, con lo stesso nome.</p>
+            <p class="forte">«Rimetti a posto».<span>Un tasto, e il documento è di nuovo al suo posto.</span></p>
+            <ul class="dettagli">
+              <li>«Manca», «Cancellato», «Modificato»: le voci di «Da fare»</li>
+              <li>«Rimetti a posto» chiede una conferma, e quello che fai resta scritto nel diario</li>
+              <li>se era voluto, scegli «Va bene così»</li>
+              <li>per rimettere a posto serve una copia di backup</li>
+            </ul>
           </div>
+          <figure class="momento-figura">
+            <picture><source media="(max-width: 599px)" srcset="img/da-fare-breve.svg" width="300" height="330"><img class="figura-carta figura-respiro" src="img/da-fare.svg" width="480" height="280" alt="In Da fare c'è la riga: Cancellato, contratto.pdf, con il pulsante Rimetti a posto. Il documento torna nella cartella dov'era, con lo stesso nome." loading="lazy"></picture>
+            <figcaption>Esempio con dati di prova.</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -225,11 +257,8 @@
             <h2>Tiene le copie dove vuoi tu</h2>
             <p class="momento-righe">Le copie dei documenti vanno dove scegli tu: un altro disco, una chiavetta, un disco di rete o un NAS, oppure una cartella sincronizzata con il tuo servizio cloud. Se vuoi, anche in due posti.</p>
             <ul class="dettagli">
-              <li>«Prova la connessione» per i dischi di rete</li>
-              <li>scegli quanti giorni e quante versioni tenere</li>
-              <li>la pulizia periodica lascia una copia al giorno, poi una a settimana</li>
-              <li>una copia ogni tanti minuti, di cui resta l'ultima</li>
-              <li>si può scegliere di non tenere copie</li>
+              <li>le copie partono subito, ogni tot minuti, oppure una volta al giorno</li>
+              <li>tiene tutte le copie della settimana, poi una al giorno, poi una a settimana, fino a un anno</li>
             </ul>
           </div>
           <figure class="momento-figura">
@@ -250,7 +279,6 @@
             <ul class="dettagli">
               <li>8 lingue</li>
               <li>controlla da solo gli aggiornamenti e ti avvisa quando c'è una versione nuova</li>
-              <li>manuale e guida dentro il programma</li>
               <li>Windows 10 (dalla versione 1809, ottobre 2018) e Windows 11</li>
             </ul>
           </div>
@@ -273,7 +301,7 @@
       <div class="largo">
         <span class="filo-fine" aria-hidden="true"></span>
         <h2>Provalo sui tuoi documenti.</h2>
-        <p class="sotto">Lo installi con una procedura guidata, scegli le cartelle e da quel momento FileGuard sa cosa succede.</p>
+        <p class="sotto">Lo installi con una procedura guidata. Al primo avvio una guida ti suggerisce le cartelle da seguire, e da quel momento FileGuard sa cosa succede.</p>
         <div class="azioni">
           <a class="bottone bottone-ambra" href="piani.html#prova">Prova gratis</a>
           <a class="bottone bottone-bordo" href="piani.html">Piani</a>
