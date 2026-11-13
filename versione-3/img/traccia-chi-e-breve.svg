@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 440" width="320" height="440" role="img" aria-labelledby="t">
+  <title id="t">I documenti dello studio, con nomi qualsiasi: FileGuard riconosce Bianchi Marco, 9 documenti sicuri e 3 da controllare, e la ditta Plurimax srl, 12 documenti sicuri, e mette insieme i loro documenti. Il modello di lettera non riguarda nessuno.</title>
+  <!-- Versione breve per il telefono. Dati di prova. Pallino pieno = sicuro, vuoto = da controllare. -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="4" y="4" width="312" height="70" rx="14" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
+    <text x="22" y="37" font-size="19" font-weight="700" fill="#16212F">Bianchi Marco</text>
+    <text x="22" y="61" font-size="16" fill="#4A5668">9 sicuri · 3 da controllare</text>
+    <path d="M34 80V208" stroke="#F2A23A" stroke-width="3.2" stroke-linecap="round"/>
+    <circle cx="34" cy="100" r="7" fill="#F2A23A"/>
+    <text x="54" y="106" font-size="17" fill="#16212F">Pratica Bianchi.pdf</text>
+    <circle cx="34" cy="136" r="7" fill="#F2A23A"/>
+    <text x="54" y="142" font-size="17" fill="#16212F">F24 marzo.pdf</text>
+    <circle cx="34" cy="172" r="7" fill="#F2A23A"/>
+    <text x="54" y="178" font-size="17" fill="#16212F">contratto def2.docx</text>
+    <circle cx="34" cy="208" r="7" fill="#FFFFFF" stroke="#F2A23A" stroke-width="3.2"/>
+    <text x="54" y="214" font-size="17" fill="#16212F">appunti telefonata.txt</text>
+    <rect x="4" y="246" width="312" height="52" rx="14" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
+    <text x="22" y="279" font-size="19" font-weight="700" fill="#16212F">Plurimax srl</text>
+    <!-- Da verificare prima della pubblicazione: ricerca ditte per partita IVA presente? Se no, togliere il numero. -->
+    <text x="298" y="279" text-anchor="end" font-size="16" fill="#4A5668">12 sicuri</text>
+    <path d="M34 304V360" stroke="#F2A23A" stroke-width="3.2" stroke-linecap="round"/>
+    <circle cx="34" cy="324" r="7" fill="#F2A23A"/>
+    <text x="54" y="330" font-size="17" fill="#16212F">doc00317.pdf</text>
+    <circle cx="34" cy="360" r="7" fill="#F2A23A"/>
+    <text x="54" y="366" font-size="17" fill="#16212F">contratto def2.docx</text>
+    <g transform="translate(14 400) scale(0.52)" opacity="0.45"><path d="M0 0h34l12 12v46H0Z" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/><path d="M34 0v12h12M9 22h28M9 31h28M9 40h18" fill="none" stroke="#0B2C6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="48" y="422" font-size="17" fill="#8A97AA">Modello lettera.docx: nessuno</text>
+  </g>
+</svg>

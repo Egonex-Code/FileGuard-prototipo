@@ -1243,14 +1243,20 @@ mark {
 .orologio {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.5rem;
   margin-top: 2.5rem;
 }
 
+@media (min-width: 700px) and (max-width: 1099px) {
+  .orologio {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 1100px) {
   .orologio {
-    grid-template-columns: repeat(9, minmax(0, 1fr));
+    grid-template-columns: repeat(10, minmax(0, 1fr));
   }
 
   .orologio::before {
@@ -2519,30 +2525,6 @@ mark {
   }
 }
 
-/* Il prezzo, coperto finché non ci sono le cifre */
-.prezzo-coperto {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.6rem 1.25rem;
-  border: 1px dashed rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  color: var(--chiaro-su-notte);
-  font-weight: 600;
-}
-
-.prezzo-cifra {
-  color: var(--carta);
-  font-family: var(--ora);
-  font-size: 1.25rem;
-  letter-spacing: 0.1em;
-}
-
-.anteprima-nota {
-  margin-top: 0.75rem;
-  color: var(--chiaro-su-notte);
-  font-size: 0.8125rem;
-}
 
 .filo-corto {
   height: 1.75rem;
@@ -2612,21 +2594,7 @@ picture {
   }
 }
 
-.prezzo-coperto {
-  white-space: nowrap;
-}
 
-@media (max-width: 379px) {
-  .prezzo-coperto {
-    gap: 0.5rem;
-    padding: 0.5rem 0.9rem;
-    font-size: 0.875rem;
-  }
-
-  .prezzo-cifra {
-    font-size: 1.05rem;
-  }
-}
 
 /* ---------- Contatti: controlli, esito e ripiego email ---------- */
 .facoltativo {
@@ -2784,3 +2752,383 @@ picture {
   }
 }
 
+
+/* ---------- Piani: il prezzo vero, calcolato sulle postazioni ---------- */
+.prezzo {
+  display: grid;
+  justify-items: center;
+}
+
+.prezzo-totale {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.prezzo-totale[hidden],
+.prezzo-oltre[hidden] {
+  display: none;
+}
+
+.prezzo-cifra {
+  color: var(--carta);
+  font-size: clamp(2.5rem, 7vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.prezzo-periodo {
+  color: var(--chiaro-su-notte);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.prezzo-oltre {
+  color: var(--carta);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.prezzo-oltre a {
+  color: var(--ambra);
+}
+
+.prezzo-dettaglio {
+  margin-top: 0.6rem;
+  color: var(--chiaro-su-notte);
+  font-size: 0.9375rem;
+}
+
+/* Testo letto solo dai lettori di schermo */
+.solo-lettori {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.prezzo-aggiunta {
+  margin-top: 0.35rem;
+  color: var(--chiaro-su-notte);
+  font-size: 0.875rem;
+}
+
+.prezzo-iva {
+  margin-top: 0.25rem;
+  color: var(--chiaro-su-notte);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.prezzo-iva[hidden] {
+  display: none;
+}
+
+/* ---------- Domande frequenti: gruppi sul filo dell'indice ---------- */
+.elenco-gruppi {
+  max-width: 50rem;
+}
+
+.gruppo-domande + .gruppo-domande {
+  margin-top: 3rem;
+}
+
+.gruppo-domande h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+}
+
+.domande details > ul {
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1.25rem;
+  color: var(--testo-2);
+}
+
+.domande details > ul li::marker {
+  color: var(--ambra);
+}
+
+.domande details > p + p,
+.domande details > ul + p {
+  margin-top: -0.5rem;
+}
+
+/* ---------- Per i consulenti privacy: scheda tecnica umana ---------- */
+.schema-confine {
+  max-width: 34rem;
+  margin: 0 0 2.5rem;
+  padding: 1.25rem;
+  border-radius: var(--raggio);
+  background: var(--ambra-tenue);
+}
+
+.schema-confine img {
+  display: block;
+  width: 100%;
+}
+
+.legale .in-evidenza {
+  padding-left: 1rem;
+  border-left: 3px solid var(--ambra);
+  color: var(--inchiostro);
+  font-weight: 700;
+}
+
+/* Blocco che si può togliere: bordo tratteggiato, come le cose «presto» */
+.legale-parte.da-definire {
+  padding: 1.5rem;
+  border: 2px dashed #8A97AA;
+  border-radius: var(--raggio);
+  background: var(--nebbia);
+}
+
+.legale-parte + .legale-parte.da-definire {
+  border-top: 2px dashed #8A97AA;
+}
+
+.per-il-dettaglio {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linea);
+}
+
+.per-il-dettaglio .collegamenti {
+  margin-top: 0.75rem;
+}
+
+/* Aperture delle pagine di consultazione: titolo un po' più contenuto */
+.apertura-legale h1 {
+  max-width: 48rem;
+  font-size: clamp(2rem, 4.6vw, 3.25rem);
+  line-height: 1.1;
+}
+
+.legale .per-il-dettaglio .collegamenti {
+  display: flex;
+  padding-left: 0;
+}
+
+/* ---------- Home: la quarta frase, larga quanto il blocco ---------- */
+.mosaico .tessera-larga {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 900px) {
+  .tessera-larga {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .tessera-larga .tessera-figura {
+    flex: 1.35;
+    padding: 1.75rem;
+  }
+
+  .tessera-larga .tessera-testo {
+    flex: 1;
+    align-self: center;
+    padding: 2rem 2.25rem;
+  }
+}
+
+.tessera-larga .tessera-figura picture {
+  width: 100%;
+}
+
+.voce-chiusa {
+  margin-top: 1rem;
+  color: var(--inchiostro);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.tessera-testo .voce-chiusa {
+  color: var(--inchiostro);
+}
+
+/* ---------- Home sul computer: apertura a due colonne, tutta visibile senza scorrere (13/11) ---------- */
+@media (min-width: 1024px) {
+  .apertura:has(.apertura-griglia) {
+    padding-block: 2.75rem 3.25rem;
+  }
+
+  .apertura-griglia {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .apertura-griglia .apertura-testa {
+    max-width: none;
+    margin: 0;
+    text-align: left;
+  }
+
+  .apertura-griglia .apertura-testa .sotto {
+    margin-inline: 0;
+  }
+
+  .apertura-griglia .apertura-testa .azioni {
+    justify-content: flex-start;
+  }
+
+  .apertura-griglia .titolo-domanda .domanda {
+    font-size: clamp(1.6rem, 2.3vw, 2.25rem);
+  }
+
+  .apertura-griglia .titolo-domanda .risposta {
+    font-size: clamp(2.9rem, 4.6vw, 4.5rem);
+  }
+
+  /* Il filo esce dai pulsanti e entra di lato nel video */
+  .apertura-griglia > .filo-discesa {
+    display: none;
+  }
+
+  .apertura-griglia .video {
+    max-width: none;
+    margin: 0;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+  }
+
+  .apertura-griglia .video::before {
+    left: -0.55rem;
+    top: 58%;
+    transform: translateY(-50%);
+  }
+
+  .apertura-griglia .video::after {
+    content: "";
+    position: absolute;
+    right: calc(100% + 0.55rem);
+    top: 58%;
+    width: 3rem;
+    height: 2px;
+    background: var(--ambra);
+  }
+
+  .apertura-griglia .video .ricordo:nth-child(-n+2) {
+    display: none;
+  }
+
+  .apertura-griglia .video-tondo {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .apertura-griglia .video-tondo svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .apertura-griglia .video-scritta strong {
+    font-size: 1.15rem;
+  }
+
+  .apertura-griglia .memoria-nota {
+    right: -0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .apertura-griglia .video {
+    grid-template-columns: 10.5rem minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .apertura-griglia .video-play {
+    max-width: 10.5rem;
+  }
+}
+
+/* Computer piccoli (1024-1199 px): più spazio al video, testo un po' più stretto */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .apertura-griglia {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 2.75rem;
+  }
+
+  .apertura-griglia .video {
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .apertura-griglia .video-play {
+    max-width: 8.5rem;
+  }
+
+  .apertura-griglia .video::after {
+    width: 2.25rem;
+  }
+
+  .apertura-griglia .titolo-domanda .risposta {
+    font-size: 2.75rem;
+  }
+}
+
+/* ---------- A capo ordinati (13/11): niente parole sole sull'ultima riga ---------- */
+/* I titoli usano tutta la colonna e si dividono in righe bilanciate;
+   i paragrafi restano intorno ai 65 caratteri per riga. Dove il browser non lo supporta, non cambia niente. */
+h1,
+h2,
+h3,
+.voce,
+.titolo-domanda .domanda,
+.titolo-domanda .risposta,
+.racconto-fine,
+.forte {
+  text-wrap: balance;
+}
+
+p,
+li,
+dd,
+summary,
+figcaption {
+  text-wrap: pretty;
+}
+
+.testa {
+  max-width: none;
+}
+
+.sotto,
+.testa .sotto,
+.momento-righe {
+  max-width: 40rem;
+}
+
+/* Testi brevi in colonne strette: righe bilanciate invece di una parola sola in fondo */
+.settore p,
+.griglia-settori span,
+.domande summary,
+.indice a,
+.elenco-fatti li,
+.legale li,
+.promessa p,
+.racconto-fileguard,
+.voce-risposta {
+  text-wrap: balance;
+}
+
+.griglia-settori span {
+  display: block;
+  text-wrap: balance;
+}
+
+.dettagli li {
+  text-wrap: balance;
+}
+
+/* Le righe introduttive sono brevi: righe pari, senza spezzature strane */
+.sotto {
+  text-wrap: balance;
+}

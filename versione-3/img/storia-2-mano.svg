@@ -1,11 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="320" height="180" role="img" aria-labelledby="t">
   <title id="t">Il contratto passa da tre computer: Segreteria, Studio e Archivio. Il filo li unisce.</title>
   <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
-    <path d="M60 60C110 60 120 90 160 90M260 60C210 60 200 90 160 90M160 90V128" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M98 45C118 45 112 93 125 93M222 45C202 45 208 93 195 93M195 93C222 100 222 155 206 155" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
     <g transform="translate(137 64)"><path d="M0 0h34l12 12v46H0Z" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/><path d="M34 0v12h12M9 22h28M9 31h28M9 40h18" fill="none" stroke="#0B2C6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
     <g fill="#E4ECF8" stroke="#0B2C6B" stroke-width="2.5"><rect x="22" y="24" width="64" height="42" rx="6"/><rect x="234" y="24" width="64" height="42" rx="6"/><rect x="128" y="132" width="64" height="40" rx="6"/></g>
     <text x="54" y="92" text-anchor="middle" font-size="15" fill="#16212F">Segreteria</text>
     <text x="266" y="92" text-anchor="middle" font-size="15" fill="#16212F">Studio</text>
-    <text x="236" y="160" font-size="15" fill="#16212F">Archivio</text>
+    <text x="220" y="161" font-size="15" fill="#16212F">Archivio</text>
+    <g fill="#F2A23A"><circle cx="98" cy="45" r="7"/><circle cx="206" cy="155" r="7"/></g>
+    <g fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"><circle cx="222" cy="45" r="7"/><circle cx="125" cy="93" r="7"/><circle cx="195" cy="93" r="7"/></g>
   </g>
 </svg>

@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Prezzi FileGuard: paghi per i computer che usi</title>
   <meta name="description" content="Una sola licenza con tutte le funzioni: il prezzo di FileGuard dipende solo da quanti computer usi. Hai domande? Ti risponde una persona.">
-  <link rel="stylesheet" href="concetto.css?v=7">
+  <link rel="stylesheet" href="concetto.css?v=16">
   <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
@@ -53,11 +53,11 @@
       <div class="largo">
         <div class="licenza">
           <div class="postazioni calcolatore">
-            <!-- [DA DECIDERE: strumento per calcolare il prezzo, da integrare nel sito]. Questa è un'anteprima senza cifre. -->
+            <!-- Prezzi reali (decisione 13/11): 450 € l'anno il primo computer, 60 € l'anno ogni computer in più. Il calcolo è in piani.js. -->
             <p class="postazioni-titolo" id="quante">Quante postazioni?</p>
             <div class="contatore" role="group" aria-labelledby="quante">
               <button class="contatore-tasto" type="button" data-passo="-1" aria-label="Una postazione in meno">−</button>
-              <output class="contatore-numero" id="postazioni-numero" aria-live="polite">3</output>
+              <output class="contatore-numero" id="postazioni-numero">3</output>
               <button class="contatore-tasto" type="button" data-passo="1" aria-label="Una postazione in più">+</button>
             </div>
             <p class="contatore-sotto" id="postazioni-parola">computer con FileGuard</p>
@@ -76,8 +76,13 @@
               </ul>
               <span class="schermi-oltre" hidden>10+</span>
             </div>
-            <p class="prezzo-coperto"><span class="prezzo-cifra" aria-hidden="true">€ ···</span><span>Il prezzo appare qui</span></p>
-            <p class="anteprima-nota">Anteprima: lo strumento definitivo arriverà con i prezzi.</p>
+            <div class="prezzo" aria-live="polite">
+              <p class="prezzo-totale"><span class="solo-lettori" id="prezzo-per">Per 3 computer: </span><span class="prezzo-cifra" id="prezzo-cifra">570 €</span> <span class="prezzo-periodo">all'anno</span></p>
+              <p class="prezzo-iva" id="prezzo-iva">IVA esclusa</p>
+              <p class="prezzo-oltre" id="prezzo-oltre" hidden>Più di 20 computer? <a href="contatto.html">Chiedici informazioni.</a></p>
+            </div>
+            <p class="prezzo-dettaglio">450 € il primo computer + 60 € per ogni altro, all'anno, IVA esclusa</p>
+            <p class="prezzo-aggiunta">Aggiungi un computer quando vuoi: 60 € l'anno.</p>
             <span class="filo-discesa filo-corto" aria-hidden="true"></span>
             <a class="bottone bottone-ambra" href="contatto.html">Chiedici informazioni</a>
           </div>
@@ -112,16 +117,16 @@
             <p>Ti arriva via email una lettera con il link per scaricarlo. Lo installi con una procedura guidata.</p>
           </details>
           <details>
-            <summary>Quanti computer comprende il prezzo?</summary>
-            <p><mark>[DA DECIDERE: quanti computer copre la licenza minima]</mark></p>
+            <summary>Quanto costa?</summary>
+            <p>450 € l'anno per il primo computer, 60 € l'anno per ogni computer in più, IVA esclusa. Con 5 computer, 690 €; con 10, 990 €.</p>
           </details>
           <details>
             <summary>Posso aggiungere computer più avanti?</summary>
-            <p><mark>[DA DECIDERE: come si fa, e come cambia il prezzo]</mark></p>
+            <p>Sì, quando vuoi: ogni computer in più costa 60 € l'anno, IVA esclusa, e non devi ricomprare niente.</p>
           </details>
           <details>
             <summary>Per quanto vale la licenza, e come si rinnova?</summary>
-            <p><mark>[DA DECIDERE: durata e rinnovo]</mark></p>
+            <p>La licenza vale un anno. <mark>[DA DECIDERE: come si rinnova]</mark></p>
           </details>
           <details>
             <summary>Come si paga? Ricevo la fattura elettronica?</summary>
@@ -165,6 +170,8 @@
           <li><a href="funzioni.html">Funzioni</a></li>
           <li><a href="piani.html" aria-current="page">Piani</a></li>
           <li><a href="contatto.html">Contatti</a></li>
+          <li><a href="domande.html">Domande frequenti</a></li>
+          <li><a href="consulenti-privacy.html">Per i consulenti privacy</a></li>
         </ul>
       </nav>
       <nav aria-label="Sicurezza e note legali">
@@ -190,6 +197,6 @@
       </div>
     </div>
   </footer>
-  <script src="piani.js?v=1"></script>
+  <script src="piani.js?v=4"></script>
 </body>
 </html>

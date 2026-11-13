@@ -11,7 +11,7 @@
     <text x="48" y="128" font-size="15" font-family="Consolas, monospace" fill="#8A5200">quando: oggi 15:28</text>
     <rect x="48" y="140" width="176" height="40" rx="20" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
     <text x="136" y="166" text-anchor="middle" font-size="17" font-weight="700" fill="#0B2C6B">Rimetti a posto</text>
-    <path d="M136 180V214" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M136 186V214" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
     <circle cx="136" cy="214" r="7" fill="#F2A23A"/>
     <path d="M4 226h36l10 10h86v88H4Z" fill="#E4ECF8" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/>
     <g transform="translate(24 250) scale(0.8)"><path d="M0 0h34l12 12v46H0Z" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/><path d="M34 0v12h12M9 22h28M9 31h28M9 40h18" fill="none" stroke="#0B2C6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>

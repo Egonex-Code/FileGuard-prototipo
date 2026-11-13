@@ -28,6 +28,7 @@ const ATTESA_MASSIMA = 15000; // millisecondi
   const esito = document.getElementById('esito');
   const ripiego = document.getElementById('ripiego');
   const apriEmail = document.getElementById('apri-email');
+  const indirizzoRipiego = document.getElementById('ripiego-indirizzo');
 
   const formaEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -166,6 +167,9 @@ const ATTESA_MASSIMA = 15000; // millisecondi
       // Origine non ammessa, rete assente, servizio in errore: si passa all'email
       esito.hidden = true;
       apriEmail.href = emailGiaCompilata(dati);
+      // L'indirizzo scritto nel messaggio è lo stesso dell'email che si apre
+      indirizzoRipiego.textContent = EMAIL_RIPIEGO[dati.recipient];
+      indirizzoRipiego.href = 'mailto:' + EMAIL_RIPIEGO[dati.recipient];
       ripiego.hidden = false;
       apriEmail.focus();
     } finally {

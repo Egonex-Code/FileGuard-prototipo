@@ -4,11 +4,11 @@
     <path d="M20 40h30l10 10h50v70H20Z" fill="#FFFFFF" stroke="#8A97AA" stroke-width="2.5" stroke-linejoin="round"/>
     <rect x="46" y="62" width="34" height="44" rx="4" fill="none" stroke="#8A97AA" stroke-width="2" stroke-dasharray="5 5"/>
     <text x="65" y="146" text-anchor="middle" font-size="15" fill="#4A5668">Clienti</text>
-    <path d="M110 84C160 84 160 104 196 104" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="110" cy="84" r="7" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
+    <path d="M122 84C152 84 156 104 184 104" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="122" cy="84" r="7" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
     <path d="M196 54h30l10 10h64v76H196Z" fill="#E4ECF8" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/>
     <g transform="translate(232 72) scale(0.9)"><path d="M0 0h34l12 12v46H0Z" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/><path d="M34 0v12h12M9 22h28M9 31h28M9 40h18" fill="none" stroke="#0B2C6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
-    <circle cx="196" cy="104" r="8" fill="#F2A23A"/>
+    <circle cx="184" cy="104" r="8" fill="#F2A23A"/>
     <text x="248" y="162" text-anchor="middle" font-size="15" font-weight="700" fill="#16212F">Archivio 2025</text>
     <text x="150" y="40" text-anchor="middle" font-size="14" font-family="Consolas, monospace" fill="#8A5200">ven 18:49 · Segreteria</text>
   </g>

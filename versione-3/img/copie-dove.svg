@@ -11,10 +11,10 @@
     </g>
     <text x="84" y="232" text-anchor="middle" font-size="18" font-weight="700" fill="#16212F">Il tuo computer</text>
     <!-- I fili -->
-    <path d="M144 140C210 140 210 58 276 58" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
-    <path d="M144 143H276" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
-    <path d="M144 146C210 146 210 230 276 230" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="144" cy="143" r="8" fill="#F2A23A"/>
+    <path d="M156 140C216 140 216 58 276 58" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M156 143H276" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M156 146C216 146 216 230 276 230" fill="none" stroke="#F2A23A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="156" cy="143" r="8" fill="#F2A23A"/>
     <!-- Altro disco -->
     <circle cx="276" cy="58" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
     <rect x="296" y="34" width="172" height="48" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>

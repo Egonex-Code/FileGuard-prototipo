@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>FileGuard: che fine ha fatto quel documento?</title>
   <meta name="description" content="FileGuard ti dice cosa succede ai documenti dei tuoi clienti: dove sono finiti, com'erano e da quale computer.">
-  <link rel="stylesheet" href="concetto.css?v=7">
+  <link rel="stylesheet" href="concetto.css?v=16">
   <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
@@ -35,9 +35,10 @@
 
   <main id="contenuto">
     <!-- 1. Apertura: titolo, pulsanti e il video protagonista.
-         Il filo ambra scende dai pulsanti dentro il riquadro del video. -->
+         Sul computer due colonne (decisione 13/11): testo a sinistra, video a destra, tutto visibile senza scorrere.
+         Il filo ambra va dai pulsanti dentro il riquadro del video. Su telefono e tablet stretto resta in colonna. -->
     <section class="apertura fascia-notte anima">
-      <div class="largo">
+      <div class="largo apertura-griglia">
         <div class="apertura-testa">
           <h1 class="titolo-domanda">
             <span class="domanda">Che fine ha fatto quel documento?</span>
@@ -81,11 +82,11 @@
       </div>
     </section>
 
-    <!-- 2. Tre frasi che si sentono in ogni ufficio -->
+    <!-- 2. Quattro frasi che si sentono in ogni ufficio -->
     <section class="fascia fascia-nebbia">
       <div class="largo">
         <div class="testa">
-          <h2>Tre frasi che si sentono in ogni ufficio.</h2>
+          <h2>Quattro frasi che si sentono in ogni ufficio.</h2>
         </div>
         <div class="mosaico">
           <article class="tessera">
@@ -103,10 +104,22 @@
             </div>
           </article>
           <article class="tessera">
-            <div class="tessera-figura"><img src="img/traccia-chi.svg" width="480" height="250" alt="Si cerca Bianchi: il filo porta ai documenti che lo riguardano, 9 sicuri e 3 da controllare." loading="lazy"></div>
+            <div class="tessera-figura"><img src="img/traccia-chi.svg" width="480" height="250" alt="Si cerca Bianchi: il filo porta ai documenti che lo riguardano, in cartelle diverse." loading="lazy"></div>
             <div class="tessera-testo">
               <h3 class="voce"><span class="virgoletta" aria-hidden="true">«</span>Cosa conservate su di me?<span class="virgoletta" aria-hidden="true">»</span></h3>
               <p class="voce-risposta">Lo chiede un cliente: cerchi il suo nome o il codice fiscale e trovi i documenti che lo riguardano.</p>
+            </div>
+          </article>
+          <!-- Quarta frase (decisione 13/11, modello di GRAFICO FG): larga quanto il blocco, figura a sinistra e testo a destra -->
+          <article class="tessera tessera-larga">
+            <div class="tessera-figura">
+              <!-- Da verificare prima della pubblicazione: ricerca ditte per partita IVA presente? Se no, togliere il numero di Plurimax srl nei due disegni. -->
+              <picture><source media="(max-width: 599px)" srcset="img/traccia-chi-e-breve.svg" width="320" height="440"><img src="img/traccia-chi-e.svg" width="720" height="330" alt="I documenti dello studio, con nomi qualsiasi: FileGuard riconosce Bianchi Marco, 9 documenti sicuri e 3 da controllare, e la ditta Plurimax srl, 12 documenti sicuri, e mette insieme i loro documenti. Il modello di lettera non riguarda nessuno." loading="lazy"></picture>
+            </div>
+            <div class="tessera-testo">
+              <h3 class="voce"><span class="virgoletta" aria-hidden="true">«</span>Ma chi gliel'ha detto chi è Bianchi?<span class="virgoletta" aria-hidden="true">»</span></h3>
+              <p class="voce-risposta">Nessuno. FileGuard riconosce da solo persone e ditte nei documenti dello studio che legge, e mette insieme i loro documenti.</p>
+              <p class="voce-chiusa">Tu non carichi niente.</p>
             </div>
           </article>
         </div>
@@ -245,6 +258,8 @@
           <li><a href="funzioni.html">Funzioni</a></li>
           <li><a href="piani.html">Piani</a></li>
           <li><a href="contatto.html">Contatti</a></li>
+          <li><a href="domande.html">Domande frequenti</a></li>
+          <li><a href="consulenti-privacy.html">Per i consulenti privacy</a></li>
         </ul>
       </nav>
       <nav aria-label="Sicurezza e note legali">

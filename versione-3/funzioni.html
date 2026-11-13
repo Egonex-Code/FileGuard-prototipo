@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Funzioni di FileGuard: diario dei documenti, versioni, ricerca per persona</title>
   <meta name="description" content="Cosa è successo a un documento, da quale computer, com'era prima, cosa conservi su un cliente. Le funzioni di FileGuard, una per ogni domanda d'ufficio.">
-  <link rel="stylesheet" href="concetto.css?v=7">
+  <link rel="stylesheet" href="concetto.css?v=16">
   <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
@@ -45,9 +45,10 @@
           <p class="sotto">Ecco le frasi che senti più spesso, e cosa fa FileGuard per ognuna.</p>
         </div>
         <nav class="orologio" aria-label="Le ore della giornata">
-          <a href="#p1"><span>09:05</span>Chi l'ha spostata?</a>
+          <a href="#p1"><span>09:05</span>Dov'è finita?</a>
           <a href="#p2"><span>10:40</span>Ho salvato sopra</a>
           <a href="#p3"><span>11:30</span>Un cliente chiede</a>
+          <a href="#p3b"><span>11:45</span>Era una foto</a>
           <a href="#p4"><span>12:15</span>Non esce</a>
           <a href="#p5"><span>14:00</span>Avvisami</a>
           <a href="#p6"><span>15:10</span>Non si tocca</a>
@@ -65,7 +66,7 @@
         <div class="largo momento-riga">
           <p class="momento-ora">09:05</p>
           <div class="momento-testo">
-            <p class="voce voce-grande"><span class="virgoletta" aria-hidden="true">«</span>Ma chi ha spostato la cartella del cliente?<span class="virgoletta" aria-hidden="true">»</span></p>
+            <p class="voce voce-grande"><span class="virgoletta" aria-hidden="true">«</span>Da quale computer è stata spostata la cartella del cliente?<span class="virgoletta" aria-hidden="true">»</span></p>
             <h2>Segue i tuoi documenti</h2>
             <p class="momento-righe">Ogni documento delle cartelle che scegli ha il suo diario: cosa gli è successo, quando e da quale computer. Niente più giri di domande in ufficio.</p>
             <ul class="dettagli">
@@ -113,11 +114,13 @@
           <div class="momento-testo">
             <p class="voce voce-grande"><span class="virgoletta" aria-hidden="true">«</span>Un cliente vuole sapere cosa teniamo su di lui.<span class="virgoletta" aria-hidden="true">»</span></p>
             <h2>Trova chi c'è nei documenti</h2>
-            <p class="momento-righe">Scrivi il nome di una persona o il suo codice fiscale: FileGuard ti mostra i documenti che la riguardano, e per ognuna c'è una scheda. Le ditte le trovi scrivendo il loro nome.</p>
+            <p class="momento-righe">Scrivi il nome di una persona o il suo codice fiscale: FileGuard ti mostra i documenti che la riguardano, e per ognuna c'è una scheda. Le ditte le trovi scrivendo il loro nome. Tu non carichi niente: FileGuard riconosce da solo persone e ditte nei documenti che legge.</p>
             <ul class="dettagli">
               <li>«sicuri»: i documenti con il codice fiscale della persona</li>
               <li>«da controllare»: i documenti dove compare solo il nome</li>
               <li>ricerca per periodo <span class="presto">presto</span></li>
+              <li>ditte anche per partita IVA <span class="presto">presto</span></li>
+              <li>«Estrai»: l'elenco e i documenti di una persona, pronti da consegnare a chi chiede i suoi dati <span class="presto">presto</span></li>
               <li>tutto resta sul tuo computer</li>
             </ul>
           </div>
@@ -131,17 +134,18 @@
         </div>
       </section>
 
-      <!-- 3b: nuova funzione, lettura di scansioni e foto (13/11). Il disegno lo fa il Grafico. -->
+      <!-- 3b: lettura di scansioni e foto. Reinserita il 13/11 dopo il confronto tra Samuele e Michele. Si dice cosa fa, non come. -->
       <section class="momento" id="p3b">
         <div class="largo momento-riga">
           <p class="momento-ora">11:45</p>
           <div class="momento-testo">
             <p class="voce voce-grande"><span class="virgoletta" aria-hidden="true">«</span>La carta d'identità era una foto. La trova lo stesso?<span class="virgoletta" aria-hidden="true">»</span></p>
             <h2>Legge anche la carta</h2>
-            <p class="momento-righe">Sì. FileGuard legge anche i documenti scansionati e le foto: il testo lo riconosce Windows, sul tuo computer, senza internet. Così la ricerca trova anche quello che è nato su carta.</p>
+            <p class="momento-righe">Sì. Anche nei documenti scansionati o fotografati FileGuard trova da solo i dati dei tuoi clienti, come il nome e il codice fiscale. Tutto sul tuo computer, senza internet.</p>
+            <p class="forte">Trova i tuoi clienti anche sulla carta.<span>Scansioni e foto entrano nella ricerca come gli altri documenti.</span></p>
             <ul class="dettagli">
               <li>documenti scansionati e foto</li>
-              <li>il testo lo riconosce Windows, sul computer</li>
+              <li>letti sul tuo computer</li>
               <li>niente passa da internet</li>
             </ul>
           </div>
@@ -170,7 +174,7 @@
             <p class="elenco-letti-testa">Documenti non letti <span>4</span></p>
             <ul>
               <li><strong>Contratto firmato.pdf</strong><span>protetto da password</span></li>
-              <li><strong>Scansione 0412.tif</strong><span>troppo grande</span></li>
+              <li><strong>Fascicolo_2019.zip</strong><span>troppo grande</span></li>
               <li><strong>Verbale vecchio.doc</strong><span>rovinato</span></li>
               <li><strong>Planimetria.dwg</strong><span>tipo non ancora leggibile</span></li>
             </ul>
@@ -290,6 +294,15 @@
           <div class="momento-testo">
             <h2>Marca temporale <span class="presto">presto</span></h2>
             <p class="momento-righe">Fissa la data e l'ora in cui un documento era così com'è, per mostrarlo se qualcuno te lo chiede.</p>
+            <p class="momento-righe">E poi, in arrivo:</p>
+            <ul class="dettagli">
+              <li>«Estrai»: in un clic l'elenco e i documenti di una persona, pronti da consegnare a chi chiede i suoi dati. Scegli tu quali documenti, e l'estrazione resta scritta nel diario <span class="presto">presto</span></li>
+              <li>Email. Collega la tua casella email: FileGuard ci cerca gli stessi dati che cerca nei documenti. Il testo delle tue email non viene conservato. <span class="presto">presto</span></li>
+              <li>Chiavette e altre uscite. Se un documento protetto esce dallo studio, su una chiavetta o in altro modo, lo sai. FileGuard dice dove è andato solo quando ne è sicuro. <span class="presto">presto</span></li>
+              <li>le ditte si trovano anche per partita IVA <span class="presto">presto</span></li>
+              <li>quando elimini un documento, nel diario resta il riferimento <span class="presto">presto</span></li>
+              <li>il «Foglio della giornata»: per ogni giorno di lavoro, una pagina con i conti del giorno (documenti creati, modificati, spostati, cancellati, usciti) e i fatti da notare, con il computer da cui sono partiti. La consulti dentro FileGuard, e resta in archivio giorno per giorno <span class="presto">presto</span></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -326,6 +339,8 @@
           <li><a href="funzioni.html" aria-current="page">Funzioni</a></li>
           <li><a href="piani.html">Piani</a></li>
           <li><a href="contatto.html">Contatti</a></li>
+          <li><a href="domande.html">Domande frequenti</a></li>
+          <li><a href="consulenti-privacy.html">Per i consulenti privacy</a></li>
         </ul>
       </nav>
       <nav aria-label="Sicurezza e note legali">
