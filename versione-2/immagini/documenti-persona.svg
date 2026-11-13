@@ -41,6 +41,6 @@
     <use href="#doc-dubbio" x="462" y="270"/>
     <text x="512" y="302" font-size="30" fill="#4B5866">Archivio</text>
     <use href="#doc-dubbio" x="462" y="345"/>
-    <text x="512" y="377" font-size="30" fill="#4B5866">Posta</text>
+    <text x="512" y="377" font-size="30" fill="#4B5866">Archivio</text>
   </g>
 </svg>
