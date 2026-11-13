@@ -3132,3 +3132,109 @@ figcaption {
 .sotto {
   text-wrap: balance;
 }
+
+/* ---------- Piede e menu con le misure del sito Egonex (13/11) ----------
+   Misure da EgonexWebsite (header.css, footer.css, design-tokens.css); colori e caratteri restano di FileGuard. */
+.barra-riga {
+  min-height: 72px;
+}
+
+.barra-marca {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.barra-marca img {
+  height: 36px;
+}
+
+.barra-menu {
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.barra-menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 1rem;
+  border-radius: var(--raggio-piccolo);
+}
+
+.barra .bottone {
+  min-height: 44px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.875rem;
+}
+
+.menu-telefono nav a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.9375rem;
+}
+
+.piede {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.piede-alto {
+  gap: 2rem;
+  padding-block: 3rem 2rem;
+}
+
+@media (min-width: 1000px) {
+  .piede-alto {
+    grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  }
+}
+
+.piede-marca img {
+  height: 36px;
+  margin-bottom: 0.75rem;
+}
+
+.piede-titolo {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.piede ul {
+  gap: 0.25rem;
+}
+
+.piede-basso {
+  padding-block: 1rem;
+  font-size: 0.75rem;
+  color: #9AA8BC;
+}
+
+@media (max-width: 379px) {
+  .barra-marca img {
+    height: 30px;
+  }
+}
+
+@media (max-width: 599px) {
+  /* Link del piede comodi da toccare */
+  .piede ul a {
+    display: inline-block;
+    padding-block: 0.35rem;
+  }
+
+  .piede ul {
+    gap: 0;
+  }
+
+  /* Lo spazio per la barra in basso sta nel piede, non sotto: niente striscia bianca */
+  body {
+    padding-bottom: 0;
+  }
+
+  .piede-basso {
+    padding-bottom: calc(1rem + 4.25rem);
+  }
+}
