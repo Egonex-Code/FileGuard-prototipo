@@ -1792,120 +1792,6 @@ mark {
   }
 }
 
-/* ---------- Piani: il filo attraversa i passi e finisce nel pulsante ---------- */
-.percorso {
-  position: relative;
-  display: grid;
-  gap: 1rem;
-  max-width: 56rem;
-  margin: 2.5rem auto 0;
-  padding: 0 0 0 2.25rem;
-  list-style: none;
-}
-
-.percorso::before {
-  content: "";
-  position: absolute;
-  left: 0.5rem;
-  top: 0.75rem;
-  bottom: 1.4rem;
-  width: 2px;
-  margin-left: -1px;
-  background: var(--ambra);
-}
-
-.percorso li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--carta);
-  font-weight: 700;
-}
-
-.percorso li::before {
-  content: "";
-  position: absolute;
-  left: -2.25rem;
-  top: 50%;
-  width: 1rem;
-  height: 1rem;
-  margin-top: -0.5rem;
-  border: 3px solid var(--ambra);
-  border-radius: 50%;
-  background: var(--notte);
-  box-sizing: border-box;
-}
-
-.percorso span {
-  color: var(--ambra);
-  font-family: var(--ora);
-  font-size: 0.875rem;
-}
-
-.percorso-arrivo::before {
-  display: none;
-}
-
-@media (min-width: 760px) {
-  .percorso {
-    grid-template-columns: repeat(3, auto) auto;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
-    padding: 0;
-  }
-
-  .percorso::before {
-    left: 0;
-    right: 4rem;
-    top: 50%;
-    bottom: auto;
-    width: auto;
-    height: 2px;
-    margin: -1px 0 0;
-  }
-
-  .percorso li {
-    flex-direction: column;
-    gap: 0.35rem;
-    padding: 0 1rem;
-    background: var(--notte);
-  }
-
-  .percorso li::before {
-    display: none;
-  }
-
-  .percorso li:not(.percorso-arrivo) {
-    padding-block: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 999px;
-    flex-direction: row;
-  }
-}
-
-/* Il biglietto della prova */
-.biglietto {
-  padding: 1.5rem;
-  border: 1px solid var(--linea);
-  border-top: 5px solid var(--ambra);
-  border-radius: var(--raggio);
-  background: var(--carta);
-  box-shadow: 0 30px 60px -30px rgba(14, 26, 43, 0.4);
-}
-
-.biglietto-testa {
-  padding-bottom: 0.75rem;
-  border-bottom: 1px dashed var(--linea);
-  font-size: 1.15rem;
-  font-weight: 800;
-}
-
-.biglietto .filo {
-  margin-bottom: 1.25rem;
-}
-
 .forte-chiaro {
   color: var(--inchiostro);
 }
@@ -2860,3 +2746,41 @@ picture {
 .momento:not(.momento-notte) .forte span {
   color: var(--testo-2);
 }
+
+/* ---------- Senza la prova (13/11): «Chiedici informazioni» al posto di «Prova gratis» ---------- */
+/* Sul telefono il pulsante lascia la barra in alto e va nella barra in basso */
+.barra-basso {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  .barra .barra-azione {
+    display: none;
+  }
+
+  .menu-telefono {
+    margin-left: auto;
+  }
+
+  .barra-basso {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: block;
+    padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom));
+    background: var(--notte);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .barra-basso .bottone {
+    justify-content: center;
+    width: 100%;
+  }
+
+  body {
+    padding-bottom: 4.25rem;
+  }
+}
+
