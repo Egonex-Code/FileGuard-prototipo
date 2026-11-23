@@ -1,4 +1,4 @@
-// Piani: calcolo del prezzo per postazioni (decisione 13/11).
+// Piani: calcolo del prezzo per postazioni. Oggi non è usato da nessuna pagina.
 // 450 € l'anno il primo computer, 60 € l'anno ogni computer in più. Calcolo fino a 20 computer, oltre: «Chiedici informazioni». Sul filo si vedono al massimo 10 computer, poi «+N».
 (function () {
   var PRIMO = 450;

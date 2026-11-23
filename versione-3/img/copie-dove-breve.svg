@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 270" width="300" height="270" role="img" aria-labelledby="t">
-  <title id="t">Dal tuo computer il filo porta le copie a un altro disco, a un disco di rete o NAS o a una cartella sincronizzata con il cloud.</title>
+  <title id="t">Dal tuo computer il filo porta le copie a un altro disco, a un disco di rete o NAS o a una cartella sincronizzata online.</title>
   <!-- Versione breve per il telefono. -->
   <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
     <rect x="4" y="8" width="80" height="54" rx="8" fill="#E4ECF8" stroke="#0B2C6B" stroke-width="2.5"/>
@@ -14,6 +14,6 @@
     <text x="64" y="187" font-size="18" fill="#16212F">Disco di rete o NAS</text>
     <circle cx="24" cy="235" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
     <rect x="48" y="214" width="248" height="42" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
-    <text x="64" y="241" font-size="18" fill="#16212F">Una cartella sul cloud</text>
+    <text x="64" y="241" font-size="18" fill="#16212F">Una cartella online</text>
   </g>
 </svg>

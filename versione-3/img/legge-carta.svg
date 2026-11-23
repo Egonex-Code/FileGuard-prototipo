@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" width="480" height="270" role="img" aria-labelledby="t">
   <title id="t">La foto di una carta di prova passa dal tuo computer, senza internet: il testo diventa leggibile, Rossi Mario, e la ricerca la trova.</title>
-  <!-- Concetto «La traccia», Grafico Egonex. Carta generica con dati di prova. -->
+  <!-- Concetto «La traccia». Carta generica con dati di prova. -->
   <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
     <g transform="translate(16 44) rotate(-4 75 48)"><rect width="150" height="96" rx="8" fill="#F4F1EA" stroke="#8A97AA" stroke-width="2.5"/><rect x="12" y="14" width="40" height="50" rx="4" fill="#DCE3EC"/><circle cx="32" cy="32" r="9" fill="#B9C5D6"/><path d="M18 62c2-12 26-12 28 0" fill="#B9C5D6"/><path d="M64 22c10-3 18 3 28 0s18 3 28 0M64 40c10-3 18 3 28 0s14 3 22 0M64 58c10-3 18 3 28 0s18 3 28 0M14 80c10-3 18 3 28 0s18 3 28 0s18 3 28 0" fill="none" stroke="#B9C5D6" stroke-width="4" stroke-linecap="round"/></g>
     <text x="91" y="176" text-anchor="middle" font-size="16" fill="#4A5668">Foto della carta</text>

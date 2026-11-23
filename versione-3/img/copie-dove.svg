@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" aria-labelledby="t">
-  <title id="t">Dal tuo computer il filo porta le copie dei documenti a un altro disco, a un disco di rete o NAS o a una cartella sincronizzata con il cloud.</title>
-  <!-- Concetto «La traccia», Grafico Egonex. Disegno per Funzioni, parte 8. -->
+  <title id="t">Dal tuo computer il filo porta le copie dei documenti a un altro disco, a un disco di rete o NAS o a una cartella sincronizzata online.</title>
+  <!-- Concetto «La traccia». Disegno per Funzioni, parte 8. -->
   <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
     <!-- Il computer -->
     <g transform="translate(24 104)">
@@ -23,9 +23,9 @@
     <circle cx="276" cy="143" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
     <rect x="296" y="119" width="172" height="48" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
     <text x="382" y="149" text-anchor="middle" font-size="17" fill="#16212F">Disco di rete o NAS</text>
-    <!-- Cartella sincronizzata con il cloud -->
+    <!-- Cartella sincronizzata online -->
     <circle cx="276" cy="230" r="8" fill="#FFFFFF" stroke="#F2A23A" stroke-width="4"/>
     <rect x="296" y="206" width="172" height="48" rx="10" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
-    <text x="382" y="236" text-anchor="middle" font-size="16" fill="#16212F">Una cartella sul cloud</text>
+    <text x="382" y="236" text-anchor="middle" font-size="16" fill="#16212F">Una cartella online</text>
   </g>
 </svg>

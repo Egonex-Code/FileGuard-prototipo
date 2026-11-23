@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" width="720" height="330" role="img" aria-labelledby="t">
   <title id="t">I documenti dello studio, con nomi qualsiasi: FileGuard riconosce Bianchi Marco, 9 documenti sicuri e 3 da controllare, e la ditta Tralvenia srl, 12 documenti sicuri, e mette insieme i loro documenti. Il modello di lettera non riguarda nessuno.</title>
-  <!-- Concetto «La traccia», Grafico Egonex, dal modello di GRAFICO FG. Dati di prova. Pallino pieno = sicuro, vuoto = da controllare. -->
+  <!-- Concetto «La traccia». Dati di prova. Pallino pieno = sicuro, vuoto = da controllare. -->
   <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
     <g transform="translate(20 26) scale(0.52)"><path d="M0 0h34l12 12v46H0Z" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5" stroke-linejoin="round"/><path d="M34 0v12h12M9 22h28M9 31h28M9 40h18" fill="none" stroke="#0B2C6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
     <text x="54" y="48" font-size="22" fill="#16212F">Pratica Bianchi.pdf</text>
@@ -29,7 +29,6 @@
     <text x="470" y="104" font-size="22" font-weight="700" fill="#16212F">Bianchi Marco</text>
     <text x="470" y="134" font-size="18" fill="#4A5668">9 sicuri · 3 da controllare</text>
     <rect x="450" y="208" width="266" height="84" rx="16" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="2.5"/>
-    <!-- Da verificare prima della pubblicazione: ricerca ditte per partita IVA presente? Se no, togliere il numero. -->
     <text x="470" y="244" font-size="22" font-weight="700" fill="#16212F">Tralvenia srl</text>
     <text x="470" y="274" font-size="18" fill="#4A5668">12 sicuri</text>
   </g>

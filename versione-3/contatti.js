@@ -91,7 +91,7 @@ const ATTESA_MASSIMA = 15000; // millisecondi
   }
 
   function emailGiaCompilata(dati) {
-    const tema = dati.recipient === 'licensing' ? 'Licenze e prezzi' : 'Informazioni generali';
+    const tema = dati.recipient === 'licensing' ? 'Licenze' : 'Informazioni generali';
     const oggetto = 'FileGuard: ' + tema;
     const righe = [
       'Nome: ' + dati.name,

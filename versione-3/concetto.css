@@ -1,4 +1,4 @@
-/* FileGuard, concetto visivo «La traccia». Grafico Egonex, 12/11/2026.
+/* FileGuard, concetto visivo «La traccia».
    Proposta separata dal prototipo: non tocca stile.css.
    Idea: la memoria dei documenti si vede come un filo ambra con dei punti
    (data, ora, computer). Il filo torna in tutto il sito. */
@@ -566,31 +566,6 @@ h3 {
   .memoria-nota {
     right: -1.25rem;
   }
-}
-
-/* Animazione discreta: il filo si disegna e i ricordi compaiono, una volta sola */
-@media (prefers-reduced-motion: no-preference) {
-  .anima .filo::before {
-    animation: filo-scrive 1.6s ease-out both;
-  }
-
-  .anima .ricordo {
-    animation: ricordo-arriva 0.5s ease-out both;
-  }
-
-  .anima .ricordo:nth-child(1) { animation-delay: 0.2s; }
-  .anima .ricordo:nth-child(2) { animation-delay: 0.55s; }
-  .anima .ricordo:nth-child(3) { animation-delay: 0.9s; }
-  .anima .ricordo:nth-child(4) { animation-delay: 1.25s; }
-
-  .anima .memoria-nota {
-    animation: ricordo-arriva 0.5s ease-out 1.7s both;
-  }
-}
-
-@keyframes filo-scrive {
-  from { transform: scaleY(0); }
-  to { transform: scaleY(1); }
 }
 
 @keyframes ricordo-arriva {
@@ -3237,4 +3212,45 @@ figcaption {
   .piede-basso {
     padding-bottom: calc(1rem + 4.25rem);
   }
+}
+
+/* ---------- Video della home (23/11): il riquadro diventa il lettore al clic ---------- */
+.video.video-attivo {
+  display: block;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  background: #000;
+}
+
+.video-attivo video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: #000;
+}
+
+.video-attivo video:focus-visible {
+  outline: 3px solid var(--ambra);
+  outline-offset: 3px;
+}
+
+/* ---------- Piani senza prezzi (23/11): l'invito a scriverci al posto del calcolatore ---------- */
+.invito-testo {
+  max-width: 26rem;
+  margin-bottom: 1.75rem;
+  color: var(--chiaro-su-notte);
+}
+
+/* Un disegno di una funzione che arriverà: la didascalia lo dice */
+.momento-figura .figura-presto {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--testo-2);
+  text-align: center;
+}
+
+.fascia-notte .figura-presto,
+.momento-notte .figura-presto {
+  color: var(--chiaro-su-notte);
 }
