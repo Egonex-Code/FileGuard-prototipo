@@ -12,7 +12,7 @@
     video.playsInline = true;
     video.poster = 'video/fileguard-60s-copertina.jpg';
     video.setAttribute('aria-label', 'Video: FileGuard in 60 secondi');
-    video.src = 'video/fileguard-60s.mp4';
+    video.src = 'video/fileguard-60s-v2.mp4';
 
     riquadro.textContent = '';
     riquadro.classList.add('video-attivo');
