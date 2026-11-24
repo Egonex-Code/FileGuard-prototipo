@@ -3254,3 +3254,91 @@ figcaption {
 .momento-notte .figura-presto {
   color: var(--chiaro-su-notte);
 }
+
+/* ---------- Video della home: la copertina vera, con il play al centro ---------- */
+/* Il filo si ferma prima del riquadro: il pallino resta fuori dal bordo e non tocca mai il lettore. */
+.video.video-copertina {
+  display: block;
+  aspect-ratio: 16 / 9;
+  margin-top: 1.9rem;
+  padding: 0;
+  background: var(--notte-2);
+}
+
+.video.video-copertina::before {
+  top: -1.9rem;
+}
+
+.video-copertina .video-play {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.video-copertina .video-play img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.video-copertina .video-tondo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4.75rem;
+  height: 4.75rem;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 8px rgba(14, 26, 43, 0.35), 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.video-copertina .video-tondo svg {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.video-copertina .video-play:focus-visible {
+  outline: 3px solid var(--ambra);
+  outline-offset: 4px;
+}
+
+.video-sotto {
+  margin-top: 0.85rem;
+  font-size: 0.875rem;
+  color: var(--chiaro-su-notte);
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .video-copertina .video-tondo {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .video-copertina .video-tondo svg {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .apertura-griglia .video.video-copertina {
+    margin: 0;
+    padding: 0;
+  }
+
+  .apertura-griglia .video.video-copertina::before {
+    left: -1.9rem;
+    top: 50%;
+  }
+
+  .apertura-griglia .video.video-copertina::after {
+    right: calc(100% + 1.9rem);
+    top: 50%;
+    width: 1.5rem;
+  }
+}

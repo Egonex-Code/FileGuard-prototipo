@@ -1,7 +1,7 @@
 /* Video della home (23/11): al clic il riquadro diventa il lettore.
    Il file si carica solo adesso, parte con l'audio e non si ripete. */
 (function () {
-  var riquadro = document.querySelector('.video');
+  var riquadro = document.querySelector('.video-copertina');
   var pulsante = riquadro && riquadro.querySelector('.video-play');
   if (!pulsante) return;
 

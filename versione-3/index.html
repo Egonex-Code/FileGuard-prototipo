@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>FileGuard: che fine ha fatto quel documento?</title>
   <meta name="description" content="FileGuard ti dice cosa succede ai documenti dei tuoi clienti: dove sono finiti, com'erano e da quale computer.">
-  <link rel="stylesheet" href="concetto.css?v=20">
+  <link rel="stylesheet" href="concetto.css?v=21">
   <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
@@ -53,30 +53,16 @@
 
         <span class="filo-discesa" aria-hidden="true"></span>
 
-        <!-- Riquadro video: la copertina è la memoria che si scrive.
-             Al clic, video.js sostituisce il riquadro con il lettore: il file si carica solo allora. -->
-        <div class="video">
-          <button class="video-play" type="button" aria-label="Guarda il video: FileGuard in 60 secondi">
-            <span class="video-tondo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z" fill="currentColor"/></svg></span>
-            <span class="video-scritta"><strong>Guarda FileGuard in 60 secondi</strong><span>Cos'è, a cosa serve, a chi serve</span></span>
-          </button>
-
-        <figure class="memoria" aria-label="Esempio: il diario di un documento, con dati di prova">
-          <div class="memoria-testa">
-            <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M7 3h15l7 7v23H7Z" fill="#E4ECF8" stroke="#0B2C6B" stroke-width="2.2" stroke-linejoin="round"/><path d="M22 3v7h7M12 17h12M12 22h12M12 27h8" fill="none" stroke="#0B2C6B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div>
-              <div class="memoria-nome">Pratica Bianchi.pdf</div>
-              <div class="memoria-cartella">Archivio 2025</div>
-            </div>
+        <!-- Riquadro video: prima del clic la copertina vera con il pulsante play.
+             Al clic, video.js sostituisce la copertina con il lettore: il file si carica solo allora. -->
+        <div class="video-blocco">
+          <div class="video video-copertina">
+            <button class="video-play" type="button" aria-label="Guarda il video: FileGuard in 60 secondi">
+              <img src="video/fileguard-60s-copertina.jpg" width="1280" height="720" alt="">
+              <span class="video-tondo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z" fill="currentColor"/></svg></span>
+            </button>
           </div>
-          <ol class="filo">
-            <li class="ricordo"><span class="ricordo-cosa">Creato</span><span class="ricordo-ora">lun 09:12</span><span class="ricordo-dove">dal computer Segreteria</span></li>
-            <li class="ricordo"><span class="ricordo-cosa">Modificato</span><span class="ricordo-ora">mer 15:32</span><span class="ricordo-dove">dal computer Amministrazione</span></li>
-            <li class="ricordo"><span class="ricordo-cosa">Rinominato</span><span class="ricordo-ora">ven 18:47</span><span class="ricordo-dove">da «Bianchi 2025.pdf»</span></li>
-            <li class="ricordo ricordo-ultimo"><span class="ricordo-cosa">Spostato in Archivio 2025</span><span class="ricordo-ora">ven 18:49</span><span class="ricordo-dove">dal computer Segreteria</span></li>
-          </ol>
-          <figcaption class="memoria-nota">Resta sul tuo computer</figcaption>
-        </figure>
+          <p class="video-sotto">Guarda FileGuard in 60 secondi</p>
         </div>
       </div>
     </section>
@@ -281,6 +267,6 @@
       </div>
     </div>
   </footer>
-  <script src="video.js?v=2" defer></script>
+  <script src="video.js?v=3" defer></script>
 </body>
 </html>
